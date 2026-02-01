@@ -1,0 +1,380 @@
+{
+  "initial": {
+    "budget": 80000,
+    "employees": 4,
+    "monthlyRevenue": 12000,
+    "monthlyCosts": {
+      "salaries": 12000,
+      "materials": 2000,
+      "maintenance": 3500,
+      "rent": 2500,
+      "insurance": 1500,
+      "marketing": 800,
+      "vandalism": 1200
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Reprise du club et premiers défis",
+      "context": "Septembre 2022 : Vous reprenez le FC Ambition, club amateur en difficulté. Terrain mal entretenu, effectif instable, finances tendues. Vous devez prendre 3 décisions pour relancer le club.",
+      "decisions": [
+        {
+          "id": "terrain",
+          "title": "Décision 1 : État du terrain",
+          "question": "Le terrain synthétique est en mauvais état. Comment gérer cette situation ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Reporter les travaux (0€)",
+              "cost": 0,
+              "effects": {
+                "maintenance": 3500,
+                "playerSatisfaction": 0,
+                "injuryRisk": 0.3
+              }
+            },
+            {
+              "id": "B",
+              "label": "Rénovation partielle (15 000€)",
+              "cost": 15000,
+              "effects": {
+                "maintenance": 2800,
+                "playerSatisfaction": 10,
+                "injuryRisk": 0.15
+              }
+            },
+            {
+              "id": "C",
+              "label": "Réfection complète (35 000€)",
+              "cost": 35000,
+              "effects": {
+                "maintenance": 2000,
+                "playerSatisfaction": 25,
+                "injuryRisk": 0.05,
+                "reputation": 15
+              }
+            }
+          ]
+        },
+        {
+          "id": "staff",
+          "title": "Décision 2 : Encadrement sportif",
+          "question": "L'équipe manque d'encadrement. Comment renforcer le staff technique ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Continuer avec les bénévoles (0€)",
+              "cost": 0,
+              "effects": {
+                "performance": "moyenne",
+                "stability": "faible"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Coach externe à temps partiel (8 000€)",
+              "cost": 8000,
+              "effects": {
+                "performance": "bonne",
+                "playerDevelopment": 10,
+                "stability": "moyenne"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Recruter un entraîneur permanent (3 000€/mois)",
+              "cost": 0,
+              "newHires": 1,
+              "effects": {
+                "performance": "excellente",
+                "playerDevelopment": 25,
+                "stability": "forte",
+                "retention": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "sponsors",
+          "title": "Décision 3 : Financement",
+          "question": "Comment développer vos revenus pour stabiliser les finances ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Cotisations seules (0€)",
+              "cost": 0,
+              "effects": {
+                "revenueGrowth": 0.03
+              }
+            },
+            {
+              "id": "B",
+              "label": "Campagne sponsors locaux (4 000€)",
+              "cost": 4000,
+              "effects": {
+                "revenueGrowth": 0.12,
+                "duration": 12,
+                "localTies": 10
+              }
+            },
+            {
+              "id": "C",
+              "label": "Partenariat grandes surfaces + école de foot (12 000€)",
+              "cost": 12000,
+              "effects": {
+                "revenueGrowth": 0.25,
+                "duration": 18,
+                "youthDevelopment": 20,
+                "localTies": 15,
+                "longTermStability": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Partenariat avec la mairie",
+      "context": "Janvier 2023 : La mairie propose de financer un projet de détection de jeunes talents locaux. En échange, vous devez créer une structure de formation.",
+      "decisions": [
+        {
+          "id": "partnership",
+          "title": "Négociation du partenariat",
+          "question": "La mairie offre 30 000€ de subvention + mise à disposition d'un terrain d'entraînement. Vous devez créer une école de foot (15 licences minimum). Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter tel quel",
+              "revenue": 30000,
+              "cost": 18000,
+              "effects": {
+                "va": 12000,
+                "dependencyRisk": "fort",
+                "socialImpact": 25,
+                "youthEngagement": 20
+              }
+            },
+            {
+              "id": "B",
+              "label": "Contre-proposition 40 000€ + équipements",
+              "successRate": 0.5,
+              "ifSuccess": {
+                "revenue": 40000,
+                "cost": 18000,
+                "effects": {
+                  "va": 22000,
+                  "dependencyRisk": "moyen",
+                  "equipmentQuality": "excellent"
+                }
+              },
+              "ifFailure": {
+                "delay": 3,
+                "effects": {
+                  "opportunity": "lost",
+                  "reputation": -10
+                }
+              }
+            },
+            {
+              "id": "C",
+              "label": "Refuser et chercher sponsors privés",
+              "delay": 4,
+              "successRate": 0.35,
+              "ifSuccess": {
+                "revenue": 28000,
+                "cost": 12000,
+                "effects": {
+                  "va": 16000,
+                  "dependencyRisk": "faible",
+                  "flexibility": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "cashFlow": "tight"
+                }
+              }
+            },
+            {
+              "id": "D",
+              "label": "Accepter + négocier clause de révision annuelle",
+              "revenue": 30000,
+              "cost": 18000,
+              "effects": {
+                "va": 12000,
+                "dependencyRisk": "moyen",
+                "flexibility": true,
+                "longTermSecurity": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Montée en division et dilemmes",
+      "context": "Septembre 2024 : Le club monte en division supérieure. Les revenus augmentent (+180%), mais les exigences aussi. Tensions sur les salaires, accusations de favoritisme local.",
+      "currentSituation": {
+        "monthlyRevenue": 34000,
+        "employees": 10,
+        "budget": 95000,
+        "monthlyVA": 18000,
+        "staffSatisfaction": 45
+      },
+      "decisions": [
+        {
+          "id": "salaries",
+          "title": "Dilemme 1 : Salaires du staff",
+          "question": "Les entraîneurs et le personnel permanent réclament une revalorisation. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Statu quo (0€)",
+              "cost": 0,
+              "effects": {
+                "turnoverRisk": 0.35,
+                "morale": -25,
+                "reputation": -15
+              }
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% (+3 000€/mois)",
+              "monthlyIncrease": 3000,
+              "effects": {
+                "staffSatisfaction": 70,
+                "turnover": -0.6,
+                "loyalty": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Augmentation 10% + primes résultats (+4 000€/mois)",
+              "monthlyIncrease": 4000,
+              "effects": {
+                "staffSatisfaction": 85,
+                "performance": 1.2,
+                "motivation": 30,
+                "winRate": 0.15
+              }
+            }
+          ]
+        },
+        {
+          "id": "recrutement",
+          "title": "Dilemme 2 : Recrutement de joueurs",
+          "question": "Pour rester compétitif, vous devez recruter. Certains proposent de payer des joueurs semi-pros. Comment réagissez-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Conserver le 100% amateur",
+              "effects": {
+                "competitiveness": "moyenne",
+                "values": "fortes",
+                "localIdentity": 30,
+                "relegationRisk": 0.4
+              }
+            },
+            {
+              "id": "B",
+              "label": "Recruter 2-3 joueurs semi-pros (+5 000€/mois)",
+              "monthlyIncrease": 5000,
+              "effects": {
+                "competitiveness": "forte",
+                "winRate": 0.25,
+                "values": "diluées",
+                "localIdentity": -15,
+                "relegationRisk": 0.15
+              }
+            },
+            {
+              "id": "C",
+              "label": "Investir dans la formation des jeunes (+8 000€ équipements)",
+              "cost": 8000,
+              "effects": {
+                "competitiveness": "moyenne-terme",
+                "values": "fortes",
+                "localIdentity": 40,
+                "socialImpact": 35,
+                "sustainability": true,
+                "relegationRisk": 0.3
+              }
+            }
+          ]
+        },
+        {
+          "id": "infrastructure",
+          "title": "Dilemme 3 : Infrastructures",
+          "question": "La division supérieure exige des vestiaires aux normes. Comment financer les travaux ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Aménagement minimal (12 000€)",
+              "cost": 12000,
+              "effects": {
+                "compliance": "minimal",
+                "playerComfort": "faible",
+                "sanctionRisk": 0.2
+              }
+            },
+            {
+              "id": "B",
+              "label": "Rénovation complète (45 000€)",
+              "cost": 45000,
+              "effects": {
+                "compliance": "total",
+                "playerComfort": "excellent",
+                "reputation": 25,
+                "attractiveness": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Partenariat public-privé (20 000€ + engagement 5 ans)",
+              "cost": 20000,
+              "effects": {
+                "compliance": "total",
+                "playerComfort": "excellent",
+                "reputation": 15,
+                "dependencyRisk": "moyen",
+                "longTermStability": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "staffSatisfaction": 25,
+      "youthDevelopment": 25,
+      "localTies": 20,
+      "fairPractices": 15,
+      "inclusion": 15
+    },
+    "environmental": {
+      "facilities": 25,
+      "greenPractices": 20,
+      "localSourcing": 20,
+      "sustainability": 20,
+      "awareness": 15
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Relégation", "description": "Le club est relégué ou en faillite" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Maintien fragile en division" },
+    "balance": { "max": 75, "label": "Équilibre trouvé", "description": "Club stable et respecté" },
+    "success": { "max": 85, "label": "Succès sportif et social", "description": "Modèle de club amateur ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Club exemplaire, référence locale 🏆" }
+  }
+}

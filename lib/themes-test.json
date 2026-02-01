@@ -1,0 +1,132 @@
+[
+  {
+    "id": "ecovelos",
+    "name": "ÉcoVélos",
+    "icon": "/icons/ecovelos.svg",
+    "subtitle": "Mobilité urbaine",
+    "description": "Lancez une start-up de vélos électriques en location",
+    "difficulty": 2,
+    "badEnding": {
+      "title": "Faillite",
+      "description": "Votre entreprise a coulé. Les vélos vandalisés s'accumulent.",
+      "consequences": ["💸 Dettes : 80 000€"]
+    }
+  },
+  {
+    "id": "cosmetique",
+    "name": "LuxeGlow",
+    "icon": "/icons/cosmetique.svg",
+    "subtitle": "Cosmétiques & beauté",
+    "description": "Créez votre marque de cosmétiques bio dans un marché saturé",
+    "difficulty": 3,
+    "badEnding": {
+      "title": "Faillite Totale",
+      "description": "Votre marque s'est effondrée.",
+      "consequences": ["💸 Dettes : 250 000€"]
+    }
+  },
+  {
+    "id": "boxe",
+    "name": "Iron Fist",
+    "icon": "/icons/boxe.svg",
+    "subtitle": "Sport & fitness",
+    "description": "Transformez un hangar en salle de boxe premium",
+    "difficulty": 3,
+    "badEnding": {
+      "title": "KO Technique",
+      "description": "La salle a fermé après 18 mois.",
+      "consequences": ["🚗 SDF, vous dormez dans votre Clio"]
+    }
+  },
+  {
+    "id": "art",
+    "name": "Canvas & Co",
+    "icon": "/icons/art.svg",
+    "subtitle": "Art & culture",
+    "description": "Ouvrez une galerie d'art dans un quartier en gentrification",
+    "difficulty": 2,
+    "badEnding": {
+      "title": "Vernissage Raté",
+      "description": "Votre galerie a coulé après un scandale de plagiat.",
+      "consequences": ["🎨 Blacklisté du milieu artistique à vie"]
+    }
+  },
+  {
+    "id": "foot",
+    "name": "FC Ambition",
+    "icon": "/icons/foot.svg",
+    "subtitle": "Sport collectif",
+    "description": "Reprenez un club de foot amateur en difficulté",
+    "difficulty": 3,
+    "badEnding": {
+      "title": "Relégation Honteuse",
+      "description": "Le club a été relégué en division inférieure.",
+      "consequences": ["💔 Votre femme vous a quitté"]
+    }
+  },
+  {
+    "id": "mode",
+    "name": "UrbanThread",
+    "icon": "/icons/mode.svg",
+    "subtitle": "Mode & textile",
+    "description": "Lancez votre marque de streetwear éthique",
+    "difficulty": 2,
+    "badEnding": {
+      "title": "Défilé Désastreux",
+      "description": "Votre première collection a été un flop total.",
+      "consequences": ["🏠 Retour chez papa-maman à 28 ans"]
+    }
+  },
+  {
+    "id": "resto",
+    "name": "Le Comptoir",
+    "icon": "/icons/resto.svg",
+    "subtitle": "Restauration",
+    "description": "Ouvrez votre restaurant gastro dans un quartier hipster",
+    "difficulty": 3,
+    "badEnding": {
+      "title": "Étoile Filante",
+      "description": "Une intoxication alimentaire a fermé votre restaurant.",
+      "consequences": ["🤮 50 clients intoxiqués"]
+    }
+  },
+  {
+    "id": "greenbox",
+    "name": "GreenBox",
+    "icon": "/icons/greenbox.svg",
+    "subtitle": "Agriculture urbaine",
+    "description": "Créez une ferme urbaine bio sur les toits de Paris",
+    "difficulty": 2,
+    "badEnding": {
+      "title": "Récolte Désastreuse",
+      "description": "Votre ferme urbaine n'a pas survécu au premier hiver.",
+      "consequences": ["🌱 Récoltes détruites par le gel", "💸 Dettes : 150 000€"]
+    }
+  },
+  {
+    "id": "streamlab",
+    "name": "StreamLab",
+    "icon": "/icons/streamlab.svg",
+    "subtitle": "Création de contenu",
+    "description": "Montez votre agence de streamers et créateurs de contenu",
+    "difficulty": 3,
+    "badEnding": {
+      "title": "Cancel Général",
+      "description": "Votre agence s'est effondrée après un scandale viral.",
+      "consequences": ["📱 Tous vos streamers vous ont quitté", "😭 Blacklisté sur Twitch et YouTube"]
+    }
+  },
+  {
+    "id": "petcare",
+    "name": "PetCare+",
+    "icon": "/icons/petcare.svg",
+    "subtitle": "Services aux animaux",
+    "description": "Lancez une chaîne de garderies premium pour animaux",
+    "difficulty": 2,
+    "badEnding": {
+      "title": "Catastrophe Canine",
+      "description": "Un incident grave a détruit votre réputation.",
+      "consequences": ["🐕 Chien disparu pendant une garde", "⚖️ Poursuites judiciaires", "📉 Plus aucun client"]
+    }
+  }
+]

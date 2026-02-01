@@ -1,0 +1,231 @@
+{
+  "id": 2,
+  "title": "Phase 2 : Croissance & Trahisons (Mois 4-8)",
+  "context": "Vous avez survécu aux 3 premiers mois. Mais un concurrent vous copie, un distributeur vous fait une offre douteuse, et Clara est épuisée. Les problèmes s'accumulent.",
+  "story": {
+    "intro": "Mois 4. Vous commencez à vendre. Mais CopyGlow (concurrent) sort une gamme identique à -30%. Un grand distributeur vous propose l'exclusivité. Clara travaille 70h/semaine.",
+    "context": "Vous devez grandir... ou mourir. Mais chaque décision peut vous tuer."
+  },
+  "currentSituation": {
+    "budget": "Variable selon Phase 1",
+    "monthlyRevenue": "6 000€ - 20 000€",
+    "threats": "Concurrent agressif + Épuisement équipe"
+  },
+  "decisions": [
+    {
+      "id": "concurrent",
+      "title": "Concurrent Déloyal",
+      "question": "CopyGlow vend des copies de vos produits à -30%. Que faites-vous ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "Poursuivre en justice (20 000€, 12 mois)",
+          "cost": 20000,
+          "effects": {
+            "legal": true,
+            "winChance": 50,
+            "delay": 12
+          },
+          "hidden": "50% chance victoire. Mais 12 mois de procédure.",
+          "consequence": "⚖️ Procès en cours. CopyGlow continue pendant ce temps."
+        },
+        {
+          "id": "B",
+          "label": "Guerre des prix (-25% sur tout)",
+          "cost": 0,
+          "effects": {
+            "priceWar": true,
+            "margin": -0.2,
+            "marketShare": 15
+          },
+          "hidden": "💀 Marges détruites. Risque faillite.",
+          "consequence": "📉 Parts de marché +15% mais marges négatives."
+        },
+        {
+          "id": "C",
+          "label": "Innovation : nouvelle gamme (15 000€)",
+          "cost": 15000,
+          "effects": {
+            "innovation": true,
+            "differentiation": 40,
+            "brandValue": 25
+          },
+          "consequence": "✅ Vous prenez de l'avance. CopyGlow ne peut pas suivre."
+        },
+        {
+          "id": "D",
+          "label": "Ignorer et focus marketing (5 000€)",
+          "cost": 5000,
+          "effects": {
+            "brandAwareness": 20,
+            "marketShare": -10
+          },
+          "hidden": "⚠️ Parts de marché en baisse.",
+          "consequence": "⚠️ CopyGlow gagne du terrain. Vous perdez des clients."
+        }
+      ]
+    },
+    {
+      "id": "distributeur",
+      "title": "Offre Distributeur",
+      "question": "BeautyChain vous propose exclusivité. Mais Clara a vu le contrat : clauses abusives...",
+      "options": [
+        {
+          "id": "A",
+          "label": "Accepter (volume garanti mais marge réduite)",
+          "cost": 0,
+          "effects": {
+            "exclusivity": true,
+            "monthlyRevenue": 40000,
+            "margin": 0.1,
+            "dependency": 90
+          },
+          "hidden": "💀 Dépendance totale. Si ils rompent, vous mourez.",
+          "consequence": "✅ Revenus explosifs mais vous êtes leur esclave."
+        },
+        {
+          "id": "B",
+          "label": "Négocier (10% de marge en plus)",
+          "cost": 0,
+          "effects": {
+            "negotiation": true,
+            "successRate": 40
+          },
+          "hidden": "40% chance succès. Sinon ils partent.",
+          "consequence": "🎲 Négociation... Ils acceptent mais réduisent volumes."
+        },
+        {
+          "id": "C",
+          "label": "Refuser et garder indépendance",
+          "cost": 0,
+          "effects": {
+            "independence": true,
+            "growth": "slow"
+          },
+          "consequence": "✅ Vous restez libre. Croissance lente mais saine."
+        },
+        {
+          "id": "D",
+          "label": "Accepter puis cacher revenus (fraude fiscale)",
+          "cost": 0,
+          "effects": {
+            "fraud": true,
+            "detectionRisk": 60
+          },
+          "hidden": "💀 60% détection. Prison possible.",
+          "consequence": "🚨 Contrôle fiscal. Redressement + amendes. GAME OVER."
+        }
+      ]
+    },
+    {
+      "id": "laboratoire",
+      "title": "Formule Moins Chère",
+      "question": "Le labo propose formule -40% coût... mais allergènes possibles. Clara refuse de signer.",
+      "options": [
+        {
+          "id": "A",
+          "label": "Garder formule actuelle (coût élevé)",
+          "cost": 0,
+          "effects": {
+            "quality": "premium",
+            "margin": -0.05
+          },
+          "consequence": "✅ Qualité préservée. Marges serrées."
+        },
+        {
+          "id": "B",
+          "label": "Nouvelle formule (risque santé)",
+          "cost": 0,
+          "effects": {
+            "quality": "risky",
+            "margin": 0.3,
+            "allergyRisk": 50
+          },
+          "hidden": "💀 50% risque réaction allergique client.",
+          "consequence": "💥 Scandale : 20 clientes allergies graves. Procès."
+        },
+        {
+          "id": "C",
+          "label": "Formule intermédiaire (R&D 8 000€)",
+          "cost": 8000,
+          "effects": {
+            "quality": "good",
+            "margin": 0.15,
+            "allergyRisk": 5
+          },
+          "consequence": "✅ Bon compromis. Risque minimal."
+        },
+        {
+          "id": "D",
+          "label": "Passer outre Clara (la virer)",
+          "cost": 0,
+          "effects": {
+            "clara": "fired",
+            "quality": "risky",
+            "betrayal": true
+          },
+          "hidden": "🎭 Clara part avec la recette. Elle lance concurrent.",
+          "consequence": "😡 Clara crée 'PureGlow'. Elle vous fait la guerre."
+        }
+      ]
+    },
+    {
+      "id": "investisseur",
+      "title": "Proposition Rachat",
+      "question": "Un fonds d'investissement propose 500 000€ pour 60% du capital. Clara dit non.",
+      "options": [
+        {
+          "id": "A",
+          "label": "Accepter (cash rapide, perte contrôle)",
+          "cost": 0,
+          "effects": {
+            "investment": 500000,
+            "control": 40,
+            "autonomy": false
+          },
+          "hidden": "Vous n'êtes plus chez vous. Ils décident tout.",
+          "consequence": "✅ 500k€ mais vous obéissez. Le jeu change."
+        },
+        {
+          "id": "B",
+          "label": "Négocier 30% seulement",
+          "cost": 0,
+          "effects": {
+            "investment": 200000,
+            "control": 70,
+            "successRate": 30
+          },
+          "hidden": "30% chance accord. Sinon ils partent.",
+          "consequence": "🎲 Ils refusent. Pas d'investissement."
+        },
+        {
+          "id": "C",
+          "label": "Refuser et bootstraper",
+          "cost": 0,
+          "effects": {
+            "bootstrap": true,
+            "control": 100,
+            "growth": "slow"
+          },
+          "consequence": "✅ Vous gardez tout. Croissance organique."
+        },
+        {
+          "id": "D",
+          "label": "Accepter en secret (trahir Clara)",
+          "cost": 0,
+          "effects": {
+            "betrayal": true,
+            "investment": 500000,
+            "claraLeaves": true
+          },
+          "hidden": "Clara découvre et part. Procès.",
+          "consequence": "😡 Clara vous poursuit. Procès + réputation détruite."
+        }
+      ]
+    }
+  ],
+  "storyEnd": {
+    "success": "Mois 8 : Vous tenez la route. Les ventes montent. Clara est toujours là (si vous ne l'avez pas virée). Mais Phase 3 arrive : les vrais dilemmes éthiques...",
+    "failure": "Mois 8 : Trop de mauvais choix. Les procès s'accumulent. Clara est partie. Vous êtes seul(e) et endetté(e). La fin approche..."
+  }
+}

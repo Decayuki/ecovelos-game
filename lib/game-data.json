@@ -1,0 +1,368 @@
+{
+  "initial": {
+    "budget": 100000,
+    "fleet": 200,
+    "employees": 5,
+    "pricePerDay": 5,
+    "utilizationRate": 0.3,
+    "monthlyRevenue": 9000,
+    "monthlyCosts": {
+      "salaries": 15000,
+      "materials": 2000,
+      "maintenance": 3000,
+      "rent": 1500,
+      "insurance": 1000,
+      "marketing": 1000,
+      "vandalism": 2500
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Lancement et premiers défis",
+      "context": "Mars 2022 : Les premiers mois sont difficiles. Vandalisme, coûts élevés, rentabilité fragile. Vous devez prendre 3 décisions pour redresser la barre.",
+      "decisions": [
+        {
+          "id": "security",
+          "title": "Décision 1 : Sécurité des vélos",
+          "question": "Comment protéger votre flotte contre le vandalisme et les vols ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Ne rien faire (0€)",
+              "cost": 0,
+              "effects": {
+                "vandalism": 2500,
+                "customerSatisfaction": 0
+              }
+            },
+            {
+              "id": "B",
+              "label": "Antivols renforcés (10 000€)",
+              "cost": 10000,
+              "effects": {
+                "vandalism": 1750,
+                "customerSatisfaction": 5
+              }
+            },
+            {
+              "id": "C",
+              "label": "Antivols + géolocalisation (25 000€)",
+              "cost": 25000,
+              "effects": {
+                "vandalism": 1000,
+                "customerSatisfaction": 10,
+                "recoveryRate": 0.8
+              }
+            }
+          ]
+        },
+        {
+          "id": "maintenance",
+          "title": "Décision 2 : Maintenance",
+          "question": "Comment gérer l'entretien de vos vélos ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Statut quo (0€)",
+              "cost": 0,
+              "effects": {
+                "maintenanceCost": 3000,
+                "bikeQuality": "moyenne"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Contrat avec réparateur local (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "maintenanceCost": 2250,
+                "bikeQuality": "bonne",
+                "socialScore": 5
+              }
+            },
+            {
+              "id": "C",
+              "label": "Recruter un responsable maintenance (3 000€/mois)",
+              "cost": 0,
+              "newHires": 1,
+              "effects": {
+                "maintenanceCost": 1800,
+                "bikeQuality": "excellente",
+                "customerSatisfaction": 15,
+                "bikeLongevity": 1.2
+              }
+            }
+          ]
+        },
+        {
+          "id": "acquisition",
+          "title": "Décision 3 : Acquisition clients",
+          "question": "Comment développer votre base d'utilisateurs ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Bouche-à-oreille (0€)",
+              "cost": 0,
+              "effects": {
+                "growthRate": 0.05
+              }
+            },
+            {
+              "id": "B",
+              "label": "Campagne réseaux sociaux (3 000€)",
+              "cost": 3000,
+              "effects": {
+                "growthRate": 0.15,
+                "duration": 3,
+                "brandAwareness": 10
+              }
+            },
+            {
+              "id": "C",
+              "label": "Partenariat université locale (8 000€)",
+              "cost": 8000,
+              "effects": {
+                "growthRate": 0.3,
+                "duration": 6,
+                "socialScore": 10,
+                "loyalty": "forte"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Partenariat FoodExpress",
+      "context": "Mai 2022 : FoodExpress propose un partenariat. Ils veulent équiper leurs 50 livreurs avec vos vélos électriques.",
+      "decisions": [
+        {
+          "id": "partnership",
+          "title": "Négociation du partenariat",
+          "question": "FoodExpress propose d'acheter 50 vélos à 800€/vélo avec prise en charge de 50% de la maintenance. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter tel quel",
+              "revenue": 40000,
+              "productionCost": 25000,
+              "maintenanceCost": 3750,
+              "effects": {
+                "va": 11250,
+                "dependencyRisk": "fort",
+                "brandImage": 10
+              }
+            },
+            {
+              "id": "B",
+              "label": "Contre-proposition 1 000€/vélo, maintenance 30%",
+              "successRate": 0.6,
+              "ifSuccess": {
+                "revenue": 50000,
+                "productionCost": 25000,
+                "maintenanceCost": 2250,
+                "effects": {
+                  "va": 22750,
+                  "dependencyRisk": "moyen"
+                }
+              },
+              "ifFailure": {
+                "delay": 2,
+                "effects": {
+                  "opportunity": "lost"
+                }
+              }
+            },
+            {
+              "id": "C",
+              "label": "Refuser et chercher d'autres clients",
+              "delay": 3,
+              "successRate": 0.4,
+              "ifSuccess": {
+                "revenue": 33000,
+                "productionCost": 15000,
+                "effects": {
+                  "va": 18000,
+                  "dependencyRisk": "faible",
+                  "diversification": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "growthRate": "slow"
+                }
+              }
+            },
+            {
+              "id": "D",
+              "label": "Accepter + clause de sortie (-5% prix)",
+              "revenue": 38000,
+              "productionCost": 25000,
+              "maintenanceCost": 3750,
+              "effects": {
+                "va": 9250,
+                "dependencyRisk": "moyen",
+                "flexibility": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Croissance et dilemmes éthiques",
+      "context": "Octobre 2023 : Le CA explose (+150%), vous embauchez. Mais tensions sociales et accusations de greenwashing apparaissent.",
+      "currentSituation": {
+        "monthlyRevenue": 60000,
+        "employees": 12,
+        "budget": 80000,
+        "monthlyVA": 15000,
+        "employeeSatisfaction": 40
+      },
+      "decisions": [
+        {
+          "id": "salaries",
+          "title": "Dilemme 1 : Salaires",
+          "question": "Les salariés réclament une augmentation. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Statu quo (0€)",
+              "cost": 0,
+              "effects": {
+                "turnoverRisk": 0.3,
+                "strikeRisk": 0.4,
+                "socialScore": -20
+              }
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% (+3 600€/mois)",
+              "monthlyIncrease": 3600,
+              "effects": {
+                "employeeSatisfaction": 65,
+                "turnover": -0.5,
+                "socialScore": 15
+              }
+            },
+            {
+              "id": "C",
+              "label": "Augmentation 10% + primes performance (+4 500€/mois)",
+              "monthlyIncrease": 4500,
+              "effects": {
+                "employeeSatisfaction": 80,
+                "productivity": 1.15,
+                "socialScore": 25
+              }
+            }
+          ]
+        },
+        {
+          "id": "sourcing",
+          "title": "Dilemme 2 : Sourcing matériaux",
+          "question": "Un article vous accuse d'utiliser des matériaux de pays à faibles normes environnementales. Comment réagissez-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Continuer tel quel",
+              "effects": {
+                "materialCost": 2000,
+                "badBuzzRisk": 0.25,
+                "imageImpact": -30,
+                "environmentalScore": -30
+              }
+            },
+            {
+              "id": "B",
+              "label": "Sourcing France certifié (+40% coût)",
+              "effects": {
+                "materialCost": 2800,
+                "imageImpact": 20,
+                "environmentalScore": 30,
+                "label": "Made in France"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Sourcing Europe (+20% coût)",
+              "effects": {
+                "materialCost": 2400,
+                "imageImpact": 10,
+                "environmentalScore": 15
+              }
+            }
+          ]
+        },
+        {
+          "id": "communication",
+          "title": "Dilemme 3 : Communication RSE",
+          "question": "Comment gérer la polémique sur vos pratiques environnementales ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Ignorer les accusations",
+              "cost": 0,
+              "effects": {
+                "customerLoss": 0.2,
+                "imageImpact": -40
+              }
+            },
+            {
+              "id": "B",
+              "label": "Campagne communication défensive (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "customerLoss": 0.1,
+                "credibility": "faible"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Audit RSE indépendant + plan d'action (45 000€)",
+              "cost": 45000,
+              "effects": {
+                "imageImpact": 40,
+                "environmentalScore": 50,
+                "certification": "B Corp",
+                "growthRate": 0.2,
+                "duration": 18
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "employeeSatisfaction": 30,
+      "lowTurnover": 20,
+      "localPartnerships": 15,
+      "fairWages": 20,
+      "workingConditions": 15
+    },
+    "environmental": {
+      "responsibleSourcing": 30,
+      "carbonReduction": 20,
+      "certifications": 20,
+      "circularEconomy": 15,
+      "transparency": 15
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Échec", "description": "Faillite probable ou scandale" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Valeur actionnariale pure" },
+    "balance": { "max": 75, "label": "Équilibre fragile", "description": "Début d'équilibre" },
+    "success": { "max": 85, "label": "Succès", "description": "Bon équilibre partenariale ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Modèle exemplaire 🏆" }
+  }
+}

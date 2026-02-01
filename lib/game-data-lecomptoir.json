@@ -1,0 +1,407 @@
+{
+  "initial": {
+    "budget": 150000,
+    "employees": 6,
+    "monthlyRevenue": 18000,
+    "monthlyCosts": {
+      "salaries": 18000,
+      "materials": 6000,
+      "maintenance": 2000,
+      "rent": 4500,
+      "insurance": 1200,
+      "marketing": 1500,
+      "foodWaste": 2500
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Ouverture du restaurant",
+      "context": "Avril 2022 : Vous ouvrez Le Comptoir dans un quartier en pleine gentrification. Cuisine locavore, circuits courts, mais concurrence rude et coûts élevés. Vous devez prendre 3 décisions stratégiques.",
+      "decisions": [
+        {
+          "id": "suppliers",
+          "title": "Décision 1 : Approvisionnement",
+          "question": "Quelle stratégie d'approvisionnement adopter pour votre cuisine locavore ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Mix grossistes + producteurs locaux (0€)",
+              "cost": 0,
+              "effects": {
+                "materials": 6000,
+                "localSourcing": 40,
+                "quality": "variable",
+                "margins": "moyennes"
+              }
+            },
+            {
+              "id": "B",
+              "label": "100% producteurs locaux rayon 50km (+25% coût)",
+              "effects": {
+                "materials": 7500,
+                "localSourcing": 90,
+                "quality": "excellente",
+                "seasonality": true,
+                "localEconomy": 25,
+                "storytelling": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Contrats annuels AMAP + potager urbain (15 000€ + 20% coût)",
+              "cost": 15000,
+              "effects": {
+                "materials": 7200,
+                "localSourcing": 100,
+                "quality": "premium",
+                "sustainability": 40,
+                "producerRelations": "excellentes",
+                "marketing": 30,
+                "resilience": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "staff",
+          "title": "Décision 2 : Équipe de cuisine",
+          "question": "Comment constituer votre brigade en cuisine ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Vous + stagiaires (0€)",
+              "cost": 0,
+              "effects": {
+                "quality": "inconsistante",
+                "turnover": "élevé",
+                "stress": "très élevé",
+                "sustainability": "faible"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Chef de partie expérimenté (3 000€/mois)",
+              "cost": 0,
+              "newHires": 1,
+              "effects": {
+                "quality": "excellente",
+                "consistency": "forte",
+                "creativity": 20,
+                "stress": "modéré",
+                "customerSatisfaction": 25
+              }
+            },
+            {
+              "id": "C",
+              "label": "Chef + commis en insertion (3 000€/mois + 8 000€ formation)",
+              "cost": 8000,
+              "newHires": 1,
+              "effects": {
+                "quality": "excellente",
+                "consistency": "forte",
+                "socialImpact": 40,
+                "subsidies": 6000,
+                "brandImage": 30,
+                "meaningfulness": "forte"
+              }
+            }
+          ]
+        },
+        {
+          "id": "concept",
+          "title": "Décision 3 : Positionnement",
+          "question": "Comment attirer et fidéliser une clientèle dans un quartier concurrentiel ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Bouche-à-oreille seul (0€)",
+              "cost": 0,
+              "effects": {
+                "growthRate": 0.05,
+                "reach": "limité"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Soirées thématiques producteurs (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "growthRate": 0.18,
+                "duration": 9,
+                "communityBuilding": 25,
+                "storytelling": 30,
+                "producerVisibility": true
+              }
+            },
+            {
+              "id": "C",
+              "label": "Guide Michelin + influenceurs food (15 000€)",
+              "cost": 15000,
+              "effects": {
+                "growthRate": 0.40,
+                "duration": 12,
+                "visibility": "très forte",
+                "reputation": 40,
+                "touristAppeal": true,
+                "pressureCost": "élevée"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Partenariat chaîne hôtelière",
+      "context": "Septembre 2022 : Un groupe hôtelier local vous propose de gérer la restauration de 3 de leurs établissements. Contrat lucratif, mais risque de perte d'identité.",
+      "decisions": [
+        {
+          "id": "partnership",
+          "title": "Négociation du partenariat",
+          "question": "Le groupe offre 60 000€/an + achat de vos produits. Vous devez standardiser les menus et renoncer au 100% local. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter tel quel",
+              "revenue": 60000,
+              "effects": {
+                "va": 32000,
+                "dependencyRisk": "très fort",
+                "brandIdentity": -30,
+                "localSourcing": -40,
+                "scale": "forte"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Contre-proposition : 70 000€, maintien 70% local minimum",
+              "successRate": 0.5,
+              "ifSuccess": {
+                "revenue": 70000,
+                "effects": {
+                  "va": 42000,
+                  "dependencyRisk": "fort",
+                  "brandIdentity": -10,
+                  "localSourcing": -20,
+                  "compromise": "acceptable"
+                }
+              },
+              "ifFailure": {
+                "delay": 3,
+                "effects": {
+                  "opportunity": "lost",
+                  "cashFlow": "tight"
+                }
+              }
+            },
+            {
+              "id": "C",
+              "label": "Refuser et développer traiteur entreprises locales",
+              "delay": 4,
+              "cost": 12000,
+              "successRate": 0.55,
+              "ifSuccess": {
+                "revenue": 45000,
+                "effects": {
+                  "va": 28000,
+                  "dependencyRisk": "faible",
+                  "brandIdentity": 20,
+                  "localSourcing": 10,
+                  "diversity": true,
+                  "b2bRelations": "fortes"
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "cashBurn": "élevé"
+                }
+              }
+            },
+            {
+              "id": "D",
+              "label": "Accepter avec clause sortie + ligne signature 100% local",
+              "revenue": 60000,
+              "effects": {
+                "va": 32000,
+                "dependencyRisk": "moyen",
+                "brandIdentity": 15,
+                "localSourcing": -20,
+                "premiumLine": true,
+                "flexibility": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Succès et dilemmes éthiques",
+      "context": "Juin 2024 : Le Comptoir est un succès (+220% CA). Vous embauchez, mais tensions émergent : gaspillage, burn-out brigade, gentrification du quartier accusée.",
+      "currentSituation": {
+        "monthlyRevenue": 58000,
+        "employees": 14,
+        "budget": 110000,
+        "monthlyVA": 28000,
+        "staffSatisfaction": 40
+      },
+      "decisions": [
+        {
+          "id": "salaries",
+          "title": "Dilemme 1 : Conditions de travail",
+          "question": "Votre brigade est épuisée. Horaires de nuit, pression, turn-over. Ils demandent une revalorisation et de meilleurs horaires. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Statu quo (0€)",
+              "cost": 0,
+              "effects": {
+                "turnoverRisk": 0.5,
+                "burnout": 0.6,
+                "quality": -20,
+                "reputation": -25
+              }
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% (+4 200€/mois)",
+              "monthlyIncrease": 4200,
+              "effects": {
+                "staffSatisfaction": 65,
+                "turnover": -0.4,
+                "quality": 10,
+                "loyalty": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Augmentation 10% + 4 jours/semaine + psychologue du travail (+6 000€/mois)",
+              "monthlyIncrease": 6000,
+              "effects": {
+                "staffSatisfaction": 85,
+                "burnout": -0.7,
+                "quality": 25,
+                "retention": 40,
+                "innovation": "forte",
+                "industryReputation": 35
+              }
+            }
+          ]
+        },
+        {
+          "id": "waste",
+          "title": "Dilemme 2 : Gaspillage alimentaire",
+          "question": "Votre succès génère du gaspillage. 15% des achats finissent à la poubelle. Comment réagir ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Continuer ainsi",
+              "effects": {
+                "foodWaste": 2500,
+                "environmentalScore": -30,
+                "costsHidden": "élevés"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Don aux associations + compost (3 000€ logistique)",
+              "cost": 3000,
+              "effects": {
+                "foodWaste": 1200,
+                "environmentalScore": 25,
+                "socialImpact": 30,
+                "taxBenefit": 2000,
+                "brandImage": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Système anti-gaspi complet : IA prédictive + valorisation (25 000€)",
+              "cost": 25000,
+              "effects": {
+                "foodWaste": 400,
+                "environmentalScore": 50,
+                "efficiency": 1.2,
+                "monthlySavings": 1800,
+                "innovation": true,
+                "certification": "Zero Waste",
+                "marketingValue": 35
+              }
+            }
+          ]
+        },
+        {
+          "id": "gentrification",
+          "title": "Dilemme 3 : Accusations de gentrification",
+          "question": "Des habitants du quartier vous accusent de participer à la gentrification. Loyers qui explosent, commerces de proximité qui ferment. Comment répondez-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Ignorer les critiques",
+              "effects": {
+                "localReputation": -40,
+                "tensions": 0.4,
+                "vandalism": 0.25
+              }
+            },
+            {
+              "id": "B",
+              "label": "Menu solidaire midi (10€, réservé résidents) - 8 000€ manque à gagner/an",
+              "cost": 8000,
+              "effects": {
+                "localReputation": 20,
+                "socialMix": "amélioré",
+                "tensions": -0.3,
+                "inclusivity": 25
+              }
+            },
+            {
+              "id": "C",
+              "label": "Programme complet : menu solidaire + emplois quartier + soutien commerces (35 000€)",
+              "cost": 35000,
+              "effects": {
+                "localReputation": 50,
+                "socialMix": "fort",
+                "tensions": -0.7,
+                "inclusivity": 50,
+                "communityIntegration": "totale",
+                "employmentLocal": 30,
+                "ecosystemSupport": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "staffSatisfaction": 25,
+      "fairWages": 20,
+      "workingConditions": 20,
+      "communityImpact": 20,
+      "inclusivity": 15
+    },
+    "environmental": {
+      "localSourcing": 30,
+      "foodWaste": 25,
+      "sustainability": 20,
+      "seasonality": 15,
+      "carbonFootprint": 10
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Fermeture", "description": "Restaurant fermé ou scandalisé" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Greenwashing sans substance" },
+    "balance": { "max": 75, "label": "Équilibre trouvé", "description": "Locavore crédible" },
+    "success": { "max": 85, "label": "Succès durable", "description": "Modèle de restauration responsable ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Restaurant exemplaire, pilier local 🏆" }
+  }
+}

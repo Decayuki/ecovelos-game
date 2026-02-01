@@ -1,0 +1,592 @@
+{
+  "initial": {
+    "budget": 50000,
+    "employees": 2,
+    "monthlyExhibitions": 1,
+    "commissionRate": 0.35,
+    "monthlyRevenue": 8000,
+    "monthlyCosts": {
+      "salaries": 6000,
+      "rent": 2500,
+      "marketing": 800,
+      "insurance": 600,
+      "utilities": 400,
+      "vernissage": 1200
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Ouverture de la galerie (Mois 1-3)",
+      "context": "Vous venez d'ouvrir votre galerie dans le Marais. 80m² dans un quartier en gentrification. Votre associée Léa (critique d'art) a des contacts dans le milieu. Vous avez 50 000€ d'économies. Le loyer est élevé (2500€/mois). Vous prenez 35% de commission sur les ventes.\n\nPremière expo : artiste émergent. 15 œuvres. Déficit actuel : -3 500€/mois (revenus 8000€, coûts 11 500€).",
+      "decisions": [
+        {
+          "id": "positioning",
+          "title": "Décision 1 : Positionnement",
+          "question": "Quel type d'artistes voulez-vous exposer ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Artistes émergents inconnus (prix bas, risque)",
+              "cost": 0,
+              "effects": {
+                "positioning": "emerging",
+                "priceRange": "low",
+                "customerSatisfaction": 15,
+                "artistSatisfaction": 40,
+                "socialScore": 30,
+                "salesVolume": 0.8
+              },
+              "consequence": "✅ Mission sociale forte. Prix 500-2000€. Volume ventes -20%. Respect artistes +40."
+            },
+            {
+              "id": "B",
+              "label": "Artistes établis (prix moyens, stable)",
+              "cost": 5000,
+              "effects": {
+                "positioning": "established",
+                "priceRange": "medium",
+                "customerSatisfaction": 30,
+                "artistSatisfaction": 20,
+                "brandImage": 25,
+                "salesVolume": 1.2
+              },
+              "consequence": "✅ Équilibre. Prix 2000-8000€. Volume ventes +20%. Investissement réseau 5000€."
+            },
+            {
+              "id": "C",
+              "label": "Artistes reconnus (prix élevés, prestige)",
+              "cost": 15000,
+              "effects": {
+                "positioning": "prestigious",
+                "priceRange": "high",
+                "customerSatisfaction": 45,
+                "brandImage": 50,
+                "artistSatisfaction": -10,
+                "salesVolume": 0.9
+              },
+              "consequence": "✅ Prestige maximal. Prix 8000-30000€. Commissions élevées. Investissement 15000€."
+            },
+            {
+              "id": "D",
+              "label": "Mix éclectique (tous types)",
+              "cost": 2000,
+              "effects": {
+                "positioning": "eclectic",
+                "priceRange": "variable",
+                "customerSatisfaction": 20,
+                "brandImage": 10,
+                "diversity": true,
+                "salesVolume": 1.0
+              },
+              "consequence": "⚠️ Pas d'identité claire. Clients confus. Diversité +. Investissement 2000€."
+            }
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Décision 2 : Stratégie Marketing",
+          "question": "Comment attirer collectionneurs et visiteurs ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Vernissages VIP mensuels (3 000€/mois)",
+              "cost": 3000,
+              "revenue": 12000,
+              "effects": {
+                "brandAwareness": 35,
+                "customerSatisfaction": 30,
+                "networkQuality": "premium",
+                "growthRate": 0.25
+              },
+              "consequence": "✅ Réseau premium. Revenus +12000€/mois. Coûts vernissage 3000€/mois. Croissance +25%."
+            },
+            {
+              "id": "B",
+              "label": "Présence salons d'art (8 000€)",
+              "cost": 8000,
+              "revenue": 15000,
+              "effects": {
+                "brandAwareness": 45,
+                "customerSatisfaction": 25,
+                "artistSatisfaction": 30,
+                "duration": 6
+              },
+              "consequence": "✅ Visibilité nationale. Revenus +15000€ sur 6 mois. Investissement 8000€."
+            },
+            {
+              "id": "C",
+              "label": "Campagne Instagram ciblée (2 000€)",
+              "cost": 2000,
+              "revenue": 6000,
+              "effects": {
+                "brandAwareness": 20,
+                "customerSatisfaction": 15,
+                "growthRate": 0.15,
+                "duration": 3
+              },
+              "consequence": "✅ Audience jeune. Revenus +6000€ sur 3 mois. Investissement 2000€. Croissance +15%."
+            },
+            {
+              "id": "D",
+              "label": "Bouche-à-oreille uniquement (0€)",
+              "cost": 0,
+              "effects": {
+                "brandAwareness": 5,
+                "growthRate": 0.05,
+                "authenticity": 25
+              },
+              "consequence": "⚠️ Croissance ultra-lente +5%/mois. Pas d'investissement. Authentique mais limité."
+            }
+          ]
+        },
+        {
+          "id": "artists",
+          "title": "Décision 3 : Relation avec les artistes",
+          "question": "Quelle commission prendre sur les ventes ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Commission standard 35% (équilibre)",
+              "cost": 0,
+              "effects": {
+                "commissionRate": 0.35,
+                "artistSatisfaction": 15,
+                "competitiveness": "average"
+              },
+              "consequence": "✅ Standard marché. Artistes acceptent. Marges correctes."
+            },
+            {
+              "id": "B",
+              "label": "Commission réduite 25% (générosité)",
+              "cost": 0,
+              "effects": {
+                "commissionRate": 0.25,
+                "artistSatisfaction": 40,
+                "socialScore": 25,
+                "margin": -0.3,
+                "loyalty": "forte"
+              },
+              "consequence": "✅ Artistes loyaux. Réputation excellente. Marges réduites -30%."
+            },
+            {
+              "id": "C",
+              "label": "Commission élevée 50% (profit max)",
+              "cost": 0,
+              "effects": {
+                "commissionRate": 0.5,
+                "artistSatisfaction": -25,
+                "margin": 0.4,
+                "churnRisk": 0.5
+              },
+              "consequence": "📉 Marges +40% mais artistes mécontents. 50% risque départ artistes."
+            },
+            {
+              "id": "D",
+              "label": "Commission variable selon succès (20-40%)",
+              "cost": 0,
+              "effects": {
+                "commissionRate": 0.3,
+                "artistSatisfaction": 25,
+                "fairness": true,
+                "socialScore": 20
+              },
+              "consequence": "✅ Équitable. Jeunes artistes 20%, établis 40%. Satisfaction +25."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Réputation et trahisons (Mois 4-8)",
+      "context": "Vous commencez à être connu. Une galerie concurrente (ArtElite) attaque vos artistes. Un collectionneur propose investissement contre exclusivité. Léa découvre qu'une œuvre exposée pourrait être un plagiat. Les dilemmes s'accumulent.",
+      "decisions": [
+        {
+          "id": "plagiarism",
+          "title": "Décision 1 : Scandale de plagiat",
+          "question": "Léa découvre qu'une œuvre de votre exposition ressemble fortement à une œuvre célèbre. L'artiste nie. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Retirer l'œuvre immédiatement (perte vente)",
+              "cost": 0,
+              "effects": {
+                "revenue": -5000,
+                "integrity": true,
+                "brandImage": 30,
+                "artistSatisfaction": -20
+              },
+              "consequence": "✅ Intégrité préservée. Perte vente 5000€. Image +30. Artiste furieux."
+            },
+            {
+              "id": "B",
+              "label": "Enquête indépendante (3 000€, 2 mois)",
+              "cost": 3000,
+              "effects": {
+                "delay": 2,
+                "integrity": true,
+                "brandImage": 20,
+                "customerSatisfaction": 15
+              },
+              "consequence": "✅ Démarche professionnelle. Coût 3000€. Délai 2 mois. Respect +20."
+            },
+            {
+              "id": "C",
+              "label": "Ignorer et continuer la vente",
+              "cost": 0,
+              "revenue": 5000,
+              "effects": {
+                "scandalRisk": 70,
+                "brandImage": -10
+              },
+              "consequence": "💥 70% risque scandale. Si découvert : blacklist milieu artistique."
+            },
+            {
+              "id": "D",
+              "label": "Négocier avec l'artiste original (10 000€)",
+              "cost": 10000,
+              "effects": {
+                "integrity": "compromised",
+                "scandalRisk": 30,
+                "artistSatisfaction": 10
+              },
+              "consequence": "⚠️ Transaction secrète 10000€. 30% risque fuite info. Réputation fragile."
+            }
+          ]
+        },
+        {
+          "id": "investor",
+          "title": "Décision 2 : Proposition d'investisseur",
+          "question": "Un riche collectionneur propose 100 000€ contre exclusivité sur vos artistes pendant 2 ans. Léa se méfie...",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter (cash rapide, perte indépendance)",
+              "cost": 0,
+              "effects": {
+                "investment": 100000,
+                "independence": false,
+                "artistSatisfaction": -30,
+                "dependencyRisk": 80
+              },
+              "consequence": "✅ 100k€ cash mais exclusivité 2 ans. Artistes mécontents. Dépendance totale."
+            },
+            {
+              "id": "B",
+              "label": "Négocier exclusivité partielle (50k€)",
+              "cost": 0,
+              "successRate": 0.5,
+              "ifSuccess": {
+                "effects": {
+                  "investment": 50000,
+                  "independence": true,
+                  "artistSatisfaction": -10
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "opportunity": "lost"
+                }
+              },
+              "consequence": "🎲 50% succès (50k€, exclusivité 50%). 50% échec : il part."
+            },
+            {
+              "id": "C",
+              "label": "Refuser et garder indépendance",
+              "cost": 0,
+              "effects": {
+                "independence": true,
+                "artistSatisfaction": 30,
+                "socialScore": 35
+              },
+              "consequence": "✅ Liberté préservée. Artistes heureux. Croissance organique."
+            },
+            {
+              "id": "D",
+              "label": "Crowdfunding participatif (5 000€ setup)",
+              "cost": 5000,
+              "revenue": 40000,
+              "effects": {
+                "community": true,
+                "brandImage": 35,
+                "socialScore": 40,
+                "artistSatisfaction": 25
+              },
+              "consequence": "✅ 40k€ via communauté. Image excellente +35. Investissement 5000€."
+            }
+          ]
+        },
+        {
+          "id": "team",
+          "title": "Décision 3 : Croissance équipe",
+          "question": "Léa est débordée. Les vernissages demandent plus de monde. Que faire ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Recruter chargé(e) de communication (3 000€/mois)",
+              "cost": 0,
+              "newHires": 1,
+              "revenue": 4000,
+              "effects": {
+                "brandAwareness": 30,
+                "employeeSatisfaction": 25,
+                "growthRate": 0.2,
+                "socialScore": 15
+              },
+              "consequence": "✅ Communication pro. Revenus +4000€/mois. Salaires +3000€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% pour Léa et vous (+600€/mois)",
+              "monthlyIncrease": 600,
+              "effects": {
+                "employeeSatisfaction": 20,
+                "turnover": -0.3,
+                "socialScore": 10
+              },
+              "consequence": "✅ Motivation +20%. Économie vs recrutement. Coûts +600€/mois."
+            },
+            {
+              "id": "C",
+              "label": "Stagiaire (500€/mois)",
+              "cost": 500,
+              "effects": {
+                "employeeSatisfaction": 10,
+                "workQuality": "variable",
+                "socialScore": 5
+              },
+              "consequence": "⚠️ Aide ponctuelle. Qualité variable. Coût 500€/mois."
+            },
+            {
+              "id": "D",
+              "label": "Externaliser événementiel (2 000€/événement)",
+              "cost": 2000,
+              "effects": {
+                "eventQuality": "professional",
+                "employeeSatisfaction": 15,
+                "brandImage": 20
+              },
+              "consequence": "✅ Événements pro. Pas de recrutement. Coût 2000€/vernissage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Dilemmes éthiques et pérennité (Mois 9-12)",
+      "context": "Un an plus tard. Vous êtes établi. 8 employés, expos régulières. Une grande maison d'enchères (Sotheby's) propose rachat pour 600 000€. Léa hésite. Un promoteur immobilier veut racheter le quartier et expulser les galeries. Des choix cruciaux s'imposent.\n\nVendez-vous ? Résistez-vous à la gentrification ? Quelle place pour l'éthique dans le marché de l'art ?",
+      "currentSituation": {
+        "monthlyRevenue": 45000,
+        "employees": 8,
+        "budget": 85000,
+        "monthlyVA": 16000,
+        "employeeSatisfaction": 55,
+        "monthlyCosts": {
+          "salaries": 24000,
+          "rent": 2500,
+          "marketing": 1500,
+          "insurance": 800,
+          "utilities": 500,
+          "vernissage": 1700
+        }
+      },
+      "decisions": [
+        {
+          "id": "buyout",
+          "title": "Dilemme 1 : Offre Sotheby's",
+          "question": "Sotheby's propose 600 000€ pour racheter Canvas & Co et l'intégrer à leur réseau. Léa dit : 'On a créé un espace libre, pas une vitrine de luxe.' Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter (600k€, fin du jeu en SUCCESS)",
+              "cost": 0,
+              "effects": {
+                "exit": "success",
+                "money": 600000,
+                "endGame": true
+              },
+              "consequence": "✅ VICTOIRE : Vous vendez pour 600k€. Léa démissionne mais vous êtes riche. FIN."
+            },
+            {
+              "id": "B",
+              "label": "Refuser et continuer l'aventure",
+              "cost": 0,
+              "effects": {
+                "independence": true,
+                "employeeSatisfaction": 45,
+                "socialScore": 50,
+                "artistSatisfaction": 40
+              },
+              "consequence": "✅ Vous restez libre. Léa sourit. Artistes respectent. L'aventure continue."
+            },
+            {
+              "id": "C",
+              "label": "Négocier 800k€ (risque refus)",
+              "cost": 0,
+              "successRate": 0.2,
+              "ifSuccess": {
+                "effects": {
+                  "exit": "success",
+                  "money": 800000,
+                  "endGame": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "competitor": "sothebys_war",
+                  "marketShare": -40
+                }
+              },
+              "consequence": "🎲 20% succès (800k€). 80% échec : Sotheby's ouvre galerie 100m. Guerre totale -40% clients."
+            }
+          ]
+        },
+        {
+          "id": "gentrification",
+          "title": "Dilemme 2 : Gentrification du quartier",
+          "question": "Un promoteur immobilier rachète l'immeuble. Loyer × 3 (7500€/mois) ou déménagement. 5 autres galeries ferment. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter loyer × 3 (+5 000€/mois)",
+              "cost": 0,
+              "effects": {
+                "rent": 7500,
+                "profitability": -0.3,
+                "socialScore": -30
+              },
+              "consequence": "📉 Loyer 7500€/mois (+5000€). Rentabilité -30%. Vous participez à la gentrification."
+            },
+            {
+              "id": "B",
+              "label": "Déménager banlieue (-50% loyer, -30% clients)",
+              "cost": 15000,
+              "effects": {
+                "rent": 1250,
+                "revenue": -13500,
+                "brandImage": -20,
+                "socialScore": 10
+              },
+              "consequence": "⚠️ Loyer 1250€ mais perte clients -30%. Déménagement 15000€. Image -20."
+            },
+            {
+              "id": "C",
+              "label": "Mobilisation collective galeries (10 000€ avocat)",
+              "cost": 10000,
+              "successRate": 0.4,
+              "ifSuccess": {
+                "effects": {
+                  "rent": 3000,
+                  "socialScore": 60,
+                  "communityStrength": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "expulsion": true
+                }
+              },
+              "consequence": "🎲 40% succès (loyer 3000€, victoire collective). 60% échec : expulsion."
+            },
+            {
+              "id": "D",
+              "label": "Coopérative d'artistes : racheter l'immeuble (200 000€)",
+              "cost": 200000,
+              "effects": {
+                "ownership": true,
+                "rent": 0,
+                "socialScore": 80,
+                "communityLeadership": true,
+                "employeeSatisfaction": 50
+              },
+              "consequence": "✅ Propriété collective. Loyer 0€. Leadership communauté. Investissement 200k€."
+            }
+          ]
+        },
+        {
+          "id": "ethics",
+          "title": "Dilemme 3 : Blanchiment d'argent",
+          "question": "Un collectionneur mystérieux propose d'acheter 300k€ d'œuvres cash. Léa suspecte blanchiment d'argent. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter (cash rapide, risque pénal)",
+              "cost": 0,
+              "revenue": 105000,
+              "effects": {
+                "ethics": "compromised",
+                "legalRisk": 80,
+                "socialScore": -50
+              },
+              "consequence": "💥 Commission 105k€ mais 80% risque enquête. Si découvert : prison + fermeture."
+            },
+            {
+              "id": "B",
+              "label": "Refuser catégoriquement",
+              "cost": 0,
+              "effects": {
+                "ethics": "preserved",
+                "employeeSatisfaction": 35,
+                "socialScore": 40,
+                "artistSatisfaction": 30
+              },
+              "consequence": "✅ Intégrité préservée. Respect équipe +35%. Perte vente 300k€."
+            },
+            {
+              "id": "C",
+              "label": "Signaler aux autorités (démarche citoyenne)",
+              "cost": 0,
+              "effects": {
+                "ethics": "exemplary",
+                "legalProtection": true,
+                "socialScore": 60,
+                "brandImage": 40
+              },
+              "consequence": "✅ Démarche exemplaire. Protection juridique. Image excellente +40."
+            },
+            {
+              "id": "D",
+              "label": "Vente fractionnée légale (90k€ commission)",
+              "cost": 0,
+              "revenue": 90000,
+              "effects": {
+                "ethics": "pragmatic",
+                "legalRisk": 20,
+                "socialScore": 10
+              },
+              "consequence": "✅ Vente légalisée. Commission 90k€. Risque faible 20%. Pragmatisme."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "employeeSatisfaction": 25,
+      "artistSatisfaction": 30,
+      "communityImpact": 25,
+      "fairPractices": 20
+    },
+    "environmental": {
+      "ethicalPractices": 40,
+      "culturalImpact": 35,
+      "transparency": 25
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Échec", "description": "Vernissage Raté - Scandale" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Galerie commerciale pure" },
+    "balance": { "max": 75, "label": "Équilibre fragile", "description": "Début d'équilibre" },
+    "success": { "max": 85, "label": "Succès", "description": "Galerie respectée ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Pilier culturel 🏆" }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "id": 1,
+  "title": "Phase 1 : Le Lancement (Mois 1-3)",
+  "context": "Premier jour dans votre local de 40m² à Belleville. Clara (votre associée chimiste) arrive avec les premiers échantillons. Le loyer est cher (2000€/mois) mais l'adresse est prestigieuse. Vous avez 3 mois pour prouver le concept.",
+  "story": {
+    "intro": "Vous venez de quitter votre CDI chez L'Oréal pour lancer LuxeGlow. Clara (ancienne collègue) est chimiste. Vous avez 80 000€ d'économies. Votre famille pense que vous êtes fou/folle.",
+    "context": "Budget initial : 80 000€. Déficit mensuel actuel : -4 000€. Il faut agir vite."
+  },
+  "currentSituation": {
+    "budget": "80 000€",
+    "employees": "2 (vous + Clara)",
+    "monthlyDeficit": "-4 000€",
+    "urgency": "3 mois pour prouver le concept"
+  },
+  "decisions": [
+    {
+      "id": "certification",
+      "title": "Certification Bio",
+      "question": "Clara dit que la certification Ecocert coûte cher et prend 6 mois. Que faites-vous ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "Certification Ecocert officielle (15 000€, 6 mois d'attente)",
+          "cost": 15000,
+          "effects": {
+            "credibility": 40,
+            "delay": 6,
+            "certification": "ecocert"
+          },
+          "hidden": "Délai énorme. Pendant 6 mois, vous ne pouvez PAS vendre. Budget fond.",
+          "consequence": "✅ Certification obtenue mais 6 mois de pertes. Budget : -24 000€ supplémentaires."
+        },
+        {
+          "id": "B",
+          "label": "Certification Cosmebio (5 000€, 2 mois)",
+          "cost": 5000,
+          "effects": {
+            "credibility": 25,
+            "delay": 2,
+            "certification": "cosmebio"
+          },
+          "hidden": "Moins prestigieux. Les gros distributeurs vous snobent.",
+          "consequence": "✅ Rapide mais Sephora refuse de vous référencer."
+        },
+        {
+          "id": "C",
+          "label": "Auto-certification 'ingrédients naturels' (500€, immédiat)",
+          "cost": 500,
+          "effects": {
+            "credibility": -10,
+            "greenwashRisk": 60,
+            "certification": "none"
+          },
+          "hidden": "⚠️ PIÈGE : 60% de risque de scandale greenwashing par un influenceur.",
+          "consequence": "💣 Une influenceuse vous dénonce sur TikTok (2M vues). Scandale greenwashing."
+        },
+        {
+          "id": "D",
+          "label": "Pas de certification, transparence totale (0€)",
+          "cost": 0,
+          "effects": {
+            "credibility": 15,
+            "nicheMarket": true,
+            "certification": "transparent"
+          },
+          "hidden": "Stratégie risquée. Croissance ultra-lente.",
+          "consequence": "⚠️ Niche ultra-spécifique. 50 clients/mois max."
+        },
+        {
+          "id": "E",
+          "label": "Acheter fausse certification internet (1 200€)",
+          "cost": 1200,
+          "effects": {
+            "credibility": 30,
+            "fraudRisk": 80,
+            "certification": "fake"
+          },
+          "hidden": "💀 PIÈGE ULTIME : 80% de détection. Conséquences catastrophiques.",
+          "consequence": "🚨 Fraude détectée → Poursuites + réputation détruite. GAME OVER."
+        }
+      ]
+    },
+    {
+      "id": "influenceur",
+      "title": "Stratégie Marketing",
+      "question": "Une influenceuse (250k followers) vous contacte. Elle veut 8 000€ pour 3 posts. Clara se méfie...",
+      "options": [
+        {
+          "id": "A",
+          "label": "Partenariat payant (8 000€ pour 3 posts + stories)",
+          "cost": 8000,
+          "effects": {
+            "influencerBoost": 40,
+            "brandAwareness": 30,
+            "revenue": 15000
+          },
+          "hidden": "Bon ROI si posts réussis. Mais si produit décevant, elle peut vous descendre.",
+          "consequence": "✅ Boost ventes +40% pendant 2 mois. ROI positif."
+        },
+        {
+          "id": "B",
+          "label": "Envoi gratuit produits (1 000€ de stock)",
+          "cost": 1000,
+          "effects": {
+            "influencerBoost": 0,
+            "ghostRisk": 50
+          },
+          "hidden": "⚠️ 50% de chance qu'elle ne poste rien.",
+          "consequence": "💔 Elle a ghosté. Aucun post. 1 000€ perdus."
+        },
+        {
+          "id": "C",
+          "label": "Micro-influenceurs (10 personnes, 2 000€)",
+          "cost": 2000,
+          "effects": {
+            "influencerBoost": 25,
+            "brandAwareness": 20,
+            "authenticity": 15,
+            "revenue": 8000
+          },
+          "hidden": "Stratégie authentique. Engagement réel mais croissance lente.",
+          "consequence": "✅ Communauté loyale. Croissance régulière."
+        },
+        {
+          "id": "D",
+          "label": "Faire votre propre contenu (0€)",
+          "cost": 0,
+          "effects": {
+            "organicGrowth": true,
+            "brandAwareness": 5,
+            "revenue": 2000
+          },
+          "hidden": "Croissance ultra-lente. Vous partez de 0.",
+          "consequence": "😴 50 followers/mois. Pas assez pour survivre."
+        },
+        {
+          "id": "E",
+          "label": "Acheter faux followers (800€)",
+          "cost": 800,
+          "effects": {
+            "fakeFollowers": 50000,
+            "detectionRisk": 70
+          },
+          "hidden": "💀 70% détection. Instagram peut bannir votre compte.",
+          "consequence": "🚨 Détecté → Compte banni. Blacklisté par vraies influenceuses."
+        }
+      ]
+    },
+    {
+      "id": "fournisseur",
+      "title": "Choix Fournisseur",
+      "question": "Clara a trouvé 3 fournisseurs d'ingrédients. Lequel choisir ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "Fournisseur français bio (coût +50%)",
+          "cost": 0,
+          "effects": {
+            "materialCost": 4500,
+            "quality": "premium",
+            "sustainability": 40,
+            "margin": 0.15
+          },
+          "hidden": "Marges très faibles. Rentabilité difficile.",
+          "consequence": "✅ Produits premium mais difficile de scaler."
+        },
+        {
+          "id": "B",
+          "label": "Fournisseur européen (équilibre qualité/prix)",
+          "cost": 0,
+          "effects": {
+            "materialCost": 3000,
+            "quality": "good",
+            "sustainability": 25,
+            "margin": 0.35
+          },
+          "hidden": "Bon compromis. Risque modéré.",
+          "consequence": "✅ Équilibre correct. Marges viables."
+        },
+        {
+          "id": "C",
+          "label": "Fournisseur asiatique low-cost (-40%)",
+          "cost": 0,
+          "effects": {
+            "materialCost": 1800,
+            "quality": "questionable",
+            "sustainability": -20,
+            "scandalRisk": 40,
+            "margin": 0.55
+          },
+          "hidden": "💣 40% risque scandale (conditions travail douteuses).",
+          "consequence": "💥 Enquête révèle travail enfants. Boycott massif."
+        },
+        {
+          "id": "D",
+          "label": "Produire vous-même (investissement 12 000€)",
+          "cost": 12000,
+          "effects": {
+            "materialCost": 2500,
+            "quality": "variable",
+            "controlTotal": true,
+            "burnoutRisk": 60
+          },
+          "hidden": "⏰ Clara épuisée. Production lente.",
+          "consequence": "😫 Clara burn-out. Embauche obligatoire (+3 000€/mois)."
+        },
+        {
+          "id": "E",
+          "label": "Fournisseur recommandé par influenceuse (prix attractif)",
+          "cost": 0,
+          "effects": {
+            "materialCost": 2200,
+            "quality": "good",
+            "hiddenCommission": true,
+            "betrayalRisk": 80
+          },
+          "hidden": "🎭 TRAHISON : Elle touche commission secrète. Prix +30% au mois 4.",
+          "consequence": "😡 Mois 4 : Prix montent +30%. Contrat exclusif 1 an."
+        }
+      ]
+    },
+    {
+      "id": "distribution",
+      "title": "Canal de Distribution",
+      "question": "Vous avez 500 unités prêtes. Comment les vendre ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "E-commerce uniquement (2 000€ setup Shopify)",
+          "cost": 2000,
+          "effects": {
+            "revenueStream": "online",
+            "monthlyRevenue": 8000,
+            "margin": 0.4
+          },
+          "consequence": "✅ Site en ligne. Revenus mensuels stables."
+        },
+        {
+          "id": "B",
+          "label": "Partenariat Sephora (conditions dures : -50% marge)",
+          "cost": 5000,
+          "effects": {
+            "revenueStream": "retail",
+            "monthlyRevenue": 20000,
+            "margin": 0.15,
+            "prestige": 40,
+            "dependencyRisk": 70
+          },
+          "hidden": "⚠️ Marges ridicules. Volume énorme mais dépendance totale.",
+          "consequence": "✅ Volume explosif mais marges minimes. Sephora dicte tout."
+        },
+        {
+          "id": "C",
+          "label": "Concept-stores indépendants (petits volumes)",
+          "cost": 1000,
+          "effects": {
+            "revenueStream": "boutique",
+            "monthlyRevenue": 6000,
+            "margin": 0.5,
+            "authenticity": 30
+          },
+          "consequence": "✅ Marges excellentes. Croissance lente mais saine."
+        },
+        {
+          "id": "D",
+          "label": "Multi-canal (8 000€ setup)",
+          "cost": 8000,
+          "effects": {
+            "revenueStream": "multi",
+            "monthlyRevenue": 15000,
+            "margin": 0.35,
+            "complexity": "high",
+            "staffNeeded": true
+          },
+          "hidden": "🤯 Gestion complexe. Besoin embauche (+2 000€/mois).",
+          "consequence": "⚠️ Revenus OK mais embauche obligatoire."
+        }
+      ]
+    }
+  ],
+  "storyEnd": {
+    "success": "Mois 3 : Vous avez survécu ! 1200 unités vendues. Clara sourit enfin. Votre mère a acheté 5 crèmes. Le compte est encore dans le rouge mais ça monte...",
+    "failure": "Mois 3 : Compte à -15 000€. Votre banquier appelle tous les jours. Clara envisage de retourner chez L'Oréal. Vous devez faire des choix drastiques en Phase 2..."
+  }
+}

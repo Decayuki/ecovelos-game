@@ -1,0 +1,237 @@
+{
+  "id": 3,
+  "title": "Phase 3 : Dilemmes Éthiques (Mois 9-12)",
+  "context": "Votre marque a de la traction. Mais maintenant les vrais choix arrivent : profit vs valeurs, court-terme vs long-terme, actionnaires vs salariés. Chaque décision révèle qui vous êtes vraiment.",
+  "story": {
+    "intro": "Mois 9. LuxeGlow est connue. Mais un choix cornélien se présente : vendre à L'Oréal (votre ancien employeur) pour 2M€, ou continuer l'aventure ? Clara attend votre réponse.",
+    "context": "Vous avez construit quelque chose. Maintenant : le garder ou le vendre ?"
+  },
+  "currentSituation": {
+    "valuation": "1,5M - 2,5M€",
+    "employees": "8-15 personnes",
+    "monthlyRevenue": "40 000€ - 80 000€",
+    "crossroads": "Vendre ou continuer ?"
+  },
+  "decisions": [
+    {
+      "id": "loreal",
+      "title": "Offre L'Oréal",
+      "question": "L'Oréal propose 2M€ cash pour racheter LuxeGlow. Clara dit : 'On a créé ça pour être libres, pas pour revenir en cage.' Que faites-vous ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "Accepter (2M€, fin du jeu en SUCCESS)",
+          "cost": 0,
+          "effects": {
+            "exit": true,
+            "money": 2000000,
+            "endGame": "success_exit"
+          },
+          "consequence": "✅ VICTOIRE : Vous vendez pour 2M€. Clara démissionne mais vous êtes riche. FIN."
+        },
+        {
+          "id": "B",
+          "label": "Refuser et continuer l'aventure",
+          "cost": 0,
+          "effects": {
+            "continue": true,
+            "respect": 40,
+            "risk": "high"
+          },
+          "consequence": "✅ Vous restez indépendant. Clara sourit. L'aventure continue."
+        },
+        {
+          "id": "C",
+          "label": "Négocier 3M€ (risque refus)",
+          "cost": 0,
+          "effects": {
+            "negotiation": true,
+            "successRate": 20,
+            "greed": true
+          },
+          "hidden": "20% chance. Sinon L'Oréal part et lance concurrent.",
+          "consequence": "😡 L'Oréal refuse et lance 'BioPure'. Guerre totale."
+        },
+        {
+          "id": "D",
+          "label": "Accepter sans dire à Clara",
+          "cost": 0,
+          "effects": {
+            "betrayal": true,
+            "money": 2000000,
+            "claraFight": true
+          },
+          "hidden": "Clara découvre. Procès + bad ending.",
+          "consequence": "💔 Clara vous poursuit pour trahison. Procès médiatisé. Réputation détruite."
+        }
+      ]
+    },
+    {
+      "id": "employes",
+      "title": "Rentabilité vs Emplois",
+      "question": "Pour être rentable, il faut licencier 3 personnes (dont Léa, mère célibataire). L'alternative : baisser tous les salaires de 15%.",
+      "options": [
+        {
+          "id": "A",
+          "label": "Licencier 3 personnes",
+          "cost": 0,
+          "effects": {
+            "layoffs": 3,
+            "profitability": 20,
+            "morale": -30,
+            "socialScore": -20
+          },
+          "consequence": "📉 Rentabilité OK. Mais ambiance plombée. 2 autres partent."
+        },
+        {
+          "id": "B",
+          "label": "Baisser salaires 15%",
+          "cost": 0,
+          "effects": {
+            "salarycut": 15,
+            "profitability": 15,
+            "morale": -20,
+            "turnover": 30
+          },
+          "consequence": "⚠️ Tout le monde reste mais démoralisé. Turn-over élevé."
+        },
+        {
+          "id": "C",
+          "label": "Baisser VOTRE salaire de 50%",
+          "cost": 0,
+          "effects": {
+            "sacrifice": true,
+            "profitability": 10,
+            "morale": 40,
+            "respect": 50
+          },
+          "consequence": "✅ Respect maximal. Équipe motivée. Vous serrez la ceinture."
+        },
+        {
+          "id": "D",
+          "label": "Licencier + dire que c'est Clara qui a décidé",
+          "cost": 0,
+          "effects": {
+            "betrayal": true,
+            "profitability": 20,
+            "claraLeaves": true
+          },
+          "hidden": "Clara part et balance tout aux médias.",
+          "consequence": "😡 Clara révèle votre mensonge. Scandale médiatique."
+        }
+      ]
+    },
+    {
+      "id": "ingredients",
+      "title": "Pénurie Ingrédients",
+      "question": "Votre fournisseur principal fait faillite. Seule alternative rapide : ingrédients chimiques (non-bio). Ou attendre 6 mois un nouveau fournisseur bio.",
+      "options": [
+        {
+          "id": "A",
+          "label": "Passer au chimique (trahir vos valeurs)",
+          "cost": 0,
+          "effects": {
+            "values": "betrayed",
+            "profitability": 30,
+            "scandalRisk": 70,
+            "bio": false
+          },
+          "hidden": "💀 70% risque découverte. Scandale greenwashing.",
+          "consequence": "💥 Clients découvrent. Scandale. Boycott massif."
+        },
+        {
+          "id": "B",
+          "label": "Attendre 6 mois (perte revenus)",
+          "cost": 0,
+          "effects": {
+            "pause": true,
+            "revenue": -40000,
+            "values": "preserved",
+            "delay": 6
+          },
+          "consequence": "✅ Valeurs préservées. Budget en chute libre. Stress max."
+        },
+        {
+          "id": "C",
+          "label": "Trouver fournisseur alternatif (+30% coût)",
+          "cost": 0,
+          "effects": {
+            "newSupplier": true,
+            "materialCost": 1.3,
+            "margin": -0.15,
+            "values": "preserved"
+          },
+          "consequence": "✅ Valeurs OK. Marges réduites. Vous survivez."
+        },
+        {
+          "id": "D",
+          "label": "Chimique ET mentir aux clients",
+          "cost": 0,
+          "effects": {
+            "fraud": true,
+            "profitability": 40,
+            "detectionRisk": 90
+          },
+          "hidden": "💀 90% détection. Prison possible.",
+          "consequence": "🚨 Scandale énorme. Poursuites pénales. GAME OVER."
+        }
+      ]
+    },
+    {
+      "id": "scandal",
+      "title": "Gestion de Crise",
+      "question": "Une cliente influente (100k followers) poste vidéo : 'LuxeGlow m'a donné de l'eczéma'. Faux, mais ça devient viral. Comment réagir ?",
+      "options": [
+        {
+          "id": "A",
+          "label": "Attaquer en diffamation (30 000€)",
+          "cost": 30000,
+          "effects": {
+            "legal": true,
+            "winChance": 60,
+            "streisandEffect": 40
+          },
+          "hidden": "Effet Streisand : le scandale grossit.",
+          "consequence": "⚠️ Vous gagnez le procès mais presse parle encore plus."
+        },
+        {
+          "id": "B",
+          "label": "Excuses publiques + remboursement",
+          "cost": 5000,
+          "effects": {
+            "apology": true,
+            "reputation": -10,
+            "humility": 30
+          },
+          "consequence": "✅ Crise calmée. Vous passez pour humble. Respect."
+        },
+        {
+          "id": "C",
+          "label": "Contre-attaque réseaux sociaux",
+          "cost": 2000,
+          "effects": {
+            "counterattack": true,
+            "backfireRisk": 50
+          },
+          "hidden": "50% risque retour de flamme.",
+          "consequence": "💥 Ça se retourne contre vous. Cancel culture."
+        },
+        {
+          "id": "D",
+          "label": "Ignorer (ça passera)",
+          "cost": 0,
+          "effects": {
+            "ignore": true,
+            "reputation": -30,
+            "sales": -20
+          },
+          "consequence": "📉 Ventes chutent -20%. Clients perdent confiance."
+        }
+      ]
+    }
+  ],
+  "storyEnd": {
+    "success": "Mois 12 : Un an. Vous avez survécu aux pièges, trahisons, dilemmes. LuxeGlow existe. Clara est fière (si elle est toujours là). Vous avez appris ce qu'est vraiment la valeur partenariale.",
+    "failure": "Mois 12 : Trop d'erreurs. Les scandales ont eu raison de vous. Clara est partie. Les clients vous boycottent. La fin est proche. Analyse de vos erreurs fatales..."
+  }
+}

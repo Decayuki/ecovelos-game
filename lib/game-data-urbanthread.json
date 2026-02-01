@@ -1,0 +1,405 @@
+{
+  "initial": {
+    "budget": 120000,
+    "employees": 3,
+    "monthlyRevenue": 8000,
+    "monthlyCosts": {
+      "salaries": 9000,
+      "materials": 3500,
+      "maintenance": 800,
+      "rent": 2000,
+      "insurance": 600,
+      "marketing": 2500,
+      "production": 4000
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Lancement de la marque",
+      "context": "Février 2022 : Vous lancez UrbanThread, votre marque de streetwear éthique. Budget limité, concurrence féroce, choix de production cruciaux. Vous devez prendre 3 décisions stratégiques.",
+      "decisions": [
+        {
+          "id": "production",
+          "title": "Décision 1 : Lieu de production",
+          "question": "Où produire votre première collection pour allier qualité, coût et éthique ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Production Asie (coût faible)",
+              "cost": 0,
+              "effects": {
+                "production": 4000,
+                "margin": "élevée",
+                "ethicalScore": -30,
+                "deliveryTime": 90
+              }
+            },
+            {
+              "id": "B",
+              "label": "Production Portugal (+35% coût)",
+              "effects": {
+                "production": 5400,
+                "margin": "moyenne",
+                "ethicalScore": 15,
+                "deliveryTime": 45,
+                "quality": "supérieure"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Production France (+60% coût)",
+              "effects": {
+                "production": 6400,
+                "margin": "faible",
+                "ethicalScore": 35,
+                "deliveryTime": 30,
+                "quality": "premium",
+                "madeInFrance": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "materials",
+          "title": "Décision 2 : Matières premières",
+          "question": "Quels textiles choisir pour votre identité de marque ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Coton standard (0€)",
+              "cost": 0,
+              "effects": {
+                "materials": 3500,
+                "quality": "standard",
+                "sustainability": 0
+              }
+            },
+            {
+              "id": "B",
+              "label": "Coton bio certifié GOTS (+25% coût)",
+              "effects": {
+                "materials": 4375,
+                "quality": "bonne",
+                "sustainability": 20,
+                "certification": "GOTS",
+                "marketingValue": 15
+              }
+            },
+            {
+              "id": "C",
+              "label": "Mix recyclé + bio (+40% coût)",
+              "effects": {
+                "materials": 4900,
+                "quality": "excellente",
+                "sustainability": 40,
+                "certification": "GOTS + GRS",
+                "marketingValue": 30,
+                "innovation": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Décision 3 : Stratégie de lancement",
+          "question": "Comment faire connaître votre marque dans un marché saturé ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Réseaux sociaux organiques (0€)",
+              "cost": 0,
+              "effects": {
+                "growthRate": 0.04,
+                "reach": "limité"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Campagne influence micro (8 000€)",
+              "cost": 8000,
+              "effects": {
+                "growthRate": 0.18,
+                "duration": 6,
+                "reach": "ciblé",
+                "authenticity": "forte"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Pop-up stores + collab artistes locaux (18 000€)",
+              "cost": 18000,
+              "effects": {
+                "growthRate": 0.35,
+                "duration": 9,
+                "reach": "local fort",
+                "brandIdentity": 25,
+                "community": 30,
+                "physicalPresence": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Proposition de grande chaîne",
+      "context": "Juin 2022 : Urban Outfitters vous contacte. Ils veulent distribuer votre collection dans 15 magasins européens. Opportunité énorme, mais avec des compromis.",
+      "decisions": [
+        {
+          "id": "partnership",
+          "title": "Négociation du partenariat",
+          "question": "Urban Outfitters propose un contrat : 3 000 pièces à 25€/pièce (votre coût : 18€), exclusivité 18 mois. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter tel quel",
+              "revenue": 75000,
+              "productionCost": 54000,
+              "effects": {
+                "va": 21000,
+                "dependencyRisk": "très fort",
+                "brandControl": -20,
+                "visibility": 40
+              }
+            },
+            {
+              "id": "B",
+              "label": "Contre-proposition 30€/pièce, exclusivité 12 mois",
+              "successRate": 0.45,
+              "ifSuccess": {
+                "revenue": 90000,
+                "productionCost": 54000,
+                "effects": {
+                  "va": 36000,
+                  "dependencyRisk": "fort",
+                  "brandControl": -10,
+                  "visibility": 40
+                }
+              },
+              "ifFailure": {
+                "delay": 3,
+                "effects": {
+                  "opportunity": "lost",
+                  "cashFlow": "tight"
+                }
+              }
+            },
+            {
+              "id": "C",
+              "label": "Refuser et développer e-commerce propre",
+              "delay": 4,
+              "successRate": 0.5,
+              "cost": 15000,
+              "ifSuccess": {
+                "revenue": 55000,
+                "productionCost": 28000,
+                "effects": {
+                  "va": 27000,
+                  "dependencyRisk": "faible",
+                  "brandControl": 30,
+                  "margins": "fortes",
+                  "independence": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "growthRate": "slow",
+                  "cashBurn": "élevé"
+                }
+              }
+            },
+            {
+              "id": "D",
+              "label": "Accepter avec clause sortie + ligne exclusive",
+              "revenue": 75000,
+              "productionCost": 54000,
+              "effects": {
+                "va": 21000,
+                "dependencyRisk": "moyen",
+                "brandControl": 10,
+                "visibility": 40,
+                "flexibility": true,
+                "premiumLine": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Croissance et dilemmes éthiques",
+      "context": "Mars 2024 : Votre CA explose (+200%). Vous embauchez, mais des tensions émergent : accusations de greenwashing, conditions de travail en atelier, pression sur les marges.",
+      "currentSituation": {
+        "monthlyRevenue": 48000,
+        "employees": 8,
+        "budget": 85000,
+        "monthlyVA": 22000,
+        "employeeSatisfaction": 50
+      },
+      "decisions": [
+        {
+          "id": "salaries",
+          "title": "Dilemme 1 : Salaires de l'équipe",
+          "question": "Votre équipe demande une revalorisation face à la charge de travail croissante. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Statu quo (0€)",
+              "cost": 0,
+              "effects": {
+                "turnoverRisk": 0.4,
+                "burnout": 0.35,
+                "morale": -30
+              }
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% (+2 400€/mois)",
+              "monthlyIncrease": 2400,
+              "effects": {
+                "employeeSatisfaction": 75,
+                "turnover": -0.5,
+                "productivity": 1.1,
+                "loyalty": 20
+              }
+            },
+            {
+              "id": "C",
+              "label": "Augmentation 10% + télétravail + primes (+3 200€/mois)",
+              "monthlyIncrease": 3200,
+              "effects": {
+                "employeeSatisfaction": 90,
+                "creativity": 1.25,
+                "retention": 30,
+                "wellBeing": 35,
+                "attractiveness": 20
+              }
+            }
+          ]
+        },
+        {
+          "id": "transparency",
+          "title": "Dilemme 2 : Transparence production",
+          "question": "Des clients remettent en cause votre éthique. Un blog accuse votre atelier portugais de flou sur les conditions. Comment réagissez-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Ignorer et continuer",
+              "effects": {
+                "reputation": -35,
+                "customerLoss": 0.25,
+                "trustScore": -40
+              }
+            },
+            {
+              "id": "B",
+              "label": "Communiquer sur les réseaux sociaux (2 000€)",
+              "cost": 2000,
+              "effects": {
+                "reputation": -10,
+                "customerLoss": 0.1,
+                "trustScore": -15,
+                "defensiveness": "perçue"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Audit indépendant + traçabilité blockchain (35 000€)",
+              "cost": 35000,
+              "effects": {
+                "reputation": 45,
+                "ethicalScore": 50,
+                "trustScore": 60,
+                "certification": "Fair Wear",
+                "transparency": "totale",
+                "growthRate": 0.25,
+                "duration": 18
+              }
+            }
+          ]
+        },
+        {
+          "id": "expansion",
+          "title": "Dilemme 3 : Développement international",
+          "question": "Votre marque cartonne. Un distributeur US propose un contrat massif, mais exige des délais serrés et des compromis sur les matières. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter et revoir les standards (-20% coût matières)",
+              "revenue": 120000,
+              "effects": {
+                "ethicalScore": -40,
+                "growth": "explosive",
+                "brandDilution": 35,
+                "profitShortTerm": "très forte"
+              }
+            },
+            {
+              "id": "B",
+              "label": "Refuser et consolider l'Europe",
+              "effects": {
+                "ethicalScore": 20,
+                "growth": "stable",
+                "brandIdentity": 30,
+                "sustainability": true,
+                "profitShortTerm": "moyenne"
+              }
+            },
+            {
+              "id": "C",
+              "label": "Contre-proposition : test 6 mois, maintien standards (15 000€ invest)",
+              "cost": 15000,
+              "successRate": 0.5,
+              "ifSuccess": {
+                "revenue": 85000,
+                "effects": {
+                  "ethicalScore": 15,
+                  "growth": "forte",
+                  "brandIntegrity": true,
+                  "internationalPresence": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "opportunity": "lost"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "employeeSatisfaction": 25,
+      "fairWages": 20,
+      "workingConditions": 20,
+      "transparency": 20,
+      "communityImpact": 15
+    },
+    "environmental": {
+      "sustainableMaterials": 30,
+      "responsibleProduction": 25,
+      "certifications": 20,
+      "carbonFootprint": 15,
+      "circularEconomy": 10
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Faillite", "description": "Marque coulée ou scandalisée" },
+    "survival": { "max": 60, "label": "Survie précaire", "description": "Fast-fashion déguisé" },
+    "balance": { "max": 75, "label": "Équilibre fragile", "description": "Éthique en construction" },
+    "success": { "max": 85, "label": "Succès éthique", "description": "Modèle de streetwear responsable ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Marque exemplaire, référence mode éthique 🏆" }
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "initial": {
+    "budget": 60000,
+    "employees": 3,
+    "members": 50,
+    "monthlySubscription": 80,
+    "monthlyRevenue": 4000,
+    "monthlyCosts": {
+      "salaries": 9000,
+      "rent": 3000,
+      "equipment": 1500,
+      "insurance": 800,
+      "utilities": 700,
+      "maintenance": 500
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "title": "Phase 1 : Transformation du hangar (Mois 1-3)",
+      "context": "Vous venez de quitter votre job de consultant pour transformer un hangar de 300m² en salle de boxe premium. Karim (ancien boxeur pro) est votre associé. Vous avez 60 000€ d'économies. Le loyer est brutal (3000€/mois). 50 membres inscrits (abonnement 80€/mois). Déficit actuel : -11 500€/mois.\n\nVous devez faire les bons choix pour survivre aux 3 premiers mois.",
+      "decisions": [
+        {
+          "id": "equipment",
+          "title": "Décision 1 : Équipement",
+          "question": "Quel niveau d'équipement choisir pour votre salle ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Équipement professionnel haut de gamme (25 000€)",
+              "cost": 25000,
+              "effects": {
+                "equipmentQuality": "premium",
+                "customerSatisfaction": 40,
+                "brandImage": 30,
+                "maintenanceCost": 800
+              },
+              "consequence": "✅ Image premium. Satisfaction +40%. Maintenance 800€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Équipement milieu de gamme (12 000€)",
+              "cost": 12000,
+              "effects": {
+                "equipmentQuality": "good",
+                "customerSatisfaction": 20,
+                "brandImage": 15,
+                "maintenanceCost": 500
+              },
+              "consequence": "✅ Bon équilibre. Satisfaction +20%. Maintenance 500€/mois."
+            },
+            {
+              "id": "C",
+              "label": "Équipement d'occasion (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "equipmentQuality": "basic",
+                "customerSatisfaction": -10,
+                "breakdownRisk": 40,
+                "maintenanceCost": 1200
+              },
+              "consequence": "⚠️ Économie initiale mais 40% risque panne. Maintenance élevée 1200€/mois."
+            },
+            {
+              "id": "D",
+              "label": "Leasing équipement (1 500€/mois)",
+              "cost": 0,
+              "effects": {
+                "equipmentQuality": "premium",
+                "customerSatisfaction": 30,
+                "leasingCost": 1500
+              },
+              "consequence": "✅ Équipement premium sans investissement. Coût mensuel +1500€."
+            }
+          ]
+        },
+        {
+          "id": "coaching",
+          "title": "Décision 2 : Coachs",
+          "question": "Karim ne peut pas tout gérer seul. Comment organiser le coaching ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Recruter 2 coachs diplômés (6 000€/mois)",
+              "cost": 0,
+              "newHires": 2,
+              "effects": {
+                "coachingQuality": "excellent",
+                "customerSatisfaction": 35,
+                "growthRate": 0.25,
+                "socialScore": 20
+              },
+              "consequence": "✅ Qualité excellente. Croissance +25%/mois. Salaires +6000€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Recruter 1 coach + stagiaires (3 500€/mois)",
+              "cost": 0,
+              "newHires": 1,
+              "effects": {
+                "coachingQuality": "good",
+                "customerSatisfaction": 15,
+                "growthRate": 0.15,
+                "socialScore": 10,
+                "turnoverRisk": 0.3
+              },
+              "consequence": "✅ Équilibre correct. Croissance +15%/mois. Salaires +3000€/mois + stagiaires 500€."
+            },
+            {
+              "id": "C",
+              "label": "Karim seul + cours en ligne (2 000€)",
+              "cost": 2000,
+              "effects": {
+                "coachingQuality": "basic",
+                "customerSatisfaction": -15,
+                "burnoutRisk": 60,
+                "churnRate": 0.2
+              },
+              "consequence": "⚠️ Karim épuisé. 60% risque burnout. Perte clients -20%/mois."
+            },
+            {
+              "id": "D",
+              "label": "Partenariat avec anciens boxeurs (rémunération au cours)",
+              "cost": 0,
+              "effects": {
+                "coachingQuality": "variable",
+                "customerSatisfaction": 10,
+                "flexibility": true,
+                "coachingCost": 800
+              },
+              "consequence": "✅ Flexibilité. Qualité variable. Coût 800€/mois (rémunération cours)."
+            }
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Décision 3 : Acquisition membres",
+          "question": "Comment attirer de nouveaux membres ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Campagne réseaux sociaux (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "newMembers": 40,
+                "growthRate": 0.3,
+                "duration": 3,
+                "brandAwareness": 25
+              },
+              "consequence": "✅ +40 membres. Croissance +30% pendant 3 mois. Revenus +3200€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Partenariat club de boxe amateur (2 000€)",
+              "cost": 2000,
+              "effects": {
+                "newMembers": 25,
+                "growthRate": 0.2,
+                "duration": 6,
+                "socialScore": 15,
+                "loyalty": "forte"
+              },
+              "consequence": "✅ +25 membres loyaux. Croissance +20% pendant 6 mois. Revenus +2000€/mois."
+            },
+            {
+              "id": "C",
+              "label": "Offre découverte gratuite 1 mois (0€)",
+              "cost": 0,
+              "effects": {
+                "newMembers": 60,
+                "conversionRate": 0.3,
+                "churnRisk": 0.5
+              },
+              "consequence": "⚠️ +60 inscrits gratuits. 30% convertissent → +18 membres. 50% risque abandon après."
+            },
+            {
+              "id": "D",
+              "label": "Influenceur fitness local (8 000€)",
+              "cost": 8000,
+              "effects": {
+                "newMembers": 80,
+                "growthRate": 0.4,
+                "duration": 2,
+                "brandImage": 30
+              },
+              "consequence": "✅ Boost massif +80 membres. Croissance +40% pendant 2 mois. Revenus +6400€/mois."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Phase 2 : Concurrence et fidélisation (Mois 4-8)",
+      "context": "Vous commencez à décoller. 120 membres, la salle se remplit. Mais BasicGym (low-cost) ouvre à 500m avec abonnement à 30€/mois. Certains membres partent. Karim est fatigué. Les choix deviennent plus complexes.",
+      "decisions": [
+        {
+          "id": "competition",
+          "title": "Décision 1 : Réponse à la concurrence",
+          "question": "BasicGym attaque avec des prix cassés (30€/mois). Comment réagir ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Guerre des prix : baisser à 50€/mois",
+              "cost": 0,
+              "effects": {
+                "priceReduction": -37.5,
+                "churnRate": -0.3,
+                "newMembers": 50,
+                "margin": -0.4
+              },
+              "consequence": "📉 Abonnement 50€. +50 membres mais marges détruites -40%. Risque faillite."
+            },
+            {
+              "id": "B",
+              "label": "Différenciation premium : services exclusifs (+10€/mois)",
+              "cost": 5000,
+              "effects": {
+                "priceIncrease": 12.5,
+                "customerSatisfaction": 25,
+                "churnRate": 0.1,
+                "brandValue": 30
+              },
+              "consequence": "✅ Abonnement 90€. +10% perte membres mais image premium. Marges améliorées."
+            },
+            {
+              "id": "C",
+              "label": "Programme fidélité + parrainage (3 000€)",
+              "cost": 3000,
+              "effects": {
+                "churnRate": -0.4,
+                "newMembers": 30,
+                "loyalty": "forte",
+                "customerSatisfaction": 20
+              },
+              "consequence": "✅ Fidélisation +40%. +30 nouveaux membres via parrainage. Coût 3000€."
+            },
+            {
+              "id": "D",
+              "label": "Ignorer et garder cap (0€)",
+              "cost": 0,
+              "effects": {
+                "churnRate": 0.25,
+                "marketShare": -15
+              },
+              "consequence": "⚠️ Perte 25% membres. Parts de marché -15%. Revenus en baisse."
+            }
+          ]
+        },
+        {
+          "id": "expansion",
+          "title": "Décision 2 : Expansion services",
+          "question": "Les membres demandent plus de services. Que proposer ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Cours de MMA + Muay Thai (recruter 1 coach spécialisé)",
+              "cost": 8000,
+              "newHires": 1,
+              "revenue": 5000,
+              "effects": {
+                "serviceRange": "large",
+                "newMembers": 40,
+                "customerSatisfaction": 30,
+                "insuranceCost": 1200
+              },
+              "consequence": "✅ +40 membres. Revenus +5000€/mois. Salaires +3000€/mois. Assurance +1200€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Nutrition + suivi perso (partenariat diététicien)",
+              "cost": 2000,
+              "revenue": 2500,
+              "effects": {
+                "serviceRange": "complet",
+                "customerSatisfaction": 35,
+                "churnRate": -0.3,
+                "socialScore": 15
+              },
+              "consequence": "✅ Satisfaction +35%. Fidélisation +30%. Revenus +2500€/mois. Coût partenariat 2000€."
+            },
+            {
+              "id": "C",
+              "label": "Salle musculation (investissement 15 000€)",
+              "cost": 15000,
+              "revenue": 4000,
+              "effects": {
+                "serviceRange": "diversifié",
+                "newMembers": 60,
+                "maintenance": 800,
+                "customerSatisfaction": 20
+              },
+              "consequence": "✅ +60 membres. Revenus +4800€/mois. Maintenance +800€/mois. Investissement 15k€."
+            },
+            {
+              "id": "D",
+              "label": "Rester focus boxe uniquement (0€)",
+              "cost": 0,
+              "effects": {
+                "focus": true,
+                "expertiseImage": 20,
+                "growthRate": 0.1
+              },
+              "consequence": "✅ Expertise reconnue. Croissance lente +10%/mois. Pas de coûts."
+            }
+          ]
+        },
+        {
+          "id": "team",
+          "title": "Décision 3 : Gestion équipe",
+          "question": "Karim est épuisé. Les coachs se plaignent de surcharge. Que faire ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Recruter 2 coachs supplémentaires",
+              "cost": 0,
+              "newHires": 2,
+              "effects": {
+                "employeeSatisfaction": 40,
+                "coachingQuality": "excellent",
+                "turnover": -0.5,
+                "socialScore": 25
+              },
+              "consequence": "✅ Équipe soulagée. Qualité +excellent. Salaires +6000€/mois."
+            },
+            {
+              "id": "B",
+              "label": "Augmentation 10% pour tous",
+              "monthlyIncrease": 900,
+              "effects": {
+                "employeeSatisfaction": 30,
+                "turnover": -0.3,
+                "socialScore": 20
+              },
+              "consequence": "✅ Satisfaction +30%. Turnover réduit. Coûts +900€/mois (10% de 9000€)."
+            },
+            {
+              "id": "C",
+              "label": "Statut quo (espérer que ça tienne)",
+              "cost": 0,
+              "effects": {
+                "burnoutRisk": 0.5,
+                "employeeSatisfaction": -25,
+                "turnoverRisk": 0.4,
+                "socialScore": -20
+              },
+              "consequence": "⚠️ 50% risque burnout Karim. 40% risque démissions. Satisfaction -25%."
+            },
+            {
+              "id": "D",
+              "label": "Automatisation planning + app (5 000€)",
+              "cost": 5000,
+              "effects": {
+                "efficiency": 1.2,
+                "employeeSatisfaction": 15,
+                "customerSatisfaction": 10,
+                "techCost": 200
+              },
+              "consequence": "✅ Productivité +20%. Satisfaction équipe +15%. Coût tech 200€/mois."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Phase 3 : Dilemmes éthiques et pérennité (Mois 9-12)",
+      "context": "Un an plus tard. Vous avez 200 membres, 10 employés. Une chaîne nationale (FightClub Inc.) propose de racheter pour 800 000€. Karim hésite. Des choix difficiles s'imposent : profit vs valeurs, court-terme vs long-terme.\n\nMaintenant vous devez choisir : vendre ou continuer ? Sacrifier la qualité pour la croissance ? Rester éthique ou maximiser les profits ?",
+      "currentSituation": {
+        "monthlyRevenue": 50000,
+        "employees": 10,
+        "members": 220,
+        "budget": 95000,
+        "monthlyVA": 13000,
+        "employeeSatisfaction": 60,
+        "monthlyCosts": {
+          "salaries": 30000,
+          "rent": 3000,
+          "equipment": 1500,
+          "insurance": 1200,
+          "utilities": 800,
+          "maintenance": 500
+        }
+      },
+      "decisions": [
+        {
+          "id": "buyout",
+          "title": "Dilemme 1 : Offre de rachat",
+          "question": "FightClub Inc. propose 800 000€ pour racheter Iron Fist. Karim dit : 'On a créé un lieu unique, pas une franchise.' Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Accepter (800k€, fin du jeu en SUCCESS)",
+              "cost": 0,
+              "effects": {
+                "exit": "success",
+                "money": 800000,
+                "endGame": true
+              },
+              "consequence": "✅ VICTOIRE : Vous vendez pour 800k€. Karim démissionne mais vous êtes riche. FIN."
+            },
+            {
+              "id": "B",
+              "label": "Refuser et continuer l'aventure",
+              "cost": 0,
+              "effects": {
+                "independence": true,
+                "employeeSatisfaction": 50,
+                "socialScore": 40
+              },
+              "consequence": "✅ Vous restez indépendant. Karim sourit. L'aventure continue. Respect +40."
+            },
+            {
+              "id": "C",
+              "label": "Négocier 1M€ (risque refus)",
+              "cost": 0,
+              "successRate": 0.25,
+              "ifSuccess": {
+                "effects": {
+                  "exit": "success",
+                  "money": 1000000,
+                  "endGame": true
+                }
+              },
+              "ifFailure": {
+                "effects": {
+                  "competitor": "fightclub_war",
+                  "marketShare": -35
+                }
+              },
+              "consequence": "🎲 25% succès (1M€). 75% échec : FightClub ouvre concurrent 200m. Guerre totale -35% membres."
+            }
+          ]
+        },
+        {
+          "id": "salaries",
+          "title": "Dilemme 2 : Rentabilité vs Équité",
+          "question": "Pour améliorer la rentabilité, il faut licencier 3 coachs (dont Sarah, mère célibataire). Ou baisser tous les salaires de 15%.",
+          "options": [
+            {
+              "id": "A",
+              "label": "Licencier 3 coachs",
+              "cost": 0,
+              "effects": {
+                "employees": -3,
+                "employeeSatisfaction": -35,
+                "socialScore": -30,
+                "coachingQuality": "réduite",
+                "turnoverRisk": 0.4
+              },
+              "consequence": "📉 Salaires -9000€/mois. Rentabilité OK. Ambiance plombée. 40% risque autres départs."
+            },
+            {
+              "id": "B",
+              "label": "Baisser salaires 15% (-4 500€/mois)",
+              "monthlyIncrease": -4500,
+              "effects": {
+                "employeeSatisfaction": -25,
+                "turnover": 0.35,
+                "socialScore": -20
+              },
+              "consequence": "⚠️ Tout le monde reste mais démoralisé. Turn-over élevé. Économie 4500€/mois."
+            },
+            {
+              "id": "C",
+              "label": "Baisser VOTRE salaire de 50% (-1 500€/mois)",
+              "monthlyIncrease": -1500,
+              "effects": {
+                "employeeSatisfaction": 45,
+                "socialScore": 50,
+                "leadershipRespect": 60
+              },
+              "consequence": "✅ Respect maximal. Équipe motivée. Vous serrez la ceinture. Économie 1500€/mois."
+            },
+            {
+              "id": "D",
+              "label": "Augmentation 10% pour tous (+3 000€/mois)",
+              "monthlyIncrease": 3000,
+              "effects": {
+                "employeeSatisfaction": 70,
+                "productivity": 1.2,
+                "turnover": -0.6,
+                "socialScore": 35
+              },
+              "consequence": "✅ Satisfaction +70%. Productivité +20%. Turnover réduit. Coûts +3000€/mois."
+            }
+          ]
+        },
+        {
+          "id": "ethics",
+          "title": "Dilemme 3 : Dopage et performance",
+          "question": "Un coach propose discrètement des compléments 'frontière légale' pour booster les perfs. Karim refuse catégoriquement. Que faites-vous ?",
+          "options": [
+            {
+              "id": "A",
+              "label": "Autoriser (revenus +30%, risque scandale)",
+              "cost": 0,
+              "revenue": 10500,
+              "effects": {
+                "ethics": "compromised",
+                "customerSatisfaction": 15,
+                "scandalRisk": 60,
+                "socialScore": -40
+              },
+              "consequence": "💥 Revenus +30% mais 60% risque scandale. Si découvert : fermeture + procès."
+            },
+            {
+              "id": "B",
+              "label": "Refuser et virer le coach",
+              "cost": 0,
+              "effects": {
+                "employees": -1,
+                "ethics": "preserved",
+                "employeeSatisfaction": 30,
+                "socialScore": 40
+              },
+              "consequence": "✅ Éthique préservée. Respect équipe +30%. Salaires -3000€/mois."
+            },
+            {
+              "id": "C",
+              "label": "Programme nutrition légal certifié (8 000€)",
+              "cost": 8000,
+              "revenue": 5000,
+              "effects": {
+                "ethics": "exemplary",
+                "customerSatisfaction": 35,
+                "certification": "nutrition",
+                "socialScore": 50
+              },
+              "consequence": "✅ Label nutrition. Revenus +5000€/mois. Investissement 8000€. Image excellente."
+            },
+            {
+              "id": "D",
+              "label": "Ignorer (fermer les yeux)",
+              "cost": 0,
+              "effects": {
+                "ethics": "ambiguous",
+                "scandalRisk": 40,
+                "socialScore": -20
+              },
+              "consequence": "⚠️ 40% risque scandale. Responsabilité engagée si découvert."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "economic": {
+      "positiveVA": 30,
+      "profitability": 20,
+      "treasury": 20,
+      "growth": 30
+    },
+    "social": {
+      "employeeSatisfaction": 35,
+      "lowTurnover": 20,
+      "fairWages": 20,
+      "memberSatisfaction": 25
+    },
+    "environmental": {
+      "ethicalPractices": 40,
+      "communityImpact": 30,
+      "transparency": 30
+    }
+  },
+  "grading": {
+    "fail": { "max": 40, "label": "Échec", "description": "KO Technique - Faillite" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Valeur actionnariale pure" },
+    "balance": { "max": 75, "label": "Équilibre fragile", "description": "Début d'équilibre" },
+    "success": { "max": 85, "label": "Succès", "description": "Bon équilibre partenariale ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Modèle exemplaire 🏆" }
+  }
+}

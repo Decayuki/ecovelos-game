@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Boîte + feuille -->
+  <rect x="18" y="24" width="28" height="24" stroke="currentColor" stroke-width="3"/>
+  <path d="M32 24L32 12C32 12 38 14 40 20C40 20 34 22 32 24Z" fill="currentColor"/>
+</svg>

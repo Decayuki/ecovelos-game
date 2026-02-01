@@ -1,0 +1,118 @@
+{
+  "ecovelos": {
+    "id": "ecovelos",
+    "name": "ÉcoVélos",
+    "icon": "🚴‍♂️",
+    "subtitle": "Start-up de vélos électriques",
+    "description": "Gérez une start-up de vélos électriques en location dans un marché compétitif",
+    "phases": []
+  },
+  "cosmetique": {
+    "id": "cosmetique",
+    "name": "LuxeGlow",
+    "icon": "💄",
+    "subtitle": "Marque de cosmétiques bio",
+    "description": "Lancez votre marque de cosmétiques bio dans un marché saturé. Attention aux contrefaçons et aux scandales.",
+    "badEnding": {
+      "title": "Faillite Totale",
+      "description": "Votre marque s'est effondrée. Les accusations de greenwashing ont détruit votre réputation. Vous avez perdu votre appartement pour rembourser les dettes. Votre ex-associée refuse de vous parler. Vous vivez chez vos parents à 35 ans.",
+      "consequences": [
+        "💸 Dettes : 250 000€",
+        "🏠 Appartement saisi par la banque",
+        "👥 Rupture avec votre associée (elle vous poursuit en justice)",
+        "📉 Interdiction bancaire pendant 5 ans",
+        "😔 Dépression et perte de confiance"
+      ]
+    }
+  },
+  "boxe": {
+    "id": "boxe",
+    "name": "Iron Fist",
+    "icon": "🥊",
+    "subtitle": "Salle de boxe urbaine",
+    "description": "Transformez un hangar en salle de boxe premium. Gérez les bagarres, les impayés et la concurrence.",
+    "badEnding": {
+      "title": "KO Technique",
+      "description": "La salle a fermé après 18 mois. Une bagarre violente a fait un blessé grave, votre assurance a explosé. Vous ne pouvez plus payer le loyer. Le gérant précédent (votre mentor) ne vous parle plus. Vous dormez dans votre voiture.",
+      "consequences": [
+        "🚗 SDF, vous dormez dans votre Clio",
+        "⚖️ Procès en cours (100 000€ de dommages)",
+        "👊 Interdit de gérer une salle de sport pendant 3 ans",
+        "💔 Votre copine vous a quitté",
+        "🍺 Problèmes d'alcool liés à la dépression"
+      ]
+    }
+  },
+  "art": {
+    "id": "art",
+    "name": "Canvas & Co",
+    "icon": "🎨",
+    "subtitle": "Galerie d'art contemporain",
+    "description": "Ouvrez une galerie d'art dans un quartier en gentrification. Naviguez entre artistes capricieux et collectionneurs exigeants.",
+    "badEnding": {
+      "title": "Vernissage Raté",
+      "description": "Votre galerie a coulé après un scandale de plagiat. Un artiste que vous représentiez a copié une œuvre célèbre. Les poursuites judiciaires vous ont ruiné. Vous êtes blacklisté du milieu de l'art.",
+      "consequences": [
+        "🎨 Blacklisté du milieu artistique à vie",
+        "💰 Ruiné (dettes : 180 000€)",
+        "🏚️ Vous squattez l'ancien local de la galerie",
+        "📰 Humiliation publique dans les médias",
+        "😢 Plus personne ne vous fait confiance"
+      ]
+    }
+  },
+  "foot": {
+    "id": "foot",
+    "name": "FC Ambition",
+    "icon": "⚽",
+    "subtitle": "Club de foot amateur",
+    "description": "Reprenez un club de foot amateur en difficulté. Gérez les joueurs, les sponsors et les supporters ultras.",
+    "badEnding": {
+      "title": "Relégation Honteuse",
+      "description": "Le club a été relégué en division inférieure après une saison catastrophique. Les supporters ont saccagé le stade. Votre femme vous a quitté pour le coach adverse. Vous êtes la risée de la ville.",
+      "consequences": [
+        "💔 Votre femme vous trompe avec le coach adverse (et tout le monde le sait)",
+        "🏟️ Le stade a été vandalisé, vous devez payer les réparations",
+        "📉 Le club est en faillite, vous êtes personnellement responsable",
+        "😡 Les supporters vous menacent (vous avez déménagé)",
+        "🍺 Alcoolisme suite au stress"
+      ]
+    }
+  },
+  "mode": {
+    "id": "mode",
+    "name": "UrbanThread",
+    "icon": "👗",
+    "subtitle": "Marque de streetwear",
+    "description": "Lancez votre marque de streetwear éthique. Affrontez la fast-fashion et les influenceurs toxiques.",
+    "badEnding": {
+      "title": "Défilé Désastreux",
+      "description": "Votre première collection a été un flop total. Un influenceur vous a descendu publiquement. Votre stock est invendu, vos fournisseurs vous poursuivent. Vous avez perdu votre studio et vivez chez vos parents.",
+      "consequences": [
+        "🏠 Retour chez papa-maman à 28 ans",
+        "📦 Stock invendu : 50 000€ de vêtements au placard",
+        "💸 Dettes fournisseurs : 120 000€",
+        "📱 Cancel culture sur les réseaux (10k followers → 200)",
+        "😭 Dépression et anxiété sociale"
+      ]
+    }
+  },
+  "resto": {
+    "id": "resto",
+    "name": "Le Comptoir",
+    "icon": "🍽️",
+    "subtitle": "Restaurant gastronomique",
+    "description": "Ouvrez votre restaurant gastro dans un quartier hipster. Gérez le chef étoilé, les critiques et les normes d'hygiène.",
+    "badEnding": {
+      "title": "Étoile Filante",
+      "description": "Une intoxication alimentaire a fermé votre restaurant. La presse vous a massacré. Votre chef a démissionné en direct sur les réseaux. Vous êtes ruiné et humilié publiquement.",
+      "consequences": [
+        "🤮 50 clients intoxiqués (poursuites judiciaires)",
+        "⭐ Critique dévastatrice dans le guide Michelin",
+        "👨‍🍳 Votre chef vous a trahi sur TikTok (2M de vues)",
+        "🏚️ Local fermé par la préfecture",
+        "💔 Divorce (votre conjoint était co-gérant)"
+      ]
+    }
+  }
+}
