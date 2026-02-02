@@ -30,54 +30,47 @@
               "label": "Équipement professionnel haut de gamme (25 000€)",
               "cost": 25000,
               "effects": {
+                "equipmentQuality": "premium",
                 "customerSatisfaction": 40,
-                "imageImpact": 30,
-                "environmentalScore": 10
+                "brandImage": 30,
+                "maintenanceCost": 800
               },
-              "consequence": "✅ Image premium. Satisfaction +40%. Maintenance 800€/mois.",
-              "monthlyCostChange": {
-                "maintenance": 800
-              }
+              "consequence": "✅ Image premium. Satisfaction +40%. Maintenance 800€/mois."
             },
             {
               "id": "B",
               "label": "Équipement milieu de gamme (12 000€)",
               "cost": 12000,
               "effects": {
+                "equipmentQuality": "good",
                 "customerSatisfaction": 20,
-                "imageImpact": 15
+                "brandImage": 15,
+                "maintenanceCost": 500
               },
-              "consequence": "✅ Bon équilibre. Satisfaction +20%. Maintenance 500€/mois.",
-              "monthlyCostChange": {
-                "maintenance": 500
-              }
+              "consequence": "✅ Bon équilibre. Satisfaction +20%. Maintenance 500€/mois."
             },
             {
               "id": "C",
               "label": "Équipement d'occasion (5 000€)",
               "cost": 5000,
               "effects": {
+                "equipmentQuality": "basic",
                 "customerSatisfaction": -10,
-                "badBuzzRisk": 0.4,
-                "imageImpact": -15
+                "breakdownRisk": 40,
+                "maintenanceCost": 1200
               },
-              "consequence": "⚠️ Économie initiale mais 40% risque panne. Maintenance élevée 1200€/mois.",
-              "monthlyCostChange": {
-                "maintenance": 1200
-              }
+              "consequence": "⚠️ Économie initiale mais 40% risque panne. Maintenance élevée 1200€/mois."
             },
             {
               "id": "D",
               "label": "Leasing équipement (1 500€/mois)",
               "cost": 0,
               "effects": {
+                "equipmentQuality": "premium",
                 "customerSatisfaction": 30,
-                "imageImpact": 20
+                "leasingCost": 1500
               },
-              "consequence": "✅ Équipement premium sans investissement. Coût mensuel +1500€.",
-              "monthlyCostChange": {
-                "equipment": 1500
-              }
+              "consequence": "✅ Équipement premium sans investissement. Coût mensuel +1500€."
             }
           ]
         },
@@ -92,12 +85,12 @@
               "cost": 0,
               "newHires": 2,
               "effects": {
+                "coachingQuality": "excellent",
                 "customerSatisfaction": 35,
-                "imageImpact": 20,
+                "growthRate": 0.25,
                 "socialScore": 20
               },
-              "consequence": "✅ Qualité excellente. Croissance +25%/mois. Salaires +6000€/mois.",
-              "revenue": 1000
+              "consequence": "✅ Qualité excellente. Croissance +25%/mois. Salaires +6000€/mois."
             },
             {
               "id": "B",
@@ -105,22 +98,23 @@
               "cost": 0,
               "newHires": 1,
               "effects": {
+                "coachingQuality": "good",
                 "customerSatisfaction": 15,
+                "growthRate": 0.15,
                 "socialScore": 10,
                 "turnoverRisk": 0.3
               },
-              "consequence": "✅ Équilibre correct. Croissance +15%/mois. Salaires +3000€/mois + stagiaires 500€.",
-              "revenue": 600,
-              "monthlyIncrease": 500
+              "consequence": "✅ Équilibre correct. Croissance +15%/mois. Salaires +3000€/mois + stagiaires 500€."
             },
             {
               "id": "C",
               "label": "Karim seul + cours en ligne (2 000€)",
               "cost": 2000,
               "effects": {
+                "coachingQuality": "basic",
                 "customerSatisfaction": -15,
-                "turnoverRisk": 0.6,
-                "customerLoss": 0.2
+                "burnoutRisk": 60,
+                "churnRate": 0.2
               },
               "consequence": "⚠️ Karim épuisé. 60% risque burnout. Perte clients -20%/mois."
             },
@@ -129,13 +123,12 @@
               "label": "Partenariat avec anciens boxeurs (rémunération au cours)",
               "cost": 0,
               "effects": {
+                "coachingQuality": "variable",
                 "customerSatisfaction": 10,
-                "socialScore": 10
+                "flexibility": true,
+                "coachingCost": 800
               },
-              "consequence": "✅ Flexibilité. Qualité variable. Coût 800€/mois (rémunération cours).",
-              "monthlyCostChange": {
-                "salaries": 800
-              }
+              "consequence": "✅ Flexibilité. Qualité variable. Coût 800€/mois (rémunération cours)."
             }
           ]
         },
@@ -149,45 +142,48 @@
               "label": "Campagne réseaux sociaux (5 000€)",
               "cost": 5000,
               "effects": {
-                "customerSatisfaction": 20,
-                "imageImpact": 25
+                "newMembers": 40,
+                "growthRate": 0.3,
+                "duration": 3,
+                "brandAwareness": 25
               },
-              "consequence": "✅ +40 membres. Croissance +30% pendant 3 mois. Revenus +3200€/mois.",
-              "revenue": 3200
+              "consequence": "✅ +40 membres. Croissance +30% pendant 3 mois. Revenus +3200€/mois."
             },
             {
               "id": "B",
               "label": "Partenariat club de boxe amateur (2 000€)",
               "cost": 2000,
               "effects": {
-                "customerSatisfaction": 15,
+                "newMembers": 25,
+                "growthRate": 0.2,
+                "duration": 6,
                 "socialScore": 15,
-                "imageImpact": 10
+                "loyalty": "forte"
               },
-              "consequence": "✅ +25 membres loyaux. Croissance +20% pendant 6 mois. Revenus +2000€/mois.",
-              "revenue": 2000
+              "consequence": "✅ +25 membres loyaux. Croissance +20% pendant 6 mois. Revenus +2000€/mois."
             },
             {
               "id": "C",
               "label": "Offre découverte gratuite 1 mois (0€)",
               "cost": 0,
               "effects": {
-                "customerSatisfaction": 10,
-                "turnoverRisk": 0.5
+                "newMembers": 60,
+                "conversionRate": 0.3,
+                "churnRisk": 0.5
               },
-              "consequence": "⚠️ +60 inscrits gratuits. 30% convertissent → +18 membres. 50% risque abandon après.",
-              "revenue": 1440
+              "consequence": "⚠️ +60 inscrits gratuits. 30% convertissent → +18 membres. 50% risque abandon après."
             },
             {
               "id": "D",
               "label": "Influenceur fitness local (8 000€)",
               "cost": 8000,
               "effects": {
-                "customerSatisfaction": 30,
-                "imageImpact": 30
+                "newMembers": 80,
+                "growthRate": 0.4,
+                "duration": 2,
+                "brandImage": 30
               },
-              "consequence": "✅ Boost massif +80 membres. Croissance +40% pendant 2 mois. Revenus +6400€/mois.",
-              "revenue": 6400
+              "consequence": "✅ Boost massif +80 membres. Croissance +40% pendant 2 mois. Revenus +6400€/mois."
             }
           ]
         }
@@ -208,43 +204,44 @@
               "label": "Guerre des prix : baisser à 50€/mois",
               "cost": 0,
               "effects": {
-                "customerSatisfaction": 10,
-                "customerLoss": -0.3,
-                "imageImpact": -20
+                "priceReduction": -37.5,
+                "churnRate": -0.3,
+                "newMembers": 50,
+                "margin": -0.4
               },
-              "consequence": "📉 Abonnement 50€. +50 membres mais marges détruites -40%. Risque faillite.",
-              "revenue": -1500
+              "consequence": "📉 Abonnement 50€. +50 membres mais marges détruites -40%. Risque faillite."
             },
             {
               "id": "B",
               "label": "Différenciation premium : services exclusifs (+10€/mois)",
               "cost": 5000,
               "effects": {
+                "priceIncrease": 12.5,
                 "customerSatisfaction": 25,
-                "customerLoss": 0.1,
-                "imageImpact": 30
+                "churnRate": 0.1,
+                "brandValue": 30
               },
-              "consequence": "✅ Abonnement 90€. +10% perte membres mais image premium. Marges améliorées.",
-              "revenue": 1000
+              "consequence": "✅ Abonnement 90€. +10% perte membres mais image premium. Marges améliorées."
             },
             {
               "id": "C",
               "label": "Programme fidélité + parrainage (3 000€)",
               "cost": 3000,
               "effects": {
-                "customerSatisfaction": 20,
-                "imageImpact": 15
+                "churnRate": -0.4,
+                "newMembers": 30,
+                "loyalty": "forte",
+                "customerSatisfaction": 20
               },
-              "consequence": "✅ Fidélisation +40%. +30 nouveaux membres via parrainage. Coût 3000€.",
-              "revenue": 2400
+              "consequence": "✅ Fidélisation +40%. +30 nouveaux membres via parrainage. Coût 3000€."
             },
             {
               "id": "D",
               "label": "Ignorer et garder cap (0€)",
               "cost": 0,
               "effects": {
-                "customerLoss": 0.25,
-                "imageImpact": -15
+                "churnRate": 0.25,
+                "marketShare": -15
               },
               "consequence": "⚠️ Perte 25% membres. Parts de marché -15%. Revenus en baisse."
             }
@@ -262,14 +259,12 @@
               "newHires": 1,
               "revenue": 5000,
               "effects": {
+                "serviceRange": "large",
+                "newMembers": 40,
                 "customerSatisfaction": 30,
-                "imageImpact": 20,
-                "environmentalScore": 5
+                "insuranceCost": 1200
               },
-              "consequence": "✅ +40 membres. Revenus +5000€/mois. Salaires +3000€/mois. Assurance +1200€/mois.",
-              "monthlyCostChange": {
-                "insurance": 1200
-              }
+              "consequence": "✅ +40 membres. Revenus +5000€/mois. Salaires +3000€/mois. Assurance +1200€/mois."
             },
             {
               "id": "B",
@@ -277,9 +272,10 @@
               "cost": 2000,
               "revenue": 2500,
               "effects": {
+                "serviceRange": "complet",
                 "customerSatisfaction": 35,
-                "socialScore": 15,
-                "imageImpact": 20
+                "churnRate": -0.3,
+                "socialScore": 15
               },
               "consequence": "✅ Satisfaction +35%. Fidélisation +30%. Revenus +2500€/mois. Coût partenariat 2000€."
             },
@@ -287,26 +283,25 @@
               "id": "C",
               "label": "Salle musculation (investissement 15 000€)",
               "cost": 15000,
-              "revenue": 4800,
+              "revenue": 4000,
               "effects": {
-                "customerSatisfaction": 20,
-                "imageImpact": 15
+                "serviceRange": "diversifié",
+                "newMembers": 60,
+                "maintenance": 800,
+                "customerSatisfaction": 20
               },
-              "consequence": "✅ +60 membres. Revenus +4800€/mois. Maintenance +800€/mois. Investissement 15k€.",
-              "monthlyCostChange": {
-                "maintenance": 800
-              }
+              "consequence": "✅ +60 membres. Revenus +4800€/mois. Maintenance +800€/mois. Investissement 15k€."
             },
             {
               "id": "D",
               "label": "Rester focus boxe uniquement (0€)",
               "cost": 0,
               "effects": {
-                "imageImpact": 20,
-                "environmentalScore": 10
+                "focus": true,
+                "expertiseImage": 20,
+                "growthRate": 0.1
               },
-              "consequence": "✅ Expertise reconnue. Croissance lente +10%/mois. Pas de coûts.",
-              "revenue": 400
+              "consequence": "✅ Expertise reconnue. Croissance lente +10%/mois. Pas de coûts."
             }
           ]
         },
@@ -322,8 +317,9 @@
               "newHires": 2,
               "effects": {
                 "employeeSatisfaction": 40,
-                "socialScore": 25,
-                "imageImpact": 10
+                "coachingQuality": "excellent",
+                "turnover": -0.5,
+                "socialScore": 25
               },
               "consequence": "✅ Équipe soulagée. Qualité +excellent. Salaires +6000€/mois."
             },
@@ -333,6 +329,7 @@
               "monthlyIncrease": 900,
               "effects": {
                 "employeeSatisfaction": 30,
+                "turnover": -0.3,
                 "socialScore": 20
               },
               "consequence": "✅ Satisfaction +30%. Turnover réduit. Coûts +900€/mois (10% de 9000€)."
@@ -342,6 +339,7 @@
               "label": "Statut quo (espérer que ça tienne)",
               "cost": 0,
               "effects": {
+                "burnoutRisk": 0.5,
                 "employeeSatisfaction": -25,
                 "turnoverRisk": 0.4,
                 "socialScore": -20
@@ -353,14 +351,12 @@
               "label": "Automatisation planning + app (5 000€)",
               "cost": 5000,
               "effects": {
+                "efficiency": 1.2,
                 "employeeSatisfaction": 15,
                 "customerSatisfaction": 10,
-                "productivity": 1.2
+                "techCost": 200
               },
-              "consequence": "✅ Productivité +20%. Satisfaction équipe +15%. Coût tech 200€/mois.",
-              "monthlyCostChange": {
-                "utilities": 200
-              }
+              "consequence": "✅ Productivité +20%. Satisfaction équipe +15%. Coût tech 200€/mois."
             }
           ]
         }
@@ -397,8 +393,9 @@
               "label": "Accepter (800k€, fin du jeu en SUCCESS)",
               "cost": 0,
               "effects": {
-                "socialScore": -20,
-                "imageImpact": 10
+                "exit": "success",
+                "money": 800000,
+                "endGame": true
               },
               "consequence": "✅ VICTOIRE : Vous vendez pour 800k€. Karim démissionne mais vous êtes riche. FIN."
             },
@@ -407,9 +404,9 @@
               "label": "Refuser et continuer l'aventure",
               "cost": 0,
               "effects": {
+                "independence": true,
                 "employeeSatisfaction": 50,
-                "socialScore": 40,
-                "imageImpact": 20
+                "socialScore": 40
               },
               "consequence": "✅ Vous restez indépendant. Karim sourit. L'aventure continue. Respect +40."
             },
@@ -420,15 +417,15 @@
               "successRate": 0.25,
               "ifSuccess": {
                 "effects": {
-                  "socialScore": -10,
-                  "imageImpact": 20
+                  "exit": "success",
+                  "money": 1000000,
+                  "endGame": true
                 }
               },
               "ifFailure": {
                 "effects": {
-                  "badBuzzRisk": 0.35,
-                  "customerLoss": 0.35,
-                  "imageImpact": -25
+                  "competitor": "fightclub_war",
+                  "marketShare": -35
                 }
               },
               "consequence": "🎲 25% succès (1M€). 75% échec : FightClub ouvre concurrent 200m. Guerre totale -35% membres."
@@ -448,6 +445,7 @@
                 "employees": -3,
                 "employeeSatisfaction": -35,
                 "socialScore": -30,
+                "coachingQuality": "réduite",
                 "turnoverRisk": 0.4
               },
               "consequence": "📉 Salaires -9000€/mois. Rentabilité OK. Ambiance plombée. 40% risque autres départs."
@@ -458,8 +456,8 @@
               "monthlyIncrease": -4500,
               "effects": {
                 "employeeSatisfaction": -25,
-                "socialScore": -20,
-                "turnoverRisk": 0.35
+                "turnover": 0.35,
+                "socialScore": -20
               },
               "consequence": "⚠️ Tout le monde reste mais démoralisé. Turn-over élevé. Économie 4500€/mois."
             },
@@ -469,7 +467,8 @@
               "monthlyIncrease": -1500,
               "effects": {
                 "employeeSatisfaction": 45,
-                "socialScore": 50
+                "socialScore": 50,
+                "leadershipRespect": 60
               },
               "consequence": "✅ Respect maximal. Équipe motivée. Vous serrez la ceinture. Économie 1500€/mois."
             },
@@ -480,6 +479,7 @@
               "effects": {
                 "employeeSatisfaction": 70,
                 "productivity": 1.2,
+                "turnover": -0.6,
                 "socialScore": 35
               },
               "consequence": "✅ Satisfaction +70%. Productivité +20%. Turnover réduit. Coûts +3000€/mois."
@@ -497,8 +497,9 @@
               "cost": 0,
               "revenue": 10500,
               "effects": {
+                "ethics": "compromised",
                 "customerSatisfaction": 15,
-                "badBuzzRisk": 0.6,
+                "scandalRisk": 60,
                 "socialScore": -40
               },
               "consequence": "💥 Revenus +30% mais 60% risque scandale. Si découvert : fermeture + procès."
@@ -508,9 +509,10 @@
               "label": "Refuser et virer le coach",
               "cost": 0,
               "effects": {
+                "employees": -1,
+                "ethics": "preserved",
                 "employeeSatisfaction": 30,
-                "socialScore": 40,
-                "imageImpact": 20
+                "socialScore": 40
               },
               "consequence": "✅ Éthique préservée. Respect équipe +30%. Salaires -3000€/mois."
             },
@@ -520,10 +522,10 @@
               "cost": 8000,
               "revenue": 5000,
               "effects": {
+                "ethics": "exemplary",
                 "customerSatisfaction": 35,
-                "socialScore": 50,
-                "environmentalScore": 30,
-                "imageImpact": 30
+                "certification": "nutrition",
+                "socialScore": 50
               },
               "consequence": "✅ Label nutrition. Revenus +5000€/mois. Investissement 8000€. Image excellente."
             },
@@ -532,7 +534,8 @@
               "label": "Ignorer (fermer les yeux)",
               "cost": 0,
               "effects": {
-                "badBuzzRisk": 0.4,
+                "ethics": "ambiguous",
+                "scandalRisk": 40,
                 "socialScore": -20
               },
               "consequence": "⚠️ 40% risque scandale. Responsabilité engagée si découvert."
