@@ -30,8 +30,8 @@
               "label": "Certification Ecocert officielle (15 000€, 6 mois d'attente)",
               "cost": 15000,
               "effects": {
-                "environmentalScore": 40,
-                "imageImpact": 30,
+                "certificationLevel": 40,
+                "delay": 6,
                 "customerSatisfaction": 30
               },
               "consequence": "✅ Certification obtenue mais 6 mois sans ventes. Budget fond de 24 000€ supplémentaires pendant l'attente."
@@ -41,20 +41,20 @@
               "label": "Certification Cosmebio (5 000€, 2 mois)",
               "cost": 5000,
               "effects": {
-                "environmentalScore": 25,
-                "imageImpact": 20,
-                "customerSatisfaction": 20
+                "certificationLevel": 25,
+                "delay": 2,
+                "customerSatisfaction": 20,
+                "growthRate": 0.1
               },
-              "consequence": "✅ Rapide mais Sephora refuse de vous référencer. Croissance +10%/mois.",
-              "revenue": 1200
+              "consequence": "✅ Rapide mais Sephora refuse de vous référencer. Croissance +10%/mois."
             },
             {
               "id": "C",
               "label": "Auto-certification 'ingrédients naturels' (500€, immédiat)",
               "cost": 500,
               "effects": {
-                "badBuzzRisk": 0.6,
-                "imageImpact": -10,
+                "certificationLevel": 0,
+                "brandRisk": 60,
                 "customerSatisfaction": -10
               },
               "consequence": "💣 60% risque scandale greenwashing. Si découvert : -50% revenus pendant 6 mois."
@@ -64,9 +64,10 @@
               "label": "Pas de certification, transparence totale (0€)",
               "cost": 0,
               "effects": {
-                "environmentalScore": 15,
-                "imageImpact": 10,
-                "customerSatisfaction": 10
+                "certificationLevel": 15,
+                "growthRate": 0.05,
+                "customerSatisfaction": 10,
+                "nicheMarket": true
               },
               "consequence": "⚠️ Niche ultra-spécifique. Croissance lente +5%/mois. 50 clients/mois max."
             }
@@ -83,8 +84,10 @@
               "cost": 8000,
               "revenue": 15000,
               "effects": {
-                "imageImpact": 30,
-                "customerSatisfaction": 15
+                "growthRate": 0.4,
+                "duration": 2,
+                "customerSatisfaction": 15,
+                "brandAwareness": 30
               },
               "consequence": "✅ Boost ventes +40% pendant 2 mois. ROI positif +7000€."
             },
@@ -92,17 +95,11 @@
               "id": "B",
               "label": "Envoi gratuit produits (1 000€ de stock)",
               "cost": 1000,
-              "consequence": "💔 50% chance qu'elle ne poste rien. 1 000€ perdus dans ce cas.",
-              "successRate": 0.5,
-              "ifSuccess": {
-                "revenue": 2000,
-                "effects": {
-                  "imageImpact": 10
-                }
+              "effects": {
+                "brandRisk": 50,
+                "customerSatisfaction": 0
               },
-              "ifFailure": {
-                "effects": {}
-              }
+              "consequence": "💔 50% chance qu'elle ne poste rien. 1 000€ perdus dans ce cas."
             },
             {
               "id": "C",
@@ -110,8 +107,11 @@
               "cost": 2000,
               "revenue": 8000,
               "effects": {
-                "imageImpact": 20,
-                "customerSatisfaction": 15
+                "growthRate": 0.25,
+                "duration": 3,
+                "customerSatisfaction": 15,
+                "brandAwareness": 20,
+                "loyalty": "forte"
               },
               "consequence": "✅ Communauté loyale. Croissance régulière +25% pendant 3 mois."
             },
@@ -121,6 +121,7 @@
               "cost": 0,
               "revenue": 2000,
               "effects": {
+                "growthRate": 0.05,
                 "customerSatisfaction": 5
               },
               "consequence": "😴 Croissance ultra-lente +5%/mois. Pas assez pour survivre."
@@ -137,19 +138,18 @@
               "label": "Fournisseur français bio (coût +50%)",
               "cost": 0,
               "effects": {
+                "materialCost": 4500,
                 "environmentalScore": 40,
                 "customerSatisfaction": 20
               },
-              "consequence": "✅ Produits premium. Marges très faibles (15%). Difficile de scaler.",
-              "monthlyCostChange": {
-                "materials": 4500
-              }
+              "consequence": "✅ Produits premium. Marges très faibles (15%). Difficile de scaler."
             },
             {
               "id": "B",
               "label": "Fournisseur européen (équilibre qualité/prix)",
               "cost": 0,
               "effects": {
+                "materialCost": 3000,
                 "environmentalScore": 25,
                 "customerSatisfaction": 10
               },
@@ -160,14 +160,12 @@
               "label": "Fournisseur asiatique low-cost (-40%)",
               "cost": 0,
               "effects": {
-                "badBuzzRisk": 0.4,
+                "materialCost": 1800,
                 "environmentalScore": -20,
+                "brandRisk": 40,
                 "customerSatisfaction": -15
               },
-              "consequence": "💥 40% risque scandale (conditions de travail). Si découvert : -60% revenus.",
-              "monthlyCostChange": {
-                "materials": 1800
-              }
+              "consequence": "💥 40% risque scandale (conditions de travail). Si découvert : -60% revenus."
             },
             {
               "id": "D",
@@ -175,13 +173,11 @@
               "cost": 12000,
               "newHires": 1,
               "effects": {
+                "materialCost": 2500,
                 "environmentalScore": 30,
                 "customerSatisfaction": 15
               },
-              "consequence": "⏰ Production maîtrisée. Embauche obligatoire +3000€/mois salaires.",
-              "monthlyCostChange": {
-                "materials": 2500
-              }
+              "consequence": "⏰ Production maîtrisée. Embauche obligatoire +3000€/mois salaires."
             }
           ]
         }
@@ -202,21 +198,21 @@
               "label": "Poursuivre en justice (20 000€, 12 mois)",
               "cost": 20000,
               "effects": {
+                "legalAction": true,
+                "delay": 12,
                 "customerSatisfaction": 5
               },
-              "consequence": "⚖️ Procès en cours. CopyGlow continue pendant ce temps. Issue incertaine.",
-              "delay": 12
+              "consequence": "⚖️ Procès en cours. CopyGlow continue pendant ce temps. Issue incertaine."
             },
             {
               "id": "B",
               "label": "Guerre des prix (-25% sur tout)",
               "cost": 0,
               "effects": {
-                "imageImpact": -10,
-                "customerSatisfaction": 10
+                "priceReduction": -25,
+                "growthRate": 0.15
               },
-              "consequence": "📉 Parts de marché +15% mais marges détruites (-25% prix). Risque faillite.",
-              "revenue": -2250
+              "consequence": "📉 Parts de marché +15% mais marges détruites (-25% prix). Risque faillite."
             },
             {
               "id": "C",
@@ -224,9 +220,11 @@
               "cost": 15000,
               "revenue": 12000,
               "effects": {
-                "imageImpact": 25,
+                "innovation": true,
+                "growthRate": 0.3,
+                "duration": 6,
                 "customerSatisfaction": 25,
-                "environmentalScore": 15
+                "brandValue": 25
               },
               "consequence": "✅ Vous prenez de l'avance. CopyGlow ne peut pas suivre. +30% revenus 6 mois."
             },
@@ -235,8 +233,8 @@
               "label": "Ignorer et focus marketing (5 000€)",
               "cost": 5000,
               "effects": {
-                "imageImpact": 20,
-                "customerSatisfaction": -10
+                "brandAwareness": 20,
+                "marketShare": -10
               },
               "consequence": "⚠️ CopyGlow gagne du terrain. Vous perdez 10% parts de marché."
             }
@@ -253,8 +251,9 @@
               "cost": 0,
               "revenue": 40000,
               "effects": {
-                "customerSatisfaction": 10,
-                "badBuzzRisk": 0.2
+                "exclusivity": true,
+                "dependencyRisk": 90,
+                "customerSatisfaction": 10
               },
               "consequence": "✅ Revenus +40000€/mois mais dépendance totale. Si ils rompent, vous mourez."
             },
@@ -266,8 +265,9 @@
               "ifSuccess": {
                 "revenue": 30000,
                 "effects": {
-                  "customerSatisfaction": 10,
-                  "badBuzzRisk": 0.15
+                  "exclusivity": true,
+                  "dependencyRisk": 80,
+                  "customerSatisfaction": 10
                 }
               },
               "ifFailure": {
@@ -282,10 +282,10 @@
               "label": "Refuser et garder indépendance",
               "cost": 0,
               "effects": {
-                "imageImpact": 5
+                "independence": true,
+                "growthRate": 0.1
               },
-              "consequence": "✅ Vous restez libre. Croissance lente mais saine +10%/mois.",
-              "revenue": 900
+              "consequence": "✅ Vous restez libre. Croissance lente mais saine +10%/mois."
             },
             {
               "id": "D",
@@ -294,8 +294,9 @@
               "newHires": 1,
               "revenue": 15000,
               "effects": {
-                "imageImpact": 15,
-                "customerSatisfaction": 10
+                "multiChannel": true,
+                "growthRate": 0.2,
+                "complexity": "high"
               },
               "consequence": "✅ Diversification. +15000€/mois. Embauche obligatoire +3000€/mois."
             }
@@ -324,6 +325,7 @@
               "monthlyIncrease": 600,
               "effects": {
                 "employeeSatisfaction": 20,
+                "turnover": -0.3,
                 "socialScore": 15
               },
               "consequence": "✅ Satisfaction +20%. Turnover réduit. Coûts +600€/mois."
@@ -344,8 +346,9 @@
               "label": "Externaliser production (10 000€)",
               "cost": 10000,
               "effects": {
+                "outsourcing": true,
                 "employeeSatisfaction": -10,
-                "environmentalScore": -10
+                "quality": -15
               },
               "consequence": "⚠️ Clara déçue. Qualité -15%. Économie temps mais perte contrôle."
             }
@@ -382,8 +385,9 @@
               "label": "Accepter (2M€, fin du jeu en SUCCESS)",
               "cost": 0,
               "effects": {
-                "socialScore": -20,
-                "imageImpact": 10
+                "exit": "success",
+                "money": 2000000,
+                "endGame": true
               },
               "consequence": "✅ VICTOIRE : Vous vendez pour 2M€. Clara démissionne mais vous êtes riche. FIN."
             },
@@ -392,9 +396,9 @@
               "label": "Refuser et continuer l'aventure",
               "cost": 0,
               "effects": {
+                "independence": true,
                 "employeeSatisfaction": 40,
-                "socialScore": 30,
-                "imageImpact": 15
+                "socialScore": 30
               },
               "consequence": "✅ Vous restez indépendant. Clara sourit. L'aventure continue. Respect +30."
             },
@@ -405,15 +409,15 @@
               "successRate": 0.2,
               "ifSuccess": {
                 "effects": {
-                  "socialScore": -10,
-                  "imageImpact": 20
+                  "exit": "success",
+                  "money": 3000000,
+                  "endGame": true
                 }
               },
               "ifFailure": {
                 "effects": {
-                  "badBuzzRisk": 0.3,
-                  "customerLoss": 0.3,
-                  "imageImpact": -20
+                  "competitor": "loreal_war",
+                  "marketShare": -30
                 }
               },
               "consequence": "🎲 20% succès (3M€). 80% échec : L'Oréal lance 'BioPure'. Guerre totale -30% parts marché."
@@ -443,8 +447,8 @@
               "monthlyIncrease": -3600,
               "effects": {
                 "employeeSatisfaction": -20,
-                "socialScore": -15,
-                "turnoverRisk": 0.3
+                "turnover": 0.3,
+                "socialScore": -15
               },
               "consequence": "⚠️ Tout le monde reste mais démoralisé. Turn-over élevé. Économie 3600€/mois."
             },
@@ -454,7 +458,8 @@
               "monthlyIncrease": -1500,
               "effects": {
                 "employeeSatisfaction": 40,
-                "socialScore": 50
+                "socialScore": 50,
+                "leadershipRespect": 50
               },
               "consequence": "✅ Respect maximal. Équipe motivée. Vous serrez la ceinture. Économie 1500€/mois."
             },
@@ -465,6 +470,7 @@
               "effects": {
                 "employeeSatisfaction": 60,
                 "productivity": 1.15,
+                "turnover": -0.5,
                 "socialScore": 25
               },
               "consequence": "✅ Satisfaction +60%. Productivité +15%. Turnover réduit. Coûts +2400€/mois."
@@ -481,39 +487,35 @@
               "label": "Passer au chimique (trahir vos valeurs)",
               "cost": 0,
               "effects": {
+                "materialCost": 2200,
                 "environmentalScore": -40,
                 "brandRisk": 70,
-                "customerSatisfaction": -30,
-                "badBuzzRisk": 0.7
+                "customerSatisfaction": -30
               },
-              "consequence": "💥 70% risque découverte. Si scandale : -60% revenus. Greenwashing accusation.",
-              "monthlyCostChange": {
-                "materials": 2200
-              }
+              "consequence": "💥 70% risque découverte. Si scandale : -60% revenus. Greenwashing accusation."
             },
             {
               "id": "B",
               "label": "Attendre 6 mois (pause production)",
               "cost": 0,
               "effects": {
+                "pause": true,
+                "delay": 6,
+                "revenue": -40000,
                 "environmentalScore": 30
               },
-              "consequence": "✅ Valeurs préservées. Perte 40000€/mois × 6 mois = -240000€. Budget en chute.",
-              "delay": 6,
-              "revenue": -40000
+              "consequence": "✅ Valeurs préservées. Perte 40000€/mois × 6 mois = -240000€. Budget en chute."
             },
             {
               "id": "C",
               "label": "Trouver fournisseur alternatif (+30% coût)",
               "cost": 0,
               "effects": {
+                "materialCost": 3900,
                 "environmentalScore": 25,
                 "customerSatisfaction": 10
               },
-              "consequence": "✅ Valeurs OK. Coûts matériaux +900€/mois. Marges réduites. Vous survivez.",
-              "monthlyCostChange": {
-                "materials": 3900
-              }
+              "consequence": "✅ Valeurs OK. Coûts matériaux +900€/mois. Marges réduites. Vous survivez."
             },
             {
               "id": "D",
@@ -521,15 +523,13 @@
               "cost": 25000,
               "newHires": 1,
               "effects": {
+                "materialCost": 3500,
                 "environmentalScore": 50,
                 "customerSatisfaction": 30,
                 "socialScore": 40,
-                "imageImpact": 30
+                "madeInFrance": true
               },
-              "consequence": "✅ Label 'Made in France'. Respect +40. Embauche +3000€/mois. Image excellente.",
-              "monthlyCostChange": {
-                "materials": 3500
-              }
+              "consequence": "✅ Label 'Made in France'. Respect +40. Embauche +3000€/mois. Image excellente."
             }
           ]
         }
@@ -557,30 +557,10 @@
     }
   },
   "grading": {
-    "fail": {
-      "max": 40,
-      "label": "Échec",
-      "description": "Faillite ou scandale"
-    },
-    "survival": {
-      "max": 60,
-      "label": "Survie difficile",
-      "description": "Valeur actionnariale pure"
-    },
-    "balance": {
-      "max": 75,
-      "label": "Équilibre fragile",
-      "description": "Début d'équilibre"
-    },
-    "success": {
-      "max": 85,
-      "label": "Succès",
-      "description": "Bon équilibre partenariale ⭐"
-    },
-    "excellence": {
-      "max": 100,
-      "label": "Excellence",
-      "description": "Modèle exemplaire 🏆"
-    }
+    "fail": { "max": 40, "label": "Échec", "description": "Faillite ou scandale" },
+    "survival": { "max": 60, "label": "Survie difficile", "description": "Valeur actionnariale pure" },
+    "balance": { "max": 75, "label": "Équilibre fragile", "description": "Début d'équilibre" },
+    "success": { "max": 85, "label": "Succès", "description": "Bon équilibre partenariale ⭐" },
+    "excellence": { "max": 100, "label": "Excellence", "description": "Modèle exemplaire 🏆" }
   }
 }
