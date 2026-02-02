@@ -4,7 +4,7 @@
     "employees": 3,
     "members": 50,
     "monthlySubscription": 80,
-    "monthlyRevenue": 4000,
+    "monthlyRevenue": 6000,
     "monthlyCosts": {
       "salaries": 9000,
       "rent": 3000,
@@ -18,7 +18,7 @@
     {
       "id": 1,
       "title": "Phase 1 : Transformation du hangar (Mois 1-3)",
-      "context": "Vous venez de quitter votre job de consultant pour transformer un hangar de 300m² en salle de boxe premium. Karim (ancien boxeur pro) est votre associé. Vous avez 60 000€ d'économies. Le loyer est brutal (3000€/mois). 50 membres inscrits (abonnement 80€/mois). Déficit actuel : -11 500€/mois.\n\nVous devez faire les bons choix pour survivre aux 3 premiers mois.",
+      "context": "Vous venez de quitter votre job de consultant pour transformer un hangar de 300m² en salle de boxe premium. Karim (ancien boxeur pro) est votre associé. Vous avez 60 000€ d'économies. Le loyer est brutal (3000€/mois). 50 membres inscrits (abonnement 80€/mois). Déficit actuel : -9 500€/mois (CA 6000€, coûts 15 500€).\n\nVous devez faire les bons choix pour survivre aux 3 premiers mois.",
       "decisions": [
         {
           "id": "equipment",

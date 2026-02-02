@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node tests/game-data.test.js",
+    "audit": "node audit-comprehensive.js"
   },
   "dependencies": {
     "next": "^14.1.0",
