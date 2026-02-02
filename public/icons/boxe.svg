@@ -1,5 +1,5 @@
 <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Hexagone (ring) -->
-  <path d="M32 14L46 24L46 40L32 50L18 40L18 24L32 14Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-  <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2"/>
+  <!-- Carré + croix -->
+  <rect x="16" y="16" width="32" height="32" stroke="currentColor" stroke-width="3"/>
+  <path d="M32 22L32 42M22 32L42 32" stroke="currentColor" stroke-width="2"/>
 </svg>
