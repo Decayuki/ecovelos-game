@@ -12,23 +12,23 @@ export default function CompanyInfo({ gameState }: CompanyInfoProps) {
   
   const infos = [];
   
-  // Qualité des vélos (dérivé de maintenance) - ÉcoVélos only
-  if (gameState.monthlyCosts.maintenance !== undefined) {
+  // Qualité équipement/maintenance (adapté au thème)
+  if (gameState.monthlyCosts.maintenance !== undefined && gameState.themeId === 'ecovelos') {
     if (gameState.monthlyCosts.maintenance <= 1800) {
-      infos.push({ label: 'Qualité vélos', value: 'Excellente', color: 'text-emerald-600' });
+      infos.push({ label: 'Qualité équipement', value: 'Excellente', color: 'text-emerald-600' });
     } else if (gameState.monthlyCosts.maintenance <= 2500) {
-      infos.push({ label: 'Qualité vélos', value: 'Bonne', color: 'text-green-600' });
+      infos.push({ label: 'Qualité équipement', value: 'Bonne', color: 'text-green-600' });
     } else {
-      infos.push({ label: 'Qualité vélos', value: 'Moyenne', color: 'text-amber-600' });
+      infos.push({ label: 'Qualité équipement', value: 'Moyenne', color: 'text-amber-600' });
     }
   }
   
-  // Vandalisme (dérivé de coût) - ÉcoVélos only
-  if (gameState.monthlyCosts.vandalism !== undefined) {
+  // Vandalisme - ÉcoVélos only
+  if (gameState.monthlyCosts.vandalism !== undefined && gameState.themeId === 'ecovelos') {
     if (gameState.monthlyCosts.vandalism <= 1000) {
-      infos.push({ label: 'Protection', value: 'Excellente (géolocalisation)', color: 'text-emerald-600' });
+      infos.push({ label: 'Protection', value: 'Excellente', color: 'text-emerald-600' });
     } else if (gameState.monthlyCosts.vandalism <= 2000) {
-      infos.push({ label: 'Protection', value: 'Bonne (antivols)', color: 'text-green-600' });
+      infos.push({ label: 'Protection', value: 'Bonne', color: 'text-green-600' });
     } else {
       infos.push({ label: 'Protection', value: 'Faible', color: 'text-red-600' });
     }
