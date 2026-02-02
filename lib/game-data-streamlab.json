@@ -31,9 +31,7 @@
               "label": "Setup basique (0€)",
               "cost": 0,
               "effects": {
-                "equipment": 2500,
-                "videoQuality": "moyenne",
-                "streamerSatisfaction": 0
+                "customerSatisfaction": 0
               }
             },
             {
@@ -41,10 +39,7 @@
               "label": "Cameras HD + éclairage pro (25 000€)",
               "cost": 25000,
               "effects": {
-                "equipment": 3500,
-                "videoQuality": "excellente",
-                "viewerGrowth": 0.2,
-                "streamerSatisfaction": 15
+                "customerSatisfaction": 15
               }
             },
             {
@@ -53,10 +48,7 @@
               "cost": 80000,
               "newHires": 1,
               "effects": {
-                "equipment": 5000,
-                "videoQuality": "premium",
-                "viewerGrowth": 0.4,
-                "streamerSatisfaction": 30,
+                "customerSatisfaction": 30,
                 "imageImpact": 25
               }
             }
@@ -71,20 +63,14 @@
               "id": "A",
               "label": "Gaming pur et dur (0€)",
               "cost": 0,
-              "effects": {
-                "contentType": "gaming",
-                "competition": "très forte",
-                "growthPotential": 0.1
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Mix gaming + talk shows (8 000€)",
               "cost": 8000,
               "effects": {
-                "contentType": "diversifié",
-                "viewerGrowth": 0.25,
-                "brandDifferentiation": 15
+                "imageImpact": 15
               }
             },
             {
@@ -93,11 +79,7 @@
               "cost": 35000,
               "newHires": 1,
               "effects": {
-                "contentType": "e-sport",
-                "viewerGrowth": 0.35,
-                "imageImpact": 20,
-                "premium": true,
-                "sponsorshipAppeal": 1.5
+                "imageImpact": 20
               }
             }
           ]
@@ -111,22 +93,13 @@
               "id": "A",
               "label": "Subs Twitch uniquement (0€)",
               "cost": 0,
-              "effects": {
-                "revenueModel": "subs",
-                "volatility": "forte",
-                "streamerCuts": 3500
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Subs + pub YouTube (3 000€ setup)",
               "cost": 3000,
-              "effects": {
-                "revenueModel": "mixte",
-                "volatility": "moyenne",
-                "monthlyRevenue": 22000,
-                "diversification": true
-              }
+              "effects": {}
             },
             {
               "id": "C",
@@ -134,10 +107,6 @@
               "cost": 15000,
               "newHires": 1,
               "effects": {
-                "revenueModel": "B2B",
-                "monthlyRevenue": 28000,
-                "volatility": "faible",
-                "streamerCuts": 4500,
                 "imageImpact": 1.3
               }
             }
@@ -160,9 +129,7 @@
               "label": "Accepter tel quel",
               "revenue": 80000,
               "effects": {
-                "va": 60000,
-                "brandIdentity": "diluée",
-                "viewerGrowth": 0.5
+                "imageImpact": 10
               }
             },
             {
@@ -172,17 +139,12 @@
               "ifSuccess": {
                 "revenue": 100000,
                 "effects": {
-                  "va": 75000,
-                  "brandIdentity": "préservée",
-                  "viewerGrowth": 0.6
+                  "imageImpact": 10
                 }
               },
               "ifFailure": {
                 "delay": 2,
-                "effects": {
-                  "opportunity": "lost",
-                  "reputationHit": -10
-                }
+                "effects": {}
               }
             },
             {
@@ -193,25 +155,18 @@
               "ifSuccess": {
                 "revenue": 45000,
                 "effects": {
-                  "va": 35000,
-                  "brandControl": "totale",
-                  "localRoots": true
+                  "imageImpact": 10
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "cashFlow": "tendu"
-                }
+                "effects": {}
               }
             },
             {
               "id": "D",
               "label": "Accepter + clause sortie 30 jours (-15% montant)",
               "revenue": 68000,
-              "effects": {
-                "va": 51000,
-                "viewerGrowth": 0.45
-              }
+              "effects": {}
             }
           ]
         }
@@ -226,7 +181,10 @@
         "employees": 10,
         "budget": 200000,
         "monthlyVA": 35000,
-        "employeeSatisfaction": 50
+        "employeeSatisfaction": 50,
+        "monthlyCosts": {
+          "salaries": 30000
+        }
       },
       "decisions": [
         {
@@ -239,10 +197,8 @@
               "label": "Le défendre publiquement",
               "cost": 0,
               "effects": {
-                "communityDivision": 0.6,
-                "sponsorLoss": 0.3,
-                "imageImpact": -50,
-                "shortTermRevenue": 1
+                "customerLoss": 0.3,
+                "imageImpact": -50
               }
             },
             {
@@ -252,9 +208,8 @@
               "cost": 5000,
               "effects": {
                 "imageImpact": -10,
-                "communityRespect": 20,
-                "secondChance": true,
-                "sponsorLoss": 0.1
+                "socialScore": 20,
+                "customerLoss": 0.1
               }
             },
             {
@@ -262,11 +217,7 @@
               "label": "Rupture contrat immédiate (-48 000€/mois permanent)",
               "revenue": -48000,
               "effects": {
-                "imageImpact": 30,
-                "ethicalStance": "forte",
-                "sponsorTrust": 1.4,
-                "rebuilding": "nécessaire",
-                "longTermGain": true
+                "imageImpact": 30
               }
             }
           ]
@@ -282,7 +233,7 @@
               "cost": 0,
               "effects": {
                 "turnoverRisk": 0.5,
-                "teamMorale": -40,
+                "employeeSatisfaction": -40,
                 "socialScore": -30
               }
             },
@@ -317,19 +268,14 @@
               "id": "A",
               "label": "Accepter Twitch exclusif",
               "revenue": 500000,
-              "effects": {
-                "platformRisk": "très fort",
-                "shortTermCash": "massif",
-                "youtubeLoss": -0.4
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Rester multi-plateforme",
               "cost": 0,
               "effects": {
-                "platformRisk": "faible",
-                "sustainability": "excellente"
+                "environmentalScore": 10
               }
             },
             {
@@ -339,15 +285,10 @@
               "newHires": 2,
               "successRate": 0.3,
               "ifSuccess": {
-                "effects": {
-                  "platformControl": "totale",
-                  "revenueShare": 1,
-                  "longTermValue": "énorme"
-                }
+                "effects": {}
               },
               "ifFailure": {
                 "effects": {
-                  "cashBurn": "catastrophique",
                   "imageImpact": -30
                 }
               }

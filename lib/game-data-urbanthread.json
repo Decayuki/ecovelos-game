@@ -29,18 +29,14 @@
               "label": "Production Asie (coût faible)",
               "cost": 0,
               "effects": {
-                "production": 4000,
-                "ethicalScore": -30,
-                "deliveryTime": 90
+                "environmentalScore": -30
               }
             },
             {
               "id": "B",
               "label": "Production Portugal (+35% coût)",
               "effects": {
-                "production": 5400,
-                "ethicalScore": 15,
-                "deliveryTime": 45,
+                "environmentalScore": 15,
                 "customerSatisfaction": 10
               }
             },
@@ -48,11 +44,8 @@
               "id": "C",
               "label": "Production France (+60% coût)",
               "effects": {
-                "production": 6400,
-                "ethicalScore": 35,
-                "deliveryTime": 30,
-                "customerSatisfaction": 10,
-                "environmentalScore": 20
+                "environmentalScore": 20,
+                "customerSatisfaction": 10
               }
             }
           ]
@@ -67,31 +60,24 @@
               "label": "Coton standard (0€)",
               "cost": 0,
               "effects": {
-                "materials": 3500,
                 "customerSatisfaction": 10,
-                "sustainability": 0
+                "environmentalScore": 0
               }
             },
             {
               "id": "B",
               "label": "Coton bio certifié GOTS (+25% coût)",
               "effects": {
-                "materials": 4375,
                 "customerSatisfaction": 10,
-                "sustainability": 20,
-                "environmentalScore": 20,
-                "marketingValue": 15
+                "environmentalScore": 20
               }
             },
             {
               "id": "C",
               "label": "Mix recyclé + bio (+40% coût)",
               "effects": {
-                "materials": 4900,
                 "customerSatisfaction": 10,
-                "sustainability": 40,
-                "environmentalScore": 20,
-                "marketingValue": 30
+                "environmentalScore": 20
               }
             }
           ]
@@ -105,28 +91,20 @@
               "id": "A",
               "label": "Réseaux sociaux organiques (0€)",
               "cost": 0,
-              "effects": {
-                "reach": "limité"
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Campagne influence micro (8 000€)",
               "cost": 8000,
-              "effects": {
-                "reach": "ciblé",
-                "authenticity": "forte"
-              }
+              "effects": {}
             },
             {
               "id": "C",
               "label": "Pop-up stores + collab artistes locaux (18 000€)",
               "cost": 18000,
               "effects": {
-                "reach": "local fort",
-                "brandIdentity": 25,
-                "community": 30,
-                "physicalPresence": true
+                "imageImpact": 25
               }
             }
           ]
@@ -149,9 +127,7 @@
               "revenue": 75000,
               "productionCost": 54000,
               "effects": {
-                "va": 21000,
-                "brandControl": -20,
-                "visibility": 40
+                "imageImpact": 40
               }
             },
             {
@@ -162,17 +138,12 @@
                 "revenue": 90000,
                 "productionCost": 54000,
                 "effects": {
-                  "va": 36000,
-                  "brandControl": -10,
-                  "visibility": 40
+                  "imageImpact": 40
                 }
               },
               "ifFailure": {
                 "delay": 3,
-                "effects": {
-                  "opportunity": "lost",
-                  "cashFlow": "tight"
-                }
+                "effects": {}
               }
             },
             {
@@ -185,15 +156,11 @@
                 "revenue": 55000,
                 "productionCost": 28000,
                 "effects": {
-                  "va": 27000,
-                  "brandControl": 30,
-                  "margins": "fortes"
+                  "imageImpact": 30
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "cashBurn": "élevé"
-                }
+                "effects": {}
               }
             },
             {
@@ -202,10 +169,7 @@
               "revenue": 75000,
               "productionCost": 54000,
               "effects": {
-                "va": 21000,
-                "brandControl": 10,
-                "visibility": 40,
-                "premiumLine": true
+                "imageImpact": 40
               }
             }
           ]
@@ -221,7 +185,10 @@
         "employees": 8,
         "budget": 85000,
         "monthlyVA": 22000,
-        "employeeSatisfaction": 50
+        "employeeSatisfaction": 50,
+        "monthlyCosts": {
+          "salaries": 24000
+        }
       },
       "decisions": [
         {
@@ -234,9 +201,8 @@
               "label": "Statu quo (0€)",
               "cost": 0,
               "effects": {
-                "turnoverRisk": 0.4,
-                "burnout": 0.35,
-                "morale": -30
+                "turnoverRisk": 0.35,
+                "employeeSatisfaction": -30
               }
             },
             {
@@ -254,11 +220,9 @@
               "label": "Augmentation 10% + télétravail + primes (+3 200€/mois)",
               "monthlyIncrease": 3200,
               "effects": {
-                "employeeSatisfaction": 90,
-                "creativity": 1.25,
-                "retention": 30,
-                "wellBeing": 35,
-                "attractiveness": 20
+                "employeeSatisfaction": 35,
+                "productivity": 1.25,
+                "turnoverRisk": -0.3
               }
             }
           ]
@@ -273,8 +237,7 @@
               "label": "Ignorer et continuer",
               "effects": {
                 "reputation": -35,
-                "customerLoss": 0.25,
-                "trustScore": -40
+                "customerLoss": 0.25
               }
             },
             {
@@ -283,9 +246,7 @@
               "cost": 2000,
               "effects": {
                 "reputation": -10,
-                "customerLoss": 0.1,
-                "trustScore": -15,
-                "defensiveness": "perçue"
+                "customerLoss": 0.1
               }
             },
             {
@@ -294,10 +255,7 @@
               "cost": 35000,
               "effects": {
                 "reputation": 45,
-                "ethicalScore": 50,
-                "trustScore": 60,
-                "environmentalScore": 20,
-                "transparency": "totale"
+                "environmentalScore": 20
               }
             }
           ]
@@ -312,21 +270,16 @@
               "label": "Accepter et revoir les standards (-20% coût matières)",
               "revenue": 120000,
               "effects": {
-                "ethicalScore": -40,
-                "growth": "explosive",
-                "brandDilution": 35,
-                "profitShortTerm": "très forte"
+                "environmentalScore": -40,
+                "imageImpact": -35
               }
             },
             {
               "id": "B",
               "label": "Refuser et consolider l'Europe",
               "effects": {
-                "ethicalScore": 20,
-                "growth": "stable",
-                "brandIdentity": 30,
-                "sustainability": true,
-                "profitShortTerm": "moyenne"
+                "environmentalScore": 10,
+                "imageImpact": 30
               }
             },
             {
@@ -337,16 +290,12 @@
               "ifSuccess": {
                 "revenue": 85000,
                 "effects": {
-                  "ethicalScore": 15,
-                  "growth": "forte",
-                  "brandIntegrity": true,
-                  "internationalPresence": true
+                  "environmentalScore": 15,
+                  "imageImpact": 10
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "opportunity": "lost"
-                }
+                "effects": {}
               }
             }
           ]

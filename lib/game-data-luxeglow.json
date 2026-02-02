@@ -271,9 +271,7 @@
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "opportunity": "lost"
-                }
+                "effects": {}
               },
               "consequence": "🎲 40% chance succès. Si oui : +30000€/mois. Si non : ils partent."
             },
@@ -482,7 +480,6 @@
               "cost": 0,
               "effects": {
                 "environmentalScore": -40,
-                "brandRisk": 70,
                 "customerSatisfaction": -30,
                 "badBuzzRisk": 0.7
               },

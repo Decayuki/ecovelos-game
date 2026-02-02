@@ -28,9 +28,8 @@
               "label": "Reporter les travaux (0€)",
               "cost": 0,
               "effects": {
-                "maintenance": 3500,
-                "playerSatisfaction": 0,
-                "injuryRisk": 0.3
+                "customerSatisfaction": 0,
+                "turnoverRisk": 0.3
               }
             },
             {
@@ -38,9 +37,8 @@
               "label": "Rénovation partielle (15 000€)",
               "cost": 15000,
               "effects": {
-                "maintenance": 2800,
-                "playerSatisfaction": 10,
-                "injuryRisk": 0.15
+                "customerSatisfaction": 10,
+                "turnoverRisk": 0.15
               }
             },
             {
@@ -48,9 +46,8 @@
               "label": "Réfection complète (35 000€)",
               "cost": 35000,
               "effects": {
-                "maintenance": 2000,
-                "playerSatisfaction": 25,
-                "injuryRisk": 0.05,
+                "customerSatisfaction": 25,
+                "turnoverRisk": 0.05,
                 "reputation": 15
               }
             }
@@ -65,19 +62,14 @@
               "id": "A",
               "label": "Continuer avec les bénévoles (0€)",
               "cost": 0,
-              "effects": {
-                "performance": "moyenne",
-                "stability": "faible"
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Coach externe à temps partiel (8 000€)",
               "cost": 8000,
               "effects": {
-                "performance": "bonne",
-                "playerDevelopment": 10,
-                "stability": "moyenne"
+                "productivity": 1.1
               }
             },
             {
@@ -86,10 +78,8 @@
               "cost": 0,
               "newHires": 1,
               "effects": {
-                "performance": "excellente",
-                "playerDevelopment": 25,
-                "stability": "forte",
-                "retention": 20
+                "productivity": 1.2,
+                "turnoverRisk": -0.2
               }
             }
           ]
@@ -103,17 +93,14 @@
               "id": "A",
               "label": "Cotisations seules (0€)",
               "cost": 0,
-              "effects": {
-                "revenueGrowth": 0.03
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Campagne sponsors locaux (4 000€)",
               "cost": 4000,
               "effects": {
-                "revenueGrowth": 0.12,
-                "localTies": 10
+                "socialScore": 10
               }
             },
             {
@@ -121,10 +108,7 @@
               "label": "Partenariat grandes surfaces + école de foot (12 000€)",
               "cost": 12000,
               "effects": {
-                "revenueGrowth": 0.25,
-                "youthDevelopment": 20,
-                "localTies": 15,
-                "longTermStability": true
+                "socialScore": 15
               }
             }
           ]
@@ -147,9 +131,7 @@
               "revenue": 30000,
               "cost": 18000,
               "effects": {
-                "va": 12000,
-                "socialImpact": 25,
-                "youthEngagement": 20
+                "socialScore": 20
               }
             },
             {
@@ -160,14 +142,12 @@
                 "revenue": 40000,
                 "cost": 18000,
                 "effects": {
-                  "va": 22000,
                   "customerSatisfaction": 10
                 }
               },
               "ifFailure": {
                 "delay": 3,
                 "effects": {
-                  "opportunity": "lost",
                   "reputation": -10
                 }
               }
@@ -180,14 +160,10 @@
               "ifSuccess": {
                 "revenue": 28000,
                 "cost": 12000,
-                "effects": {
-                  "va": 16000
-                }
+                "effects": {}
               },
               "ifFailure": {
-                "effects": {
-                  "cashFlow": "tight"
-                }
+                "effects": {}
               }
             },
             {
@@ -195,10 +171,7 @@
               "label": "Accepter + négocier clause de révision annuelle",
               "revenue": 30000,
               "cost": 18000,
-              "effects": {
-                "va": 12000,
-                "longTermSecurity": true
-              }
+              "effects": {}
             }
           ]
         }
@@ -213,7 +186,10 @@
         "employees": 10,
         "budget": 80000,
         "monthlyVA": 20000,
-        "employeeSatisfaction": 60
+        "employeeSatisfaction": 60,
+        "monthlyCosts": {
+          "salaries": 30000
+        }
       },
       "decisions": [
         {
@@ -227,7 +203,7 @@
               "cost": 0,
               "effects": {
                 "turnoverRisk": 0.35,
-                "morale": -25,
+                "employeeSatisfaction": -25,
                 "reputation": -15
               }
             },
@@ -236,7 +212,7 @@
               "label": "Augmentation 10% (+3 000€/mois)",
               "monthlyIncrease": 3000,
               "effects": {
-                "staffSatisfaction": 70,
+                "employeeSatisfaction": 70,
                 "turnover": -0.6
               }
             },
@@ -245,10 +221,7 @@
               "label": "Augmentation 10% + primes résultats (+4 000€/mois)",
               "monthlyIncrease": 4000,
               "effects": {
-                "staffSatisfaction": 85,
-                "performance": 1.2,
-                "motivation": 30,
-                "winRate": 0.15
+                "employeeSatisfaction": 30
               }
             }
           ]
@@ -262,10 +235,7 @@
               "id": "A",
               "label": "Conserver le 100% amateur",
               "effects": {
-                "competitiveness": "moyenne",
-                "values": "fortes",
-                "localIdentity": 30,
-                "relegationRisk": 0.4
+                "socialScore": 30
               }
             },
             {
@@ -273,11 +243,7 @@
               "label": "Recruter 2-3 joueurs semi-pros (+5 000€/mois)",
               "monthlyIncrease": 5000,
               "effects": {
-                "competitiveness": "forte",
-                "winRate": 0.25,
-                "values": "diluées",
-                "localIdentity": -15,
-                "relegationRisk": 0.15
+                "socialScore": -15
               }
             },
             {
@@ -285,12 +251,8 @@
               "label": "Investir dans la formation des jeunes (+8 000€ équipements)",
               "cost": 8000,
               "effects": {
-                "competitiveness": "moyenne-terme",
-                "values": "fortes",
-                "localIdentity": 40,
-                "socialImpact": 35,
-                "sustainability": true,
-                "relegationRisk": 0.3
+                "socialScore": 35,
+                "environmentalScore": 10
               }
             }
           ]
@@ -304,21 +266,14 @@
               "id": "A",
               "label": "Aménagement minimal (12 000€)",
               "cost": 12000,
-              "effects": {
-                "compliance": "minimal",
-                "playerComfort": "faible",
-                "sanctionRisk": 0.2
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Rénovation complète (45 000€)",
               "cost": 45000,
               "effects": {
-                "compliance": "total",
-                "playerComfort": "excellent",
-                "reputation": 25,
-                "attractiveness": 20
+                "reputation": 25
               }
             },
             {
@@ -326,10 +281,7 @@
               "label": "Partenariat public-privé (20 000€ + engagement 5 ans)",
               "cost": 20000,
               "effects": {
-                "compliance": "total",
-                "playerComfort": "excellent",
-                "reputation": 15,
-                "longTermStability": true
+                "reputation": 15
               }
             }
           ]

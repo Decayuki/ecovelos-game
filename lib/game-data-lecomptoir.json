@@ -29,22 +29,17 @@
               "label": "Mix grossistes + producteurs locaux (0€)",
               "cost": 0,
               "effects": {
-                "materials": 6000,
-                "localSourcing": 40,
-                "customerSatisfaction": 10,
-                "margins": "moyennes"
+                "environmentalScore": 40,
+                "customerSatisfaction": 10
               }
             },
             {
               "id": "B",
               "label": "100% producteurs locaux rayon 50km (+25% coût)",
               "effects": {
-                "materials": 7500,
-                "localSourcing": 90,
+                "environmentalScore": 90,
                 "customerSatisfaction": 10,
-                "seasonality": true,
-                "localEconomy": 25,
-                "storytelling": 20
+                "socialScore": 25
               }
             },
             {
@@ -52,13 +47,8 @@
               "label": "Contrats annuels AMAP + potager urbain (15 000€ + 20% coût)",
               "cost": 15000,
               "effects": {
-                "materials": 7200,
-                "localSourcing": 100,
-                "customerSatisfaction": 10,
-                "sustainability": 40,
-                "producerRelations": "excellentes",
-                "marketing": 30,
-                "resilience": true
+                "environmentalScore": 40,
+                "customerSatisfaction": 10
               }
             }
           ]
@@ -75,8 +65,7 @@
               "effects": {
                 "customerSatisfaction": 10,
                 "turnover": "élevé",
-                "stress": "très élevé",
-                "sustainability": "faible"
+                "environmentalScore": 10
               }
             },
             {
@@ -86,9 +75,7 @@
               "newHires": 1,
               "effects": {
                 "customerSatisfaction": 25,
-                "consistency": "forte",
-                "creativity": 20,
-                "stress": "modéré"
+                "productivity": 20
               }
             },
             {
@@ -98,11 +85,8 @@
               "newHires": 1,
               "effects": {
                 "customerSatisfaction": 10,
-                "consistency": "forte",
-                "socialImpact": 40,
-                "subsidies": 6000,
-                "imageImpact": 30,
-                "meaningfulness": "forte"
+                "socialScore": 40,
+                "imageImpact": 30
               }
             }
           ]
@@ -116,18 +100,14 @@
               "id": "A",
               "label": "Bouche-à-oreille seul (0€)",
               "cost": 0,
-              "effects": {
-                "reach": "limité"
-              }
+              "effects": {}
             },
             {
               "id": "B",
               "label": "Soirées thématiques producteurs (5 000€)",
               "cost": 5000,
               "effects": {
-                "communityBuilding": 25,
-                "storytelling": 30,
-                "producerVisibility": true
+                "socialScore": 25
               }
             },
             {
@@ -135,10 +115,8 @@
               "label": "Guide Michelin + influenceurs food (15 000€)",
               "cost": 15000,
               "effects": {
-                "visibility": "très forte",
-                "reputation": 40,
-                "touristAppeal": true,
-                "pressureCost": "élevée"
+                "imageImpact": 10,
+                "reputation": 40
               }
             }
           ]
@@ -160,10 +138,8 @@
               "label": "Accepter tel quel",
               "revenue": 60000,
               "effects": {
-                "va": 32000,
-                "brandIdentity": -30,
-                "localSourcing": -40,
-                "scale": "forte"
+                "imageImpact": -30,
+                "environmentalScore": -40
               }
             },
             {
@@ -173,18 +149,13 @@
               "ifSuccess": {
                 "revenue": 70000,
                 "effects": {
-                  "va": 42000,
-                  "brandIdentity": -10,
-                  "localSourcing": -20,
-                  "compromise": "acceptable"
+                  "imageImpact": -10,
+                  "environmentalScore": -20
                 }
               },
               "ifFailure": {
                 "delay": 3,
-                "effects": {
-                  "opportunity": "lost",
-                  "cashFlow": "tight"
-                }
+                "effects": {}
               }
             },
             {
@@ -196,17 +167,12 @@
               "ifSuccess": {
                 "revenue": 45000,
                 "effects": {
-                  "va": 28000,
-                  "brandIdentity": 20,
-                  "localSourcing": 10,
-                  "diversity": true,
-                  "b2bRelations": "fortes"
+                  "imageImpact": 20,
+                  "environmentalScore": 10
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "cashBurn": "élevé"
-                }
+                "effects": {}
               }
             },
             {
@@ -214,10 +180,8 @@
               "label": "Accepter avec clause sortie + ligne signature 100% local",
               "revenue": 60000,
               "effects": {
-                "va": 32000,
-                "brandIdentity": 15,
-                "localSourcing": -20,
-                "premiumLine": true
+                "imageImpact": 15,
+                "environmentalScore": -20
               }
             }
           ]
@@ -233,7 +197,10 @@
         "employees": 14,
         "budget": 100000,
         "monthlyVA": 35000,
-        "employeeSatisfaction": 50
+        "employeeSatisfaction": 50,
+        "monthlyCosts": {
+          "salaries": 42000
+        }
       },
       "decisions": [
         {
@@ -246,8 +213,7 @@
               "label": "Statu quo (0€)",
               "cost": 0,
               "effects": {
-                "turnoverRisk": 0.5,
-                "burnout": 0.6,
+                "turnoverRisk": 0.6,
                 "customerSatisfaction": 10,
                 "reputation": -25
               }
@@ -257,7 +223,7 @@
               "label": "Augmentation 10% (+4 200€/mois)",
               "monthlyIncrease": 4200,
               "effects": {
-                "staffSatisfaction": 65,
+                "employeeSatisfaction": 65,
                 "turnover": -0.4,
                 "customerSatisfaction": 10
               }
@@ -267,11 +233,10 @@
               "label": "Augmentation 10% + 4 jours/semaine + psychologue du travail (+6 000€/mois)",
               "monthlyIncrease": 6000,
               "effects": {
-                "staffSatisfaction": 85,
-                "burnout": -0.7,
+                "employeeSatisfaction": 85,
+                "turnoverRisk": -0.4,
                 "customerSatisfaction": 10,
-                "retention": 40,
-                "industryReputation": 35
+                "imageImpact": 35
               }
             }
           ]
@@ -285,9 +250,7 @@
               "id": "A",
               "label": "Continuer ainsi",
               "effects": {
-                "foodWaste": 2500,
-                "environmentalScore": -30,
-                "costsHidden": "élevés"
+                "environmentalScore": -30
               }
             },
             {
@@ -295,10 +258,8 @@
               "label": "Don aux associations + compost (3 000€ logistique)",
               "cost": 3000,
               "effects": {
-                "foodWaste": 1200,
                 "environmentalScore": 25,
-                "socialImpact": 30,
-                "taxBenefit": 2000,
+                "socialScore": 30,
                 "imageImpact": 20
               }
             },
@@ -307,10 +268,7 @@
               "label": "Système anti-gaspi complet : IA prédictive + valorisation (25 000€)",
               "cost": 25000,
               "effects": {
-                "foodWaste": 400,
-                "environmentalScore": 70,
-                "monthlySavings": 1800,
-                "marketingValue": 35
+                "environmentalScore": 70
               }
             }
           ]
@@ -324,8 +282,8 @@
               "id": "A",
               "label": "Ignorer les critiques",
               "effects": {
-                "localReputation": -40,
-                "tensions": 0.4,
+                "imageImpact": -40,
+                "badBuzzRisk": 0.4,
                 "vandalism": 0.25
               }
             },
@@ -334,10 +292,9 @@
               "label": "Menu solidaire midi (10€, réservé résidents) - 8 000€ manque à gagner/an",
               "cost": 8000,
               "effects": {
-                "localReputation": 20,
-                "socialMix": "amélioré",
-                "tensions": -0.3,
-                "inclusivity": 25
+                "imageImpact": 20,
+                "badBuzzRisk": -0.3,
+                "socialScore": 25
               }
             },
             {
@@ -345,13 +302,9 @@
               "label": "Programme complet : menu solidaire + emplois quartier + soutien commerces (35 000€)",
               "cost": 35000,
               "effects": {
-                "localReputation": 50,
-                "socialMix": "fort",
-                "tensions": -0.7,
-                "inclusivity": 50,
-                "communityIntegration": "totale",
-                "employmentLocal": 30,
-                "ecosystemSupport": true
+                "imageImpact": 50,
+                "badBuzzRisk": -0.7,
+                "socialScore": 10
               }
             }
           ]

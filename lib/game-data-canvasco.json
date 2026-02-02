@@ -30,12 +30,8 @@
               "label": "Artistes émergents inconnus (prix bas, risque)",
               "cost": 0,
               "effects": {
-                "positioning": "emerging",
-                "priceRange": "low",
-                "customerSatisfaction": 15,
-                "artistSatisfaction": 40,
-                "socialScore": 30,
-                "salesVolume": 0.8
+                "customerSatisfaction": 40,
+                "socialScore": 30
               },
               "consequence": "✅ Mission sociale forte. Prix 500-2000€. Volume ventes -20%. Respect artistes +40."
             },
@@ -44,12 +40,8 @@
               "label": "Artistes établis (prix moyens, stable)",
               "cost": 5000,
               "effects": {
-                "positioning": "established",
-                "priceRange": "medium",
-                "customerSatisfaction": 30,
-                "artistSatisfaction": 20,
-                "imageImpact": 25,
-                "salesVolume": 1.2
+                "customerSatisfaction": 20,
+                "imageImpact": 25
               },
               "consequence": "✅ Équilibre. Prix 2000-8000€. Volume ventes +20%. Investissement réseau 5000€."
             },
@@ -58,12 +50,8 @@
               "label": "Artistes reconnus (prix élevés, prestige)",
               "cost": 15000,
               "effects": {
-                "positioning": "prestigious",
-                "priceRange": "high",
-                "customerSatisfaction": 45,
-                "imageImpact": 50,
-                "artistSatisfaction": -10,
-                "salesVolume": 0.9
+                "customerSatisfaction": -10,
+                "imageImpact": 50
               },
               "consequence": "✅ Prestige maximal. Prix 8000-30000€. Commissions élevées. Investissement 15000€."
             },
@@ -72,12 +60,8 @@
               "label": "Mix éclectique (tous types)",
               "cost": 2000,
               "effects": {
-                "positioning": "eclectic",
-                "priceRange": "variable",
                 "customerSatisfaction": 20,
-                "imageImpact": 10,
-                "diversity": true,
-                "salesVolume": 1
+                "imageImpact": 10
               },
               "consequence": "⚠️ Pas d'identité claire. Clients confus. Diversité +. Investissement 2000€."
             }
@@ -95,8 +79,7 @@
               "revenue": 12000,
               "effects": {
                 "imageImpact": 35,
-                "customerSatisfaction": 30,
-                "networkQuality": "premium"
+                "customerSatisfaction": 30
               },
               "consequence": "✅ Réseau premium. Revenus +12000€/mois. Coûts vernissage 3000€/mois. Croissance +25%."
             },
@@ -107,8 +90,7 @@
               "revenue": 15000,
               "effects": {
                 "imageImpact": 45,
-                "customerSatisfaction": 25,
-                "artistSatisfaction": 30
+                "customerSatisfaction": 30
               },
               "consequence": "✅ Visibilité nationale. Revenus +15000€ sur 6 mois. Investissement 8000€."
             },
@@ -128,8 +110,7 @@
               "label": "Bouche-à-oreille uniquement (0€)",
               "cost": 0,
               "effects": {
-                "imageImpact": 5,
-                "authenticity": 25
+                "imageImpact": 5
               },
               "consequence": "⚠️ Croissance ultra-lente +5%/mois. Pas d'investissement. Authentique mais limité."
             }
@@ -145,9 +126,7 @@
               "label": "Commission standard 35% (équilibre)",
               "cost": 0,
               "effects": {
-                "commissionRate": 0.35,
-                "artistSatisfaction": 15,
-                "competitiveness": "average"
+                "customerSatisfaction": 15
               },
               "consequence": "✅ Standard marché. Artistes acceptent. Marges correctes."
             },
@@ -156,8 +135,7 @@
               "label": "Commission réduite 25% (générosité)",
               "cost": 0,
               "effects": {
-                "commissionRate": 0.25,
-                "artistSatisfaction": 40,
+                "customerSatisfaction": 40,
                 "socialScore": 25
               },
               "consequence": "✅ Artistes loyaux. Réputation excellente. Marges réduites -30%."
@@ -167,8 +145,7 @@
               "label": "Commission élevée 50% (profit max)",
               "cost": 0,
               "effects": {
-                "commissionRate": 0.5,
-                "artistSatisfaction": -25,
+                "customerSatisfaction": -25,
                 "turnoverRisk": 0.5
               },
               "consequence": "📉 Marges +40% mais artistes mécontents. 50% risque départ artistes."
@@ -178,9 +155,7 @@
               "label": "Commission variable selon succès (20-40%)",
               "cost": 0,
               "effects": {
-                "commissionRate": 0.3,
-                "artistSatisfaction": 25,
-                "fairness": true,
+                "customerSatisfaction": 25,
                 "socialScore": 20
               },
               "consequence": "✅ Équitable. Jeunes artistes 20%, établis 40%. Satisfaction +25."
@@ -204,10 +179,8 @@
               "label": "Retirer l'œuvre immédiatement (perte vente)",
               "cost": 0,
               "effects": {
-                "revenue": -5000,
-                "integrity": true,
                 "imageImpact": 30,
-                "artistSatisfaction": -20
+                "customerSatisfaction": -20
               },
               "consequence": "✅ Intégrité préservée. Perte vente 5000€. Image +30. Artiste furieux."
             },
@@ -216,7 +189,6 @@
               "label": "Enquête indépendante (3 000€, 2 mois)",
               "cost": 3000,
               "effects": {
-                "integrity": true,
                 "imageImpact": 20,
                 "customerSatisfaction": 15
               },
@@ -238,9 +210,8 @@
               "label": "Négocier avec l'artiste original (10 000€)",
               "cost": 10000,
               "effects": {
-                "integrity": "compromised",
                 "turnoverRisk": 30,
-                "artistSatisfaction": 10
+                "customerSatisfaction": 10
               },
               "consequence": "⚠️ Transaction secrète 10000€. 30% risque fuite info. Réputation fragile."
             }
@@ -256,8 +227,7 @@
               "label": "Accepter (cash rapide, perte indépendance)",
               "cost": 0,
               "effects": {
-                "investment": 100000,
-                "artistSatisfaction": -30
+                "customerSatisfaction": -30
               },
               "consequence": "✅ 100k€ cash mais exclusivité 2 ans. Artistes mécontents. Dépendance totale."
             },
@@ -268,14 +238,11 @@
               "successRate": 0.5,
               "ifSuccess": {
                 "effects": {
-                  "investment": 50000,
-                  "artistSatisfaction": -10
+                  "customerSatisfaction": -10
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "opportunity": "lost"
-                }
+                "effects": {}
               },
               "consequence": "🎲 50% succès (50k€, exclusivité 50%). 50% échec : il part."
             },
@@ -284,7 +251,7 @@
               "label": "Refuser et garder indépendance",
               "cost": 0,
               "effects": {
-                "artistSatisfaction": 30,
+                "customerSatisfaction": 30,
                 "socialScore": 35
               },
               "consequence": "✅ Liberté préservée. Artistes heureux. Croissance organique."
@@ -295,10 +262,9 @@
               "cost": 5000,
               "revenue": 40000,
               "effects": {
-                "community": true,
                 "imageImpact": 35,
                 "socialScore": 40,
-                "artistSatisfaction": 25
+                "customerSatisfaction": 25
               },
               "consequence": "✅ 40k€ via communauté. Image excellente +35. Investissement 5000€."
             }
@@ -339,7 +305,6 @@
               "cost": 500,
               "effects": {
                 "employeeSatisfaction": 10,
-                "workQuality": "variable",
                 "socialScore": 5
               },
               "consequence": "⚠️ Aide ponctuelle. Qualité variable. Coût 500€/mois."
@@ -349,7 +314,6 @@
               "label": "Externaliser événementiel (2 000€/événement)",
               "cost": 2000,
               "effects": {
-                "eventQuality": "professional",
                 "employeeSatisfaction": 15,
                 "imageImpact": 20
               },
@@ -398,7 +362,7 @@
               "effects": {
                 "employeeSatisfaction": 45,
                 "socialScore": 50,
-                "artistSatisfaction": 40
+                "customerSatisfaction": 40
               },
               "consequence": "✅ Vous restez libre. Léa sourit. Artistes respectent. L'aventure continue."
             },
@@ -427,8 +391,6 @@
               "label": "Accepter loyer × 3 (+5 000€/mois)",
               "cost": 0,
               "effects": {
-                "rent": 7500,
-                "profitability": -0.3,
                 "socialScore": -30
               },
               "consequence": "📉 Loyer 7500€/mois (+5000€). Rentabilité -30%. Vous participez à la gentrification."
@@ -438,8 +400,6 @@
               "label": "Déménager banlieue (-50% loyer, -30% clients)",
               "cost": 15000,
               "effects": {
-                "rent": 1250,
-                "revenue": -13500,
                 "imageImpact": -20,
                 "socialScore": 10
               },
@@ -452,15 +412,11 @@
               "successRate": 0.4,
               "ifSuccess": {
                 "effects": {
-                  "rent": 3000,
-                  "socialScore": 60,
-                  "communityStrength": true
+                  "socialScore": 10
                 }
               },
               "ifFailure": {
-                "effects": {
-                  "expulsion": true
-                }
+                "effects": {}
               },
               "consequence": "🎲 40% succès (loyer 3000€, victoire collective). 60% échec : expulsion."
             },
@@ -469,10 +425,7 @@
               "label": "Coopérative d'artistes : racheter l'immeuble (200 000€)",
               "cost": 200000,
               "effects": {
-                "ownership": true,
-                "rent": 0,
-                "socialScore": 80,
-                "communityLeadership": true,
+                "socialScore": 10,
                 "employeeSatisfaction": 50
               },
               "consequence": "✅ Propriété collective. Loyer 0€. Leadership communauté. Investissement 200k€."
@@ -491,7 +444,6 @@
               "revenue": 105000,
               "effects": {
                 "environmentalScore": 20,
-                "legalRisk": 80,
                 "socialScore": -50
               },
               "consequence": "💥 Commission 105k€ mais 80% risque enquête. Si découvert : prison + fermeture."
@@ -504,7 +456,7 @@
                 "environmentalScore": 20,
                 "employeeSatisfaction": 35,
                 "socialScore": 40,
-                "artistSatisfaction": 30
+                "customerSatisfaction": 30
               },
               "consequence": "✅ Intégrité préservée. Respect équipe +35%. Perte vente 300k€."
             },
@@ -514,7 +466,6 @@
               "cost": 0,
               "effects": {
                 "environmentalScore": 20,
-                "legalProtection": true,
                 "socialScore": 60,
                 "imageImpact": 40
               },
@@ -527,7 +478,6 @@
               "revenue": 90000,
               "effects": {
                 "environmentalScore": 20,
-                "legalRisk": 20,
                 "socialScore": 10
               },
               "consequence": "✅ Vente légalisée. Commission 90k€. Risque faible 20%. Pragmatisme."

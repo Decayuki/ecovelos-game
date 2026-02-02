@@ -31,7 +31,6 @@
               "label": "Grossistes classiques (0€)",
               "cost": 0,
               "effects": {
-                "ingredients": 4500,
                 "customerSatisfaction": 0
               }
             },
@@ -40,10 +39,8 @@
               "label": "Contrat producteurs locaux (8 000€)",
               "cost": 8000,
               "effects": {
-                "ingredients": 5400,
                 "customerSatisfaction": 15,
-                "socialScore": 10,
-                "freshness": 1.3
+                "socialScore": 10
               }
             },
             {
@@ -51,11 +48,8 @@
               "label": "Circuit ultra-court + camion frigorifique (35 000€)",
               "cost": 35000,
               "effects": {
-                "ingredients": 6300,
                 "customerSatisfaction": 25,
-                "socialScore": 20,
-                "freshness": 1.5,
-                "waste": 0.7
+                "socialScore": 20
               }
             }
           ]
@@ -70,7 +64,6 @@
               "label": "Plastique standard (0€)",
               "cost": 0,
               "effects": {
-                "packaging": 1200,
                 "environmentalScore": -20,
                 "imageImpact": -15
               }
@@ -80,7 +73,6 @@
               "label": "Carton recyclé (+30% coût)",
               "cost": 0,
               "effects": {
-                "packaging": 1560,
                 "environmentalScore": 10,
                 "imageImpact": 10
               }
@@ -91,7 +83,6 @@
               "cost": 25000,
               "newHires": 1,
               "effects": {
-                "packaging": 800,
                 "environmentalScore": 40,
                 "customerSatisfaction": 20,
                 "socialScore": 10,
@@ -110,7 +101,6 @@
               "label": "Livreurs Uber Eats (0€)",
               "cost": 0,
               "effects": {
-                "delivery": 2000,
                 "socialScore": -15
               }
             },
@@ -119,10 +109,8 @@
               "label": "Vélos cargo électriques (15 000€)",
               "cost": 15000,
               "effects": {
-                "delivery": 1400,
-                "environmentalScore": 20,
-                "imageImpact": 15,
-                "carbonReduction": 0.8
+                "environmentalScore": 0.8,
+                "imageImpact": 15
               }
             },
             {
@@ -131,10 +119,8 @@
               "cost": 45000,
               "newHires": 2,
               "effects": {
-                "delivery": 1000,
                 "socialScore": 25,
                 "customerSatisfaction": 15,
-                "reliability": "excellente",
                 "environmentalScore": 25
               }
             }
@@ -158,8 +144,7 @@
               "revenue": 72000,
               "productionCost": 45000,
               "effects": {
-                "va": 27000,
-                "brandVisibility": 20
+                "imageImpact": 20
               }
             },
             {
@@ -169,15 +154,11 @@
               "ifSuccess": {
                 "revenue": 81000,
                 "productionCost": 45000,
-                "effects": {
-                  "va": 36000
-                }
+                "effects": {}
               },
               "ifFailure": {
                 "delay": 2,
-                "effects": {
-                  "opportunity": "lost"
-                }
+                "effects": {}
               }
             },
             {
@@ -188,10 +169,7 @@
               "ifSuccess": {
                 "revenue": 54000,
                 "productionCost": 27000,
-                "effects": {
-                  "va": 27000,
-                  "marginControl": "totale"
-                }
+                "effects": {}
               },
               "ifFailure": {
                 "effects": {}
@@ -202,10 +180,7 @@
               "label": "Accepter + clause révision prix après 3 mois",
               "revenue": 72000,
               "productionCost": 45000,
-              "effects": {
-                "va": 27000,
-                "renegotiationOption": true
-              }
+              "effects": {}
             }
           ]
         }
@@ -220,7 +195,10 @@
         "employees": 15,
         "budget": 120000,
         "monthlyVA": 25000,
-        "employeeSatisfaction": 45
+        "employeeSatisfaction": 45,
+        "monthlyCosts": {
+          "salaries": 45000
+        }
       },
       "decisions": [
         {
@@ -270,7 +248,6 @@
               "id": "A",
               "label": "Basculer vers le bio industriel (-40% coût)",
               "effects": {
-                "ingredients": 3240,
                 "imageImpact": -40,
                 "customerLoss": 0.3,
                 "environmentalScore": -40,
@@ -281,7 +258,6 @@
               "id": "B",
               "label": "Mix 50/50 bio local/industriel (-20% coût)",
               "effects": {
-                "ingredients": 4320,
                 "imageImpact": -15,
                 "customerLoss": 0.1,
                 "environmentalScore": -15
@@ -292,9 +268,7 @@
               "label": "Rester 100% bio local et l'afficher fièrement",
               "cost": 0,
               "effects": {
-                "ingredients": 5400,
                 "imageImpact": 30,
-                "customerLoyalty": 1.25,
                 "environmentalScore": 30,
                 "socialScore": 25
               }
@@ -310,11 +284,7 @@
               "id": "A",
               "label": "Accepter l'investissement",
               "revenue": 500000,
-              "effects": {
-                "controlLoss": 0.4,
-                "profitPressure": "forte",
-                "scalabilityHigh": true
-              }
+              "effects": {}
             },
             {
               "id": "B",
@@ -324,7 +294,6 @@
               "ifSuccess": {
                 "revenue": 150000,
                 "effects": {
-                  "communityEngagement": "forte",
                   "socialScore": 30
                 }
               },
@@ -339,8 +308,7 @@
               "label": "Croissance organique lente",
               "cost": 0,
               "effects": {
-                "controlFull": true,
-                "sustainability": "excellente",
+                "environmentalScore": 10,
                 "socialScore": 15
               }
             }
