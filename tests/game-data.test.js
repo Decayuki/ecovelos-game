@@ -324,8 +324,39 @@ describe('Test 8: Seuils de grading cohérents', () => {
   });
 });
 
-// Test 9: ÉcoVélos (référence) a ses champs spécifiques
-describe('Test 9: ÉcoVélos (référence) contient fleet/utilizationRate', () => {
+// Test 9: Pas de termes spécifiques ÉcoVélos dans les textes
+describe('Test 9: Pas de références textuelles ÉcoVélos', () => {
+  const ecoVelosTerms = [
+    /\bstation\b/i,
+    /\bborne\b/i,
+    /\bflotte\b/i,
+    /\bfleet\b/i,
+    /taux.*(utilisation|occupation)/i,
+    /utilization.?rate/i,
+    /libre.?service/i,
+    /parc.*(vélo|velo)/i
+  ];
+
+  THEMES.forEach(theme => {
+    const data = loadTheme(theme);
+    const jsonStr = JSON.stringify(data);
+
+    ecoVelosTerms.forEach(term => {
+      const found = term.test(jsonStr);
+      // Exception: "station" peut être utilisé dans d'autres contextes (station de radio, etc.)
+      if (term.toString().includes('station') && theme === 'streamlab') {
+        return; // Skip for streaming context
+      }
+      test(
+        `${theme}: Pas de terme "${term.toString().slice(1, -2)}"`,
+        !found
+      );
+    });
+  });
+});
+
+// Test 10: ÉcoVélos (référence) a ses champs spécifiques
+describe('Test 10: ÉcoVélos (référence) contient fleet/utilizationRate', () => {
   try {
     const ecovelos = loadEcoVelos();
     test(
@@ -343,8 +374,8 @@ describe('Test 9: ÉcoVélos (référence) contient fleet/utilizationRate', () =
   }
 });
 
-// Test 10: Simulation simple
-describe('Test 10: Simulation basique du calcul de scores', () => {
+// Test 11: Simulation simple
+describe('Test 11: Simulation basique du calcul de scores', () => {
   THEMES.forEach(theme => {
     const data = loadTheme(theme);
     const phase3 = data.phases.find(p => p.id === 3);

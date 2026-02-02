@@ -284,7 +284,7 @@
               "effects": {
                 "imageImpact": -40,
                 "badBuzzRisk": 0.4,
-                "vandalism": 0.25
+                "turnoverRisk": 0.25
               }
             },
             {
