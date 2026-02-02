@@ -1,96 +1,119 @@
-# ÉcoVélos Manager - Application Web
+# 🎮 Gestion & Valeur Partenariale
 
-Application web de simulation pédagogique pour le chapitre 12 : La valeur ajoutée et la valeur partenariale.
+**Serious game pédagogique pour élèves de Première STMG**
 
-## Installation
+Simulateur de gestion d'entreprise illustrant les concepts de valeur ajoutée et valeur partenariale à travers 10 secteurs d'activité différents.
 
-```bash
-# Dans le dossier ecovelos-game-web
-npm install
-```
+## 🚀 Démo en ligne
 
-## Lancement
+**URL :** https://ecovelos-game-web.vercel.app
 
-```bash
-npm run dev
-```
+## 📚 Thèmes disponibles
 
-Puis ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+- 🚲 **ÉcoVélos** - Mobilité urbaine (vélos électriques)
+- 🧴 **LuxeGlow** - Cosmétiques & beauté bio
+- 🥊 **Iron Fist** - Salle de boxe premium
+- 🎨 **Canvas & Co** - Galerie d'art contemporain
+- ⚽ **FC Ambition** - Club de foot amateur
+- 👕 **UrbanThread** - Marque streetwear éthique
+- 🍽️ **Le Comptoir** - Restaurant gastro locavore
+- 📦 **GreenBox** - Livraison de repas bio
+- 🎮 **StreamLab** - Studio streaming e-sport
+- 🐾 **PetCare+** - Animalerie moderne
 
-## Build pour production
+## 🎯 Objectifs pédagogiques
 
-```bash
-npm run build
-npm start
-```
+- Calculer et comprendre la **valeur ajoutée**
+- Distinguer valeur **actionnariale** vs valeur **partenariale**
+- Prendre des décisions de gestion équilibrées
+- Gérer budget, CA, coûts, satisfaction employés/clients
+- Mesurer l'impact social et environnemental
 
-## Structure du projet
+## 🛠️ Technologies
+
+- **Framework :** Next.js 14 (React)
+- **Langage :** TypeScript
+- **Styling :** Tailwind CSS
+- **Déploiement :** Vercel
+- **Version :** v2.2
+
+## 📖 Structure
 
 ```
 ecovelos-game-web/
-├── app/
-│   ├── page.tsx          # Page principale du jeu
-│   ├── layout.tsx        # Layout global
-│   └── globals.css       # Styles globaux
-├── components/
-│   ├── Dashboard.tsx     # Tableau de bord financier
-│   ├── ScoreBoard.tsx    # Tableau des scores
-│   ├── DecisionCard.tsx  # Cartes de décision
-│   └── PhaseIntro.tsx    # Introduction des phases
-├── lib/
+├── app/                    # Pages Next.js
+│   ├── page.tsx           # Logique principale du jeu
+│   └── layout.tsx         # Layout global
+├── components/            # Composants React
+│   ├── Dashboard.tsx      # Tableau de bord financier
+│   ├── ScoreBoard.tsx     # Scores (économique, social, environnemental)
+│   ├── DecisionCard.tsx   # Cartes de décision
+│   ├── TimeTransition.tsx # Écran de passage du temps
+│   └── CompanyInfo.tsx    # Infos entreprise
+├── lib/                   # Logique métier
+│   ├── calculations.ts    # Calculs VA, scores, effets
 │   ├── types.ts          # Types TypeScript
-│   └── calculations.ts   # Logique de calcul VA et scores
-└── game-data.json        # Données du jeu (importé depuis parent)
+│   ├── game-data.json    # Données ÉcoVélos
+│   ├── game-data-*.json  # Données des 9 autres thèmes
+│   └── theme-phases-map.ts # Routing des thèmes
+└── public/icons/         # Icônes SVG des thèmes
 ```
 
-## Fonctionnalités
+## 🎓 Mécaniques de jeu
 
-### Interface de jeu
-- ✅ Dashboard en temps réel (budget, CA, VA, coûts)
-- ✅ Scores économique, social, environnemental
-- ✅ 3 phases progressives avec contexte narratif
-- ✅ Cartes de décision interactives
-- ✅ Calcul automatique des effets
-- ✅ Écran de résultats avec analyse
+### Phases
+- **Phase 1 :** Lancement (3 décisions)
+- **Phase 2 :** Partenariat stratégique (1 décision avec risque)
+- **Phase 3 :** Croissance et dilemmes éthiques (3 décisions)
 
-### Calculs pédagogiques
-- ✅ Valeur ajoutée = CA - Consommations intermédiaires
-- ✅ Répartition de la VA entre parties prenantes
-- ✅ Scoring équilibré (économique 40%, social 30%, environnemental 30%)
-- ✅ Impact des décisions sur tous les indicateurs
+### Variables suivies
+- **Budget** - Trésorerie
+- **CA mensuel** - Chiffre d'affaires
+- **Coûts mensuels** - Salaires, matières, maintenance, loyer, etc.
+- **VA** - Valeur ajoutée (CA - Coûts)
+- **Employés** - Nombre de salariés
+- **Satisfaction** - Clients, employés, réputation
+- **Scores** - Économique, social, environnemental, global
 
-## Utilisation en classe
+### Cohérence
+- Salaires : **3000€/employé** partout
+- Phase 3 = **RESET complet** (time skip 18 mois)
+- Simulation de **3 mois** entre chaque phase
+- Tous les effets impactent des variables réelles
 
-### Avant la séance
-1. Lancer l'application sur l'ordinateur de l'enseignant
-2. Projeter l'écran pour toute la classe
-3. Ou : partager le lien (si hébergé) pour que chaque groupe joue sur sa machine
+## 🚀 Installation locale
 
-### Pendant la séance (60 min)
-- **10 min** : Introduction du jeu et objectifs pédagogiques
-- **15 min** : Phase 1 (Lancement)
-- **15 min** : Phase 2 (Partenariat)
-- **15 min** : Phase 3 (Éthique)
-- **5 min** : Résultats et scores finaux
+```bash
+# Cloner le repo
+git clone https://github.com/Decayuki/ecovelos-game.git
+cd ecovelos-game
 
-### Après la séance
-- **15 min** : Débriefing collectif avec les questions de discussion
+# Installer les dépendances
+npm install
 
-## Personnalisation
+# Lancer en dev
+npm run dev
 
-Pour modifier les mécaniques de jeu, éditer le fichier `game-data.json` :
-- Ajuster les coûts et revenus
-- Modifier les effets des décisions
-- Ajouter/retirer des options
-- Changer les seuils de scoring
+# Ouvrir http://localhost:3000
+```
 
-## Technologies
+## 📝 Documentation complète
 
-- **Next.js 14** : Framework React
-- **TypeScript** : Typage fort
-- **Tailwind CSS** : Styles utilitaires
-- **Recharts** : Graphiques (potentiel ajout futur)
+Voir les fichiers d'audit dans le repo parent :
+- `GUIDE-PEDAGOGIQUE.md` - Guide pour élèves
+- `CORRECTIONS-FINALES.md` - Récap des corrections
+- `AUDIT-*.md` - Audits détaillés par thème
+
+## 👨‍💻 Auteur
+
+**Marc (yukimurra)**
+- GitHub: [@Decayuki](https://github.com/Decayuki)
+- Email: yukimurra@gmail.com
+
+## 📄 Licence
+
+MIT License - Libre d'utilisation pour l'éducation
 
 ---
 
-Créé le 2026-02-01 par Sally l'Assistante 💅
+**Créé en février 2026 avec Sally l'Assistante 🤖**
