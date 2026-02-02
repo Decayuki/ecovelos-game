@@ -48,7 +48,7 @@
                 "priceRange": "medium",
                 "customerSatisfaction": 30,
                 "artistSatisfaction": 20,
-                "imageImpact": 25,
+                "brandImage": 25,
                 "salesVolume": 1.2
               },
               "consequence": "✅ Équilibre. Prix 2000-8000€. Volume ventes +20%. Investissement réseau 5000€."
@@ -61,7 +61,7 @@
                 "positioning": "prestigious",
                 "priceRange": "high",
                 "customerSatisfaction": 45,
-                "imageImpact": 50,
+                "brandImage": 50,
                 "artistSatisfaction": -10,
                 "salesVolume": 0.9
               },
@@ -75,7 +75,7 @@
                 "positioning": "eclectic",
                 "priceRange": "variable",
                 "customerSatisfaction": 20,
-                "imageImpact": 10,
+                "brandImage": 10,
                 "diversity": true,
                 "salesVolume": 1
               },
@@ -94,9 +94,10 @@
               "cost": 3000,
               "revenue": 12000,
               "effects": {
-                "imageImpact": 35,
+                "brandAwareness": 35,
                 "customerSatisfaction": 30,
-                "networkQuality": "premium"
+                "networkQuality": "premium",
+                "growthRate": 0.25
               },
               "consequence": "✅ Réseau premium. Revenus +12000€/mois. Coûts vernissage 3000€/mois. Croissance +25%."
             },
@@ -106,9 +107,10 @@
               "cost": 8000,
               "revenue": 15000,
               "effects": {
-                "imageImpact": 45,
+                "brandAwareness": 45,
                 "customerSatisfaction": 25,
-                "artistSatisfaction": 30
+                "artistSatisfaction": 30,
+                "duration": 6
               },
               "consequence": "✅ Visibilité nationale. Revenus +15000€ sur 6 mois. Investissement 8000€."
             },
@@ -118,8 +120,10 @@
               "cost": 2000,
               "revenue": 6000,
               "effects": {
-                "imageImpact": 20,
-                "customerSatisfaction": 15
+                "brandAwareness": 20,
+                "customerSatisfaction": 15,
+                "growthRate": 0.15,
+                "duration": 3
               },
               "consequence": "✅ Audience jeune. Revenus +6000€ sur 3 mois. Investissement 2000€. Croissance +15%."
             },
@@ -128,7 +132,8 @@
               "label": "Bouche-à-oreille uniquement (0€)",
               "cost": 0,
               "effects": {
-                "imageImpact": 5,
+                "brandAwareness": 5,
+                "growthRate": 0.05,
                 "authenticity": 25
               },
               "consequence": "⚠️ Croissance ultra-lente +5%/mois. Pas d'investissement. Authentique mais limité."
@@ -158,7 +163,9 @@
               "effects": {
                 "commissionRate": 0.25,
                 "artistSatisfaction": 40,
-                "socialScore": 25
+                "socialScore": 25,
+                "margin": -0.3,
+                "loyalty": "forte"
               },
               "consequence": "✅ Artistes loyaux. Réputation excellente. Marges réduites -30%."
             },
@@ -169,7 +176,8 @@
               "effects": {
                 "commissionRate": 0.5,
                 "artistSatisfaction": -25,
-                "turnoverRisk": 0.5
+                "margin": 0.4,
+                "churnRisk": 0.5
               },
               "consequence": "📉 Marges +40% mais artistes mécontents. 50% risque départ artistes."
             },
@@ -206,7 +214,7 @@
               "effects": {
                 "revenue": -5000,
                 "integrity": true,
-                "imageImpact": 30,
+                "brandImage": 30,
                 "artistSatisfaction": -20
               },
               "consequence": "✅ Intégrité préservée. Perte vente 5000€. Image +30. Artiste furieux."
@@ -216,8 +224,9 @@
               "label": "Enquête indépendante (3 000€, 2 mois)",
               "cost": 3000,
               "effects": {
+                "delay": 2,
                 "integrity": true,
-                "imageImpact": 20,
+                "brandImage": 20,
                 "customerSatisfaction": 15
               },
               "consequence": "✅ Démarche professionnelle. Coût 3000€. Délai 2 mois. Respect +20."
@@ -228,8 +237,8 @@
               "cost": 0,
               "revenue": 5000,
               "effects": {
-                "turnoverRisk": 70,
-                "imageImpact": -10
+                "scandalRisk": 70,
+                "brandImage": -10
               },
               "consequence": "💥 70% risque scandale. Si découvert : blacklist milieu artistique."
             },
@@ -239,7 +248,7 @@
               "cost": 10000,
               "effects": {
                 "integrity": "compromised",
-                "turnoverRisk": 30,
+                "scandalRisk": 30,
                 "artistSatisfaction": 10
               },
               "consequence": "⚠️ Transaction secrète 10000€. 30% risque fuite info. Réputation fragile."
@@ -257,7 +266,9 @@
               "cost": 0,
               "effects": {
                 "investment": 100000,
-                "artistSatisfaction": -30
+                "independence": false,
+                "artistSatisfaction": -30,
+                "dependencyRisk": 80
               },
               "consequence": "✅ 100k€ cash mais exclusivité 2 ans. Artistes mécontents. Dépendance totale."
             },
@@ -269,6 +280,7 @@
               "ifSuccess": {
                 "effects": {
                   "investment": 50000,
+                  "independence": true,
                   "artistSatisfaction": -10
                 }
               },
@@ -284,6 +296,7 @@
               "label": "Refuser et garder indépendance",
               "cost": 0,
               "effects": {
+                "independence": true,
                 "artistSatisfaction": 30,
                 "socialScore": 35
               },
@@ -296,7 +309,7 @@
               "revenue": 40000,
               "effects": {
                 "community": true,
-                "imageImpact": 35,
+                "brandImage": 35,
                 "socialScore": 40,
                 "artistSatisfaction": 25
               },
@@ -316,8 +329,9 @@
               "newHires": 1,
               "revenue": 4000,
               "effects": {
-                "imageImpact": 30,
+                "brandAwareness": 30,
                 "employeeSatisfaction": 25,
+                "growthRate": 0.2,
                 "socialScore": 15
               },
               "consequence": "✅ Communication pro. Revenus +4000€/mois. Salaires +3000€/mois."
@@ -351,7 +365,7 @@
               "effects": {
                 "eventQuality": "professional",
                 "employeeSatisfaction": 15,
-                "imageImpact": 20
+                "brandImage": 20
               },
               "consequence": "✅ Événements pro. Pas de recrutement. Coût 2000€/vernissage."
             }
@@ -388,7 +402,11 @@
               "id": "A",
               "label": "Accepter (600k€, fin du jeu en SUCCESS)",
               "cost": 0,
-              "effects": {},
+              "effects": {
+                "exit": "success",
+                "money": 600000,
+                "endGame": true
+              },
               "consequence": "✅ VICTOIRE : Vous vendez pour 600k€. Léa démissionne mais vous êtes riche. FIN."
             },
             {
@@ -396,6 +414,7 @@
               "label": "Refuser et continuer l'aventure",
               "cost": 0,
               "effects": {
+                "independence": true,
                 "employeeSatisfaction": 45,
                 "socialScore": 50,
                 "artistSatisfaction": 40
@@ -408,10 +427,17 @@
               "cost": 0,
               "successRate": 0.2,
               "ifSuccess": {
-                "effects": {}
+                "effects": {
+                  "exit": "success",
+                  "money": 800000,
+                  "endGame": true
+                }
               },
               "ifFailure": {
-                "effects": {}
+                "effects": {
+                  "competitor": "sothebys_war",
+                  "marketShare": -40
+                }
               },
               "consequence": "🎲 20% succès (800k€). 80% échec : Sotheby's ouvre galerie 100m. Guerre totale -40% clients."
             }
@@ -440,7 +466,7 @@
               "effects": {
                 "rent": 1250,
                 "revenue": -13500,
-                "imageImpact": -20,
+                "brandImage": -20,
                 "socialScore": 10
               },
               "consequence": "⚠️ Loyer 1250€ mais perte clients -30%. Déménagement 15000€. Image -20."
@@ -490,7 +516,7 @@
               "cost": 0,
               "revenue": 105000,
               "effects": {
-                "environmentalScore": 20,
+                "ethics": "compromised",
                 "legalRisk": 80,
                 "socialScore": -50
               },
@@ -501,7 +527,7 @@
               "label": "Refuser catégoriquement",
               "cost": 0,
               "effects": {
-                "environmentalScore": 20,
+                "ethics": "preserved",
                 "employeeSatisfaction": 35,
                 "socialScore": 40,
                 "artistSatisfaction": 30
@@ -513,10 +539,10 @@
               "label": "Signaler aux autorités (démarche citoyenne)",
               "cost": 0,
               "effects": {
-                "environmentalScore": 20,
+                "ethics": "exemplary",
                 "legalProtection": true,
                 "socialScore": 60,
-                "imageImpact": 40
+                "brandImage": 40
               },
               "consequence": "✅ Démarche exemplaire. Protection juridique. Image excellente +40."
             },
@@ -526,7 +552,7 @@
               "cost": 0,
               "revenue": 90000,
               "effects": {
-                "environmentalScore": 20,
+                "ethics": "pragmatic",
                 "legalRisk": 20,
                 "socialScore": 10
               },

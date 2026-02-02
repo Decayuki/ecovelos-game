@@ -31,7 +31,7 @@
               "effects": {
                 "materials": 6000,
                 "localSourcing": 40,
-                "customerSatisfaction": 10,
+                "quality": "variable",
                 "margins": "moyennes"
               }
             },
@@ -41,7 +41,7 @@
               "effects": {
                 "materials": 7500,
                 "localSourcing": 90,
-                "customerSatisfaction": 10,
+                "quality": "excellente",
                 "seasonality": true,
                 "localEconomy": 25,
                 "storytelling": 20
@@ -54,7 +54,7 @@
               "effects": {
                 "materials": 7200,
                 "localSourcing": 100,
-                "customerSatisfaction": 10,
+                "quality": "premium",
                 "sustainability": 40,
                 "producerRelations": "excellentes",
                 "marketing": 30,
@@ -73,7 +73,7 @@
               "label": "Vous + stagiaires (0€)",
               "cost": 0,
               "effects": {
-                "customerSatisfaction": 10,
+                "quality": "inconsistante",
                 "turnover": "élevé",
                 "stress": "très élevé",
                 "sustainability": "faible"
@@ -85,10 +85,11 @@
               "cost": 0,
               "newHires": 1,
               "effects": {
-                "customerSatisfaction": 25,
+                "quality": "excellente",
                 "consistency": "forte",
                 "creativity": 20,
-                "stress": "modéré"
+                "stress": "modéré",
+                "customerSatisfaction": 25
               }
             },
             {
@@ -97,11 +98,11 @@
               "cost": 8000,
               "newHires": 1,
               "effects": {
-                "customerSatisfaction": 10,
+                "quality": "excellente",
                 "consistency": "forte",
                 "socialImpact": 40,
                 "subsidies": 6000,
-                "imageImpact": 30,
+                "brandImage": 30,
                 "meaningfulness": "forte"
               }
             }
@@ -117,6 +118,7 @@
               "label": "Bouche-à-oreille seul (0€)",
               "cost": 0,
               "effects": {
+                "growthRate": 0.05,
                 "reach": "limité"
               }
             },
@@ -125,6 +127,8 @@
               "label": "Soirées thématiques producteurs (5 000€)",
               "cost": 5000,
               "effects": {
+                "growthRate": 0.18,
+                "duration": 9,
                 "communityBuilding": 25,
                 "storytelling": 30,
                 "producerVisibility": true
@@ -135,6 +139,8 @@
               "label": "Guide Michelin + influenceurs food (15 000€)",
               "cost": 15000,
               "effects": {
+                "growthRate": 0.4,
+                "duration": 12,
                 "visibility": "très forte",
                 "reputation": 40,
                 "touristAppeal": true,
@@ -161,6 +167,7 @@
               "revenue": 60000,
               "effects": {
                 "va": 32000,
+                "dependencyRisk": "très fort",
                 "brandIdentity": -30,
                 "localSourcing": -40,
                 "scale": "forte"
@@ -174,6 +181,7 @@
                 "revenue": 70000,
                 "effects": {
                   "va": 42000,
+                  "dependencyRisk": "fort",
                   "brandIdentity": -10,
                   "localSourcing": -20,
                   "compromise": "acceptable"
@@ -197,6 +205,7 @@
                 "revenue": 45000,
                 "effects": {
                   "va": 28000,
+                  "dependencyRisk": "faible",
                   "brandIdentity": 20,
                   "localSourcing": 10,
                   "diversity": true,
@@ -215,9 +224,11 @@
               "revenue": 60000,
               "effects": {
                 "va": 32000,
+                "dependencyRisk": "moyen",
                 "brandIdentity": 15,
                 "localSourcing": -20,
-                "premiumLine": true
+                "premiumLine": true,
+                "flexibility": true
               }
             }
           ]
@@ -248,7 +259,7 @@
               "effects": {
                 "turnoverRisk": 0.5,
                 "burnout": 0.6,
-                "customerSatisfaction": 10,
+                "quality": -20,
                 "reputation": -25
               }
             },
@@ -259,7 +270,8 @@
               "effects": {
                 "staffSatisfaction": 65,
                 "turnover": -0.4,
-                "customerSatisfaction": 10
+                "quality": 10,
+                "loyalty": 20
               }
             },
             {
@@ -269,8 +281,9 @@
               "effects": {
                 "staffSatisfaction": 85,
                 "burnout": -0.7,
-                "customerSatisfaction": 10,
+                "quality": 25,
                 "retention": 40,
+                "innovation": "forte",
                 "industryReputation": 35
               }
             }
@@ -299,7 +312,7 @@
                 "environmentalScore": 25,
                 "socialImpact": 30,
                 "taxBenefit": 2000,
-                "imageImpact": 20
+                "brandImage": 20
               }
             },
             {
@@ -308,8 +321,11 @@
               "cost": 25000,
               "effects": {
                 "foodWaste": 400,
-                "environmentalScore": 70,
+                "environmentalScore": 50,
+                "efficiency": 1.2,
                 "monthlySavings": 1800,
+                "innovation": true,
+                "certification": "Zero Waste",
                 "marketingValue": 35
               }
             }

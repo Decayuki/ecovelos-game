@@ -30,6 +30,7 @@
               "cost": 0,
               "effects": {
                 "production": 4000,
+                "margin": "élevée",
                 "ethicalScore": -30,
                 "deliveryTime": 90
               }
@@ -39,9 +40,10 @@
               "label": "Production Portugal (+35% coût)",
               "effects": {
                 "production": 5400,
+                "margin": "moyenne",
                 "ethicalScore": 15,
                 "deliveryTime": 45,
-                "customerSatisfaction": 10
+                "quality": "supérieure"
               }
             },
             {
@@ -49,10 +51,11 @@
               "label": "Production France (+60% coût)",
               "effects": {
                 "production": 6400,
+                "margin": "faible",
                 "ethicalScore": 35,
                 "deliveryTime": 30,
-                "customerSatisfaction": 10,
-                "environmentalScore": 20
+                "quality": "premium",
+                "madeInFrance": true
               }
             }
           ]
@@ -68,7 +71,7 @@
               "cost": 0,
               "effects": {
                 "materials": 3500,
-                "customerSatisfaction": 10,
+                "quality": "standard",
                 "sustainability": 0
               }
             },
@@ -77,9 +80,9 @@
               "label": "Coton bio certifié GOTS (+25% coût)",
               "effects": {
                 "materials": 4375,
-                "customerSatisfaction": 10,
+                "quality": "bonne",
                 "sustainability": 20,
-                "environmentalScore": 20,
+                "certification": "GOTS",
                 "marketingValue": 15
               }
             },
@@ -88,10 +91,11 @@
               "label": "Mix recyclé + bio (+40% coût)",
               "effects": {
                 "materials": 4900,
-                "customerSatisfaction": 10,
+                "quality": "excellente",
                 "sustainability": 40,
-                "environmentalScore": 20,
-                "marketingValue": 30
+                "certification": "GOTS + GRS",
+                "marketingValue": 30,
+                "innovation": true
               }
             }
           ]
@@ -106,6 +110,7 @@
               "label": "Réseaux sociaux organiques (0€)",
               "cost": 0,
               "effects": {
+                "growthRate": 0.04,
                 "reach": "limité"
               }
             },
@@ -114,6 +119,8 @@
               "label": "Campagne influence micro (8 000€)",
               "cost": 8000,
               "effects": {
+                "growthRate": 0.18,
+                "duration": 6,
                 "reach": "ciblé",
                 "authenticity": "forte"
               }
@@ -123,6 +130,8 @@
               "label": "Pop-up stores + collab artistes locaux (18 000€)",
               "cost": 18000,
               "effects": {
+                "growthRate": 0.35,
+                "duration": 9,
                 "reach": "local fort",
                 "brandIdentity": 25,
                 "community": 30,
@@ -150,6 +159,7 @@
               "productionCost": 54000,
               "effects": {
                 "va": 21000,
+                "dependencyRisk": "très fort",
                 "brandControl": -20,
                 "visibility": 40
               }
@@ -163,6 +173,7 @@
                 "productionCost": 54000,
                 "effects": {
                   "va": 36000,
+                  "dependencyRisk": "fort",
                   "brandControl": -10,
                   "visibility": 40
                 }
@@ -186,12 +197,15 @@
                 "productionCost": 28000,
                 "effects": {
                   "va": 27000,
+                  "dependencyRisk": "faible",
                   "brandControl": 30,
-                  "margins": "fortes"
+                  "margins": "fortes",
+                  "independence": true
                 }
               },
               "ifFailure": {
                 "effects": {
+                  "growthRate": "slow",
                   "cashBurn": "élevé"
                 }
               }
@@ -203,8 +217,10 @@
               "productionCost": 54000,
               "effects": {
                 "va": 21000,
+                "dependencyRisk": "moyen",
                 "brandControl": 10,
                 "visibility": 40,
+                "flexibility": true,
                 "premiumLine": true
               }
             }
@@ -246,7 +262,8 @@
               "effects": {
                 "employeeSatisfaction": 75,
                 "turnover": -0.5,
-                "productivity": 1.1
+                "productivity": 1.1,
+                "loyalty": 20
               }
             },
             {
@@ -296,8 +313,10 @@
                 "reputation": 45,
                 "ethicalScore": 50,
                 "trustScore": 60,
-                "environmentalScore": 20,
-                "transparency": "totale"
+                "certification": "Fair Wear",
+                "transparency": "totale",
+                "growthRate": 0.25,
+                "duration": 18
               }
             }
           ]

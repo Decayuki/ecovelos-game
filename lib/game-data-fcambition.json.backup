@@ -113,6 +113,7 @@
               "cost": 4000,
               "effects": {
                 "revenueGrowth": 0.12,
+                "duration": 12,
                 "localTies": 10
               }
             },
@@ -122,6 +123,7 @@
               "cost": 12000,
               "effects": {
                 "revenueGrowth": 0.25,
+                "duration": 18,
                 "youthDevelopment": 20,
                 "localTies": 15,
                 "longTermStability": true
@@ -148,6 +150,7 @@
               "cost": 18000,
               "effects": {
                 "va": 12000,
+                "dependencyRisk": "fort",
                 "socialImpact": 25,
                 "youthEngagement": 20
               }
@@ -161,7 +164,8 @@
                 "cost": 18000,
                 "effects": {
                   "va": 22000,
-                  "customerSatisfaction": 10
+                  "dependencyRisk": "moyen",
+                  "equipmentQuality": "excellent"
                 }
               },
               "ifFailure": {
@@ -181,7 +185,9 @@
                 "revenue": 28000,
                 "cost": 12000,
                 "effects": {
-                  "va": 16000
+                  "va": 16000,
+                  "dependencyRisk": "faible",
+                  "flexibility": true
                 }
               },
               "ifFailure": {
@@ -197,6 +203,8 @@
               "cost": 18000,
               "effects": {
                 "va": 12000,
+                "dependencyRisk": "moyen",
+                "flexibility": true,
                 "longTermSecurity": true
               }
             }
@@ -237,7 +245,8 @@
               "monthlyIncrease": 3000,
               "effects": {
                 "staffSatisfaction": 70,
-                "turnover": -0.6
+                "turnover": -0.6,
+                "loyalty": 20
               }
             },
             {
@@ -329,6 +338,7 @@
                 "compliance": "total",
                 "playerComfort": "excellent",
                 "reputation": 15,
+                "dependencyRisk": "moyen",
                 "longTermStability": true
               }
             }

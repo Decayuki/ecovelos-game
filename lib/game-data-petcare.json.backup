@@ -100,7 +100,7 @@
                 "monthlyRevenue": 58000,
                 "recurrence": "très forte",
                 "customerLoyalty": 1.6,
-                "customerSatisfaction": 10
+                "serviceQuality": "excellente"
               }
             }
           ]
@@ -140,7 +140,7 @@
                 "supplies": 13600,
                 "animalOrigin": "élevages éthiques",
                 "ethicalScore": 40,
-                "environmentalScore": 20,
+                "certification": "Bien-être animal",
                 "premium": true,
                 "avgBasket": 70
               }
@@ -291,7 +291,8 @@
               "label": "Statu quo (0€)",
               "cost": 0,
               "effects": {
-                "turnoverRisk": 0.95,
+                "turnoverRisk": 0.45,
+                "burnoutRisk": 0.5,
                 "socialScore": -30
               }
             },
@@ -311,7 +312,7 @@
               "monthlyIncrease": 7000,
               "effects": {
                 "employeeSatisfaction": 90,
-                "turnoverRisk": 0,
+                "burnoutRisk": 0,
                 "productivity": 1.15,
                 "socialScore": 40,
                 "innovativeEmployer": true
@@ -343,6 +344,7 @@
               "effects": {
                 "ethicalScore": 10,
                 "animalWelfare": "contrôlée",
+                "expertise": "spécialisée",
                 "niche": true
               }
             },
