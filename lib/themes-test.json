@@ -2,7 +2,7 @@
   {
     "id": "ecovelos",
     "name": "ÉcoVélos",
-    "icon": "/icons/ecovelos.svg",
+    "icon": "/icons/ecovelos-v2.svg?v=2",
     "subtitle": "Mobilité urbaine",
     "description": "Lancez une start-up de vélos électriques en location",
     "difficulty": 2,
@@ -15,7 +15,7 @@
   {
     "id": "cosmetique",
     "name": "LuxeGlow",
-    "icon": "/icons/cosmetique.svg",
+    "icon": "/icons/cosmetique-v2.svg?v=2",
     "subtitle": "Cosmétiques & beauté",
     "description": "Créez votre marque de cosmétiques bio dans un marché saturé",
     "difficulty": 3,
@@ -28,7 +28,7 @@
   {
     "id": "boxe",
     "name": "Iron Fist",
-    "icon": "/icons/boxe.svg",
+    "icon": "/icons/boxe-v2.svg?v=2",
     "subtitle": "Sport & fitness",
     "description": "Transformez un hangar en salle de boxe premium",
     "difficulty": 3,
@@ -41,7 +41,7 @@
   {
     "id": "art",
     "name": "Canvas & Co",
-    "icon": "/icons/art.svg",
+    "icon": "/icons/art-v2.svg?v=2",
     "subtitle": "Art & culture",
     "description": "Ouvrez une galerie d'art dans un quartier en gentrification",
     "difficulty": 2,
@@ -54,7 +54,7 @@
   {
     "id": "foot",
     "name": "FC Ambition",
-    "icon": "/icons/foot.svg",
+    "icon": "/icons/foot-v2.svg?v=2",
     "subtitle": "Sport collectif",
     "description": "Reprenez un club de foot amateur en difficulté",
     "difficulty": 3,
@@ -67,7 +67,7 @@
   {
     "id": "mode",
     "name": "UrbanThread",
-    "icon": "/icons/mode.svg",
+    "icon": "/icons/mode-v2.svg?v=2",
     "subtitle": "Mode & textile",
     "description": "Lancez votre marque de streetwear éthique",
     "difficulty": 2,
@@ -80,7 +80,7 @@
   {
     "id": "resto",
     "name": "Le Comptoir",
-    "icon": "/icons/resto.svg",
+    "icon": "/icons/resto-v2.svg?v=2",
     "subtitle": "Restauration",
     "description": "Ouvrez votre restaurant gastro dans un quartier hipster",
     "difficulty": 3,
@@ -93,7 +93,7 @@
   {
     "id": "greenbox",
     "name": "GreenBox",
-    "icon": "/icons/greenbox.svg",
+    "icon": "/icons/greenbox-v2.svg?v=2",
     "subtitle": "Agriculture urbaine",
     "description": "Créez une ferme urbaine bio sur les toits de Paris",
     "difficulty": 2,
@@ -106,7 +106,7 @@
   {
     "id": "streamlab",
     "name": "StreamLab",
-    "icon": "/icons/streamlab.svg",
+    "icon": "/icons/streamlab-v2.svg?v=2",
     "subtitle": "Création de contenu",
     "description": "Montez votre agence de streamers et créateurs de contenu",
     "difficulty": 3,
@@ -119,7 +119,7 @@
   {
     "id": "petcare",
     "name": "PetCare+",
-    "icon": "/icons/petcare.svg",
+    "icon": "/icons/petcare-v2.svg?v=2",
     "subtitle": "Services aux animaux",
     "description": "Lancez une chaîne de garderies premium pour animaux",
     "difficulty": 2,
