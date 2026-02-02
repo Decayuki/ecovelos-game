@@ -139,7 +139,7 @@
               "label": "Guide Michelin + influenceurs food (15 000€)",
               "cost": 15000,
               "effects": {
-                "growthRate": 0.40,
+                "growthRate": 0.4,
                 "duration": 12,
                 "visibility": "très forte",
                 "reputation": 40,
@@ -240,11 +240,11 @@
       "title": "Phase 3 : Succès et dilemmes éthiques",
       "context": "Juin 2024 : Le Comptoir est un succès (+220% CA). Vous embauchez, mais tensions émergent : gaspillage, burn-out brigade, gentrification du quartier accusée.",
       "currentSituation": {
-        "monthlyRevenue": 58000,
+        "monthlyRevenue": 85000,
         "employees": 14,
-        "budget": 110000,
-        "monthlyVA": 28000,
-        "staffSatisfaction": 40
+        "budget": 100000,
+        "monthlyVA": 35000,
+        "employeeSatisfaction": 50
       },
       "decisions": [
         {
@@ -398,10 +398,30 @@
     }
   },
   "grading": {
-    "fail": { "max": 40, "label": "Fermeture", "description": "Restaurant fermé ou scandalisé" },
-    "survival": { "max": 60, "label": "Survie difficile", "description": "Greenwashing sans substance" },
-    "balance": { "max": 75, "label": "Équilibre trouvé", "description": "Locavore crédible" },
-    "success": { "max": 85, "label": "Succès durable", "description": "Modèle de restauration responsable ⭐" },
-    "excellence": { "max": 100, "label": "Excellence", "description": "Restaurant exemplaire, pilier local 🏆" }
+    "fail": {
+      "max": 40,
+      "label": "Fermeture",
+      "description": "Restaurant fermé ou scandalisé"
+    },
+    "survival": {
+      "max": 60,
+      "label": "Survie difficile",
+      "description": "Greenwashing sans substance"
+    },
+    "balance": {
+      "max": 75,
+      "label": "Équilibre trouvé",
+      "description": "Locavore crédible"
+    },
+    "success": {
+      "max": 85,
+      "label": "Succès durable",
+      "description": "Modèle de restauration responsable ⭐"
+    },
+    "excellence": {
+      "max": 100,
+      "label": "Excellence",
+      "description": "Restaurant exemplaire, pilier local 🏆"
+    }
   }
 }

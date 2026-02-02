@@ -9,8 +9,7 @@
       "maintenance": 3500,
       "rent": 2500,
       "insurance": 1500,
-      "marketing": 800,
-      "vandalism": 1200
+      "marketing": 800
     }
   },
   "phases": [
@@ -218,11 +217,11 @@
       "title": "Phase 3 : Montée en division et dilemmes",
       "context": "Septembre 2024 : Le club monte en division supérieure. Les revenus augmentent (+180%), mais les exigences aussi. Tensions sur les salaires, accusations de favoritisme local.",
       "currentSituation": {
-        "monthlyRevenue": 34000,
+        "monthlyRevenue": 60000,
         "employees": 10,
-        "budget": 95000,
-        "monthlyVA": 18000,
-        "staffSatisfaction": 45
+        "budget": 80000,
+        "monthlyVA": 20000,
+        "employeeSatisfaction": 60
       },
       "decisions": [
         {
@@ -371,10 +370,30 @@
     }
   },
   "grading": {
-    "fail": { "max": 40, "label": "Relégation", "description": "Le club est relégué ou en faillite" },
-    "survival": { "max": 60, "label": "Survie difficile", "description": "Maintien fragile en division" },
-    "balance": { "max": 75, "label": "Équilibre trouvé", "description": "Club stable et respecté" },
-    "success": { "max": 85, "label": "Succès sportif et social", "description": "Modèle de club amateur ⭐" },
-    "excellence": { "max": 100, "label": "Excellence", "description": "Club exemplaire, référence locale 🏆" }
+    "fail": {
+      "max": 40,
+      "label": "Relégation",
+      "description": "Le club est relégué ou en faillite"
+    },
+    "survival": {
+      "max": 60,
+      "label": "Survie difficile",
+      "description": "Maintien fragile en division"
+    },
+    "balance": {
+      "max": 75,
+      "label": "Équilibre trouvé",
+      "description": "Club stable et respecté"
+    },
+    "success": {
+      "max": 85,
+      "label": "Succès sportif et social",
+      "description": "Modèle de club amateur ⭐"
+    },
+    "excellence": {
+      "max": 100,
+      "label": "Excellence",
+      "description": "Club exemplaire, référence locale 🏆"
+    }
   }
 }
