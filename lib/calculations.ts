@@ -1,4 +1,4 @@
-import { GameState, MonthlyCosts } from './types';
+import type { GameState, MonthlyCosts } from './types';
 
 export function calculateVA(revenue: number, costs: MonthlyCosts): number {
   const totalCosts = Object.values(costs).filter((v): v is number => v !== undefined).reduce((sum, cost) => sum + cost, 0);

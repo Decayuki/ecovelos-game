@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "ÉcoVélos",
+    "kicker": "Serious game · Valeur partenariale",
+    "subtitle": "Une start-up de vélos électriques à Lyon, 2022–2023",
+    "description": "Traversée continue des trois phases d'ÉcoVélos : chaque décision se prend dans la scène, le temps passe entre les phases, le bilan mesure l'équilibre économique, social et environnemental.",
+    "note": "Mise en scène inspirée de SenseNova sn-motion-html (MIT) : scène unique fixe, caméra pilotée par le défilement, sans vidéo.",
+    "sector": "ecovelos",
+    "style": "cinematic",
+    "ui": "folio",
+    "spans": { "opening": 1.6, "intro": 1.2, "decision": 1.3, "validate": 1.0, "finale": 1.4, "connector": 1.5 }
+  },
+  "objectives": [
+    "Comprendre la notion de valeur ajoutée",
+    "Appréhender la répartition de la VA entre parties prenantes",
+    "Différencier valeur actionnariale et valeur partenariale",
+    "Décider en pesant les impacts économiques, sociaux et environnementaux"
+  ],
+  "chapters": [
+    {
+      "id": "00-ouverture",
+      "kind": "opening",
+      "label": "Ouverture",
+      "eyebrow": "Prologue · Lyon, mars 2022",
+      "title": "Deux cents vélos et une idée",
+      "copyPosition": "left",
+      "paragraphs": [
+        "Vous lancez ÉcoVélos : 200 vélos électriques en location, 5 salariés, 100 000 € en caisse.",
+        "Chaque mois, la location rapporte 9 000 € — mais les salaires, l'entretien et le vandalisme coûtent plus cher. À vous de créer de la valeur… et de décider à qui elle profite."
+      ],
+      "mood": "dawn"
+    },
+    {
+      "id": "01-lancement",
+      "kind": "phase",
+      "phaseIndex": 0,
+      "label": "Lancement",
+      "eyebrow": "Phase 1 · Mars 2022",
+      "copyPosition": "left",
+      "mood": "morning",
+      "hotspots": [[18, 64], [52, 50], [86, 42]]
+    },
+    {
+      "id": "02-partenariat",
+      "kind": "phase",
+      "phaseIndex": 1,
+      "label": "Partenariat",
+      "eyebrow": "Phase 2 · Mai 2022",
+      "copyPosition": "left",
+      "mood": "noon",
+      "hotspots": [[47, 46]]
+    },
+    {
+      "id": "03-croissance",
+      "kind": "phase",
+      "phaseIndex": 2,
+      "label": "Croissance",
+      "eyebrow": "Phase 3 · Octobre 2023",
+      "copyPosition": "left",
+      "mood": "autumn",
+      "hotspots": [[18, 50], [55, 60], [88, 56]]
+    },
+    {
+      "id": "04-bilan",
+      "kind": "finale",
+      "label": "Bilan",
+      "eyebrow": "Épilogue · Lyon, vu de Fourvière",
+      "copyPosition": "left",
+      "mood": "dusk"
+    }
+  ],
+  "connectors": [
+    { "caption": "Le rideau se lève", "detail": "Premiers mois d'activité" },
+    { "caption": "Trois mois plus tard", "detail": "La trésorerie a encaissé vos choix" },
+    { "caption": "Dix-huit mois plus tard", "detail": "L'entreprise a changé d'échelle" },
+    { "caption": "Fin de l'exercice", "detail": "L'heure des comptes" }
+  ],
+  "collapseConnector": { "caption": "Tout s'effondre", "detail": "La partie s'arrête ici" },
+  "pictos": {
+    "security": "lock",
+    "maintenance": "wrench",
+    "acquisition": "megaphone",
+    "partnership": "handshake",
+    "salaries": "wallet",
+    "sourcing": "crate",
+    "communication": "speech"
+  },
+  "copy": {
+    "start": "Commencer la traversée",
+    "scrollHint": "Faites défiler pour avancer",
+    "decisionNext": "Décision suivante",
+    "toValidate": "Revoir et valider la phase",
+    "validate": "Valider la phase",
+    "finish": "Clore l'exercice",
+    "validated": "Phase validée",
+    "missing": "Encore à décider",
+    "periodReport": "Bilan des {months} derniers mois : cash-flow de {cashflow} € par mois, trésorerie {budgetChange} €.",
+    "timeSkip": "L'entreprise a grandi entre-temps : nouvelle échelle, nouveaux enjeux."
+  },
+  "discussion": [
+    "Comment vos décisions ont-elles impacté la valeur ajoutée ?",
+    "Quelle part de la VA est allée aux salariés ? Aux actionnaires ?",
+    "Avez-vous privilégié la valeur actionnariale ou la valeur partenariale ?",
+    "Peut-on être rentable ET éthique ?",
+    "Quels sont les risques de privilégier uniquement le profit ?"
+  ]
+}

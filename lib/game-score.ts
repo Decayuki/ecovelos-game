@@ -1,6 +1,8 @@
 // Contrat StudyNote GameEmbed (identique à SGN11 v2) :
 // window.parent.postMessage({ type: 'GAME_SCORE', score }, '*'), score entier 0–100,
 // émis une seule fois par partie, à l'écran final (bilan ou bad ending).
+// Règle produit (Marc, 2026-10-04) : une partie perdue (bad ending) émet 0 — le score
+// détaillé reste affiché à l'écran, seul le message envoyé à StudyNote passe à 0.
 // Aucun appel réseau : StudyNote vérifie l'origine et crédite côté serveur.
 
 export interface ScoreTarget {
@@ -16,6 +18,10 @@ export function newRunId(): string {
   const c = typeof crypto !== 'undefined' ? crypto : undefined;
   if (c && typeof c.randomUUID === 'function') return c.randomUUID();
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
+export function scoreForStudyNote(globalScore: number, badEnding: boolean): number {
+  return badEnding ? 0 : globalScore;
 }
 
 const sentInDocument = new Set<string>();

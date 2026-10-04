@@ -1,4 +1,4 @@
-import { GameState } from './types';
+import type { GameState } from './types';
 
 // Détecte si un bad ending doit être déclenché
 export const checkBadEnding = (gameState: GameState): { triggered: boolean; errors: string[] } => {

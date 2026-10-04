@@ -13,38 +13,18 @@ import LexiconSidebar from '@/components/LexiconSidebar';
 import ClaraCoach from '@/components/ClaraCoach';
 import TimeTransition from '@/components/TimeTransition';
 import { GameState, Phase, Theme } from '@/lib/types';
-import { applyDecisionEffects, calculateEconomicScore, calculateSocialScore, calculateEnvironmentalScore, calculateGlobalScore, getGrading } from '@/lib/calculations';
+import { calculateEconomicScore, calculateSocialScore, calculateEnvironmentalScore, calculateGlobalScore, getGrading } from '@/lib/calculations';
+import { createInitialState, validatePhase } from '@/lib/engine';
+import StoryExperience from '@/components/story/StoryExperience';
 import { getThemePhases, getThemeInitialState } from '@/lib/theme-phases-map';
-import { checkBadEnding, calculateScandals, calculateReputation } from '@/lib/bad-ending-logic';
 import themesData from '@/lib/themes-test.json';
-import { emitScoreOnce, newRunId } from '@/lib/game-score';
+import { emitScoreOnce, newRunId, scoreForStudyNote } from '@/lib/game-score';
 
-const getInitialState = (themeId: string): GameState => {
-  const themeData = getThemeInitialState(themeId);
-  
-  return {
-    themeId,
-    ...themeData,
-    currentPhase: 0,
-    decisions: {},
-    scores: {
-      economic: 0,
-      social: 50,
-      environmental: 50,
-      global: 0
-    },
-    customerSatisfaction: 50,
-    employeeSatisfaction: 50,
-    reputation: 50,
-    scandals: 0,
-    turnoverRisk: 0,
-    strikeRisk: 0,
-    badBuzzRisk: 0,
-    socialScoreModifier: 0,
-    environmentalScoreModifier: 0,
-    imageModifier: 0
-  };
-};
+const getInitialState = (themeId: string): GameState =>
+  createInitialState(themeId, getThemeInitialState(themeId));
+
+// Secteur mis en scène en traversée continue (démo SenseNova) ; les autres gardent le parcours par cartes.
+const STORY_SECTOR = 'ecovelos';
 
 export default function Home() {
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
@@ -89,11 +69,11 @@ export default function Home() {
     }
   }, [gameState?.budget, gameState?.monthlyRevenue, gameState?.monthlyCosts]);
 
-  // Écran final (bilan ou bad ending) : GAME_SCORE une seule fois par partie (contrat StudyNote).
+  // Écran final (bilan ou bad ending) : GAME_SCORE une seule fois par partie (contrat StudyNote), 0 si bad ending.
   const isFinalScreen = !!gameState && (gameFinished || !!gameState.badEnding);
   useEffect(() => {
     if (!isFinalScreen || !runId || !gameState) return;
-    emitScoreOnce(runId, calculateGlobalScore(gameState), window.parent, window, () => window.localStorage);
+    emitScoreOnce(runId, scoreForStudyNote(calculateGlobalScore(gameState), !!gameState.badEnding), window.parent, window, () => window.localStorage);
   }, [isFinalScreen, runId, gameState]);
   
   const handleSelectTheme = (themeId: string) => {
@@ -133,155 +113,24 @@ export default function Home() {
   
   const handleValidatePhase = () => {
     if (!gameState || !currentPhase) return;
-    
-    let newState = { ...gameState };
-    
-    // Appliquer toutes les décisions de la phase
-    currentPhase.decisions.forEach(decision => {
-      const selectedOptionId = pendingDecisions[decision.id];
-      if (selectedOptionId) {
-        const option = decision.options.find(opt => opt.id === selectedOptionId);
-        if (option) {
-          newState = applyDecisionEffects(newState, decision.id, selectedOptionId, option);
-          newState.decisions[`${currentPhase.id}-${decision.id}`] = selectedOptionId;
-        }
-      }
-    });
-    
-    // Calculer scandales et réputation (uniquement pour cosmetique pour l'instant)
-    if (selectedTheme === 'cosmetique') {
-      newState.scandals = calculateScandals(newState);
-      newState.reputation = calculateReputation(newState);
-    }
-    
-    // Simuler le passage du temps (3 mois entre chaque phase)
-    const monthsToSimulate = 3;
-    const totalCosts = Object.values(newState.monthlyCosts).filter((v): v is number => v !== undefined).reduce((sum, cost) => sum + cost, 0);
-    const monthlyCashFlow = newState.monthlyRevenue - totalCosts;
-    const budgetChange = monthlyCashFlow * monthsToSimulate;
-    newState.budget += budgetChange;
-    
-    console.log(`\n=== SIMULATION ${monthsToSimulate} MOIS ===`);
-    console.log(`CA mensuel: ${newState.monthlyRevenue}€`);
-    console.log(`Coûts mensuels détail:`, newState.monthlyCosts);
-    console.log(`Coûts totaux: ${totalCosts}€`);
-    console.log(`Cash-flow/mois: ${monthlyCashFlow}€`);
-    console.log(`Impact budget: ${budgetChange}€`);
-    console.log(`Nouveau budget: ${newState.budget}€`);
-    
-    // Préparer les données de transition
-    const currentPhaseNum = currentPhase.id;
-    const nextPhaseNum = newState.currentPhase < phases.length - 1 ? currentPhase.id + 1 : currentPhase.id;
-    
-    // Vérifier bad ending
-    const badEndingCheck = checkBadEnding(newState);
-    if (badEndingCheck.triggered) {
-      newState.badEnding = true;
-      setFatalErrors(badEndingCheck.errors);
-      setGameState(newState);
+    // Même moteur que la traversée ÉcoVélos (lib/engine.ts) : règles inchangées.
+    const outcome = validatePhase(gameState, phases, pendingDecisions);
+    if (outcome.kind === 'badEnding') {
+      setFatalErrors(outcome.fatalErrors);
+      setGameState(outcome.state);
       return; // Arrêter le jeu, bad ending screen s'affichera
     }
-    
-    // Passer à la phase suivante ou terminer le jeu
-    if (newState.currentPhase < phases.length - 1) {
-      // Afficher l'écran de transition
-      setTransitionData({
-        fromPhase: currentPhaseNum,
-        toPhase: nextPhaseNum,
-        budgetChange,
-        monthlyRevenue: newState.monthlyRevenue,
-        monthlyCosts: totalCosts,
-        months: monthsToSimulate
-      });
-      setShowTimeTransition(true);
-      
-      newState.currentPhase++;
-      
-      // Appliquer le currentSituation de la nouvelle phase si défini
-      const nextPhase = phases[newState.currentPhase];
-      
-      console.log(`\n━━━ DÉBUT PHASE ${nextPhase.id} ━━━`);
-      console.log(`État au début:`, {
-        budget: newState.budget,
-        employees: newState.employees,
-        monthlyRevenue: newState.monthlyRevenue,
-        salaries: newState.monthlyCosts.salaries,
-        totalCosts: Object.values(newState.monthlyCosts).filter((v): v is number => v !== undefined).reduce((a,b) => a+b, 0)
-      });
-      
-      if (nextPhase.currentSituation) {
-        console.log('\n=== APPLYING CURRENT SITUATION (TIME SKIP) ===');
-        
-        const oldEmployees = newState.employees;
-        const oldRevenue = newState.monthlyRevenue;
-        const oldBudget = newState.budget;
-        
-        // Time skip : l'entreprise a grandi, on RESET l'état opérationnel
-        if (nextPhase.currentSituation.employees !== undefined) {
-          const growth = nextPhase.currentSituation.employees - oldEmployees;
-          newState.employees = nextPhase.currentSituation.employees;
-          // RESET salaires = employees × 3000€ (pas de continuation des augmentations Phase 1-2)
-          newState.monthlyCosts.salaries = nextPhase.currentSituation.employees * 3000;
-          console.log(`Croissance: ${oldEmployees} → ${newState.employees} employés (+${growth})`);
-          console.log(`Salaires RESET: ${newState.monthlyCosts.salaries}€ (${newState.employees} × 3000€)`);
-        }
-        
-        // CA : RESET à la nouvelle valeur
-        if (nextPhase.currentSituation.monthlyRevenue !== undefined) {
-          const growthRatio = nextPhase.currentSituation.monthlyRevenue / oldRevenue;
-          newState.monthlyRevenue = nextPhase.currentSituation.monthlyRevenue;
-          console.log(`CA: ${oldRevenue}€ → ${newState.monthlyRevenue}€ (×${growthRatio.toFixed(2)})`);
-        }
-        
-        // RESET complet des coûts pour Phase 3 (nouvelle échelle d'entreprise)
-        if (nextPhase.id === 3 && nextPhase.currentSituation.monthlyVA !== undefined) {
-          const targetVA = nextPhase.currentSituation.monthlyVA;
-          const targetCosts = newState.monthlyRevenue - targetVA;
-          const otherCosts = targetCosts - newState.monthlyCosts.salaries;
-          
-          // Répartition des coûts hors salaires
-          newState.monthlyCosts = {
-            salaries: newState.monthlyCosts.salaries, // Déjà calculé
-            materials: Math.round(otherCosts * 0.35),
-            maintenance: Math.round(otherCosts * 0.20),
-            rent: Math.round(otherCosts * 0.15),
-            insurance: Math.round(otherCosts * 0.10),
-            marketing: Math.round(otherCosts * 0.10),
-            vandalism: Math.round(otherCosts * 0.10)
-          };
-          
-          console.log(`RESET coûts Phase 3: CA ${newState.monthlyRevenue}€ - VA ${targetVA}€ = coûts ${targetCosts}€`);
-          console.log(`  Salaires: ${newState.monthlyCosts.salaries}€`);
-          console.log(`  Autres: ${otherCosts}€ répartis`);
-        }
-        
-        // Budget : prendre le meilleur (seule chose qui persiste vraiment entre phases)
-        if (nextPhase.currentSituation.budget !== undefined) {
-          newState.budget = Math.max(newState.budget, nextPhase.currentSituation.budget);
-          console.log(`Budget: ${oldBudget}€ → ${newState.budget}€ (max entre actuel et ${nextPhase.currentSituation.budget}€)`);
-        }
-        
-        if (nextPhase.currentSituation.employeeSatisfaction !== undefined) {
-          newState.employeeSatisfaction = nextPhase.currentSituation.employeeSatisfaction;
-        }
-        
-        console.log('Après time skip:', {
-          employees: newState.employees,
-          monthlyRevenue: newState.monthlyRevenue,
-          budget: newState.budget,
-          salaries: newState.monthlyCosts.salaries,
-          totalCosts: Object.values(newState.monthlyCosts).filter((v): v is number => v !== undefined).reduce((a,b) => a+b, 0)
-        });
-      }
-      
-      // NE PAS appeler setShowPhaseIntro ici, sera fait après TimeTransition
-      setCurrentDecisionIndex(0);
-      setPendingDecisions({});
-      setGameState(newState);
-    } else {
+    if (outcome.kind === 'finished') {
       setGameFinished(true);
-      setGameState(newState);
+      setGameState(outcome.state);
+      return;
     }
+    // NE PAS appeler setShowPhaseIntro ici, sera fait après TimeTransition
+    setTransitionData(outcome.transition);
+    setShowTimeTransition(true);
+    setCurrentDecisionIndex(0);
+    setPendingDecisions({});
+    setGameState(outcome.state);
   };
   
   const handleRestart = () => {
@@ -317,6 +166,19 @@ export default function Home() {
         <ThemeSelector themes={themes} onSelectTheme={handleSelectTheme} />
         {showWelcomeModal && <WelcomeModal onSelect={handleWelcomeChoice} />}
       </main>
+    );
+  }
+
+  if (selectedTheme === STORY_SECTOR && currentTheme) {
+    return (
+      <StoryExperience
+        key={selectedTheme}
+        theme={currentTheme}
+        phases={phases}
+        initial={getThemeInitialState(selectedTheme)}
+        guided={isGuidedMode}
+        onExit={handleChangeTheme}
+      />
     );
   }
 

@@ -1,0 +1,384 @@
+{
+  "$comment": "Point UNIQUE de remplacement des visuels. Un still passe à status=ready quand son fichier existe sous public/ (src). Aucun code à toucher : relancer scripts/assets/generate-gpt.mjs <secteur> ou déposer le fichier et passer status à ready.",
+  "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+  "style": "Editorial cinematic illustration with painterly realism, soft natural light, gentle atmospheric haze, clear foreground / midground / background, consistent camera height at eye level, wide landscape framing. Palette anchored on {palette}. Recurring identity: {identity}. Absolutely no text, no letters, no numbers, no logos, no watermarks, no brand names.",
+  "output": {
+    "generate": {
+      "width": 1536,
+      "height": 1024
+    },
+    "deliver": {
+      "width": 1600,
+      "format": "webp",
+      "quality": 78,
+      "targetKB": 260
+    }
+  },
+  "stills": {
+    "ecovelos/00-ouverture": {
+      "status": "ready",
+      "src": "/story/ecovelos/00-ouverture.webp",
+      "palette": "muted teal and warm sand",
+      "identity": "teal electric bikes",
+      "prompt": "Lyon, March 2022, dawn: a small electric-bike rental depot on a cobbled quay by the river, 200 identical teal e-bikes lined up in rows in front of a half-open garage door, city skyline and Fourvière hill in the background, wide establishing shot, generous empty sky on the left third.",
+      "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+      "generatedAt": "2026-10-04",
+      "sizeKB": 210
+    },
+    "ecovelos/01-lancement": {
+      "status": "ready",
+      "src": "/story/ecovelos/01-lancement.webp",
+      "palette": "muted teal and warm sand",
+      "identity": "teal electric bikes",
+      "prompt": "Lyon, morning: street-level view of a city square around a small teal e-bike docking station. Left third: a teal e-bike with a broken lock and a scratched frame leaning on a post (vandalism). Center: an open-air repair workbench with tools and a bike on a repair stand. Right third, background: a university campus entrance with students. Empty band of sky across the top.",
+      "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+      "generatedAt": "2026-10-04",
+      "sizeKB": 229
+    },
+    "ecovelos/02-partenariat": {
+      "status": "ready",
+      "src": "/story/ecovelos/02-partenariat.webp",
+      "palette": "muted teal and warm sand",
+      "identity": "teal electric bikes",
+      "prompt": "Lyon, May 2022, midday: in front of the e-bike depot, a group of food-delivery couriers with plain insulated orange backpacks (no brand) stand beside a row of teal e-bikes; center foreground: a small outdoor table with contract papers and two coffee cups, ready for a negotiation. Empty sky on the left.",
+      "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+      "generatedAt": "2026-10-04",
+      "sizeKB": 193
+    },
+    "ecovelos/03-croissance": {
+      "status": "ready",
+      "src": "/story/ecovelos/03-croissance.webp",
+      "palette": "muted teal and warm sand",
+      "identity": "teal electric bikes",
+      "prompt": "Lyon, October 2023, autumn afternoon: a much larger e-bike workshop in a converted industrial hall. Left third: a group of employees gathered in a tense discussion. Center: stacks of bike frames and crates of components from different origins. Right third: a newsstand with blurred, unreadable newspapers. Teal e-bikes everywhere.",
+      "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+      "generatedAt": "2026-10-04",
+      "sizeKB": 204
+    },
+    "ecovelos/04-bilan": {
+      "status": "ready",
+      "src": "/story/ecovelos/04-bilan.webp",
+      "palette": "muted teal and warm sand",
+      "identity": "teal electric bikes",
+      "prompt": "Lyon at dusk seen from Fourvière hill: panoramic city view, glowing bike lanes threading through the streets with small teal lights of moving e-bikes, calm and hopeful mood, generous sky.",
+      "provider": "OpenAI GPT image (outil image_gen intégré à Codex CLI, compte ChatGPT)",
+      "generatedAt": "2026-10-04",
+      "sizeKB": 201
+    },
+    "cosmetique/00-ouverture": {
+      "status": "pending",
+      "src": "/story/cosmetique/00-ouverture.webp",
+      "palette": "blush pink, ivory and soft gold",
+      "identity": "amber glass bottles of organic cosmetics",
+      "prompt": "A small organic cosmetics workshop in a Paris courtyard at dawn, shelves of amber glass bottles, botanical ingredients on a marble table, wide establishing shot, empty wall on the left."
+    },
+    "cosmetique/01-lancement": {
+      "status": "pending",
+      "src": "/story/cosmetique/01-lancement.webp",
+      "palette": "blush pink, ivory and soft gold",
+      "identity": "amber glass bottles of organic cosmetics",
+      "prompt": "The cosmetics workshop by day. Left: a certification inspector's clipboard on a lab bench. Center: a smartphone on a ring-light tripod for influencer marketing. Right: crates of raw plant ingredients from a supplier. Empty space at the top."
+    },
+    "cosmetique/02-partenariat": {
+      "status": "pending",
+      "src": "/story/cosmetique/02-partenariat.webp",
+      "palette": "blush pink, ivory and soft gold",
+      "identity": "amber glass bottles of organic cosmetics",
+      "prompt": "A crowded beauty-retail aisle and a sleek rival brand display facing the small brand's stand, a distributor's meeting table in the center, midday light."
+    },
+    "cosmetique/03-croissance": {
+      "status": "pending",
+      "src": "/story/cosmetique/03-croissance.webp",
+      "palette": "blush pink, ivory and soft gold",
+      "identity": "amber glass bottles of organic cosmetics",
+      "prompt": "A larger cosmetics lab, autumn: left a team meeting, center rows of production vats, right a glass-walled office for an acquisition offer."
+    },
+    "cosmetique/04-bilan": {
+      "status": "pending",
+      "src": "/story/cosmetique/04-bilan.webp",
+      "palette": "blush pink, ivory and soft gold",
+      "identity": "amber glass bottles of organic cosmetics",
+      "prompt": "Dusk over Paris rooftops with a softly lit shop window of the brand, hopeful mood."
+    },
+    "boxe/00-ouverture": {
+      "status": "pending",
+      "src": "/story/boxe/00-ouverture.webp",
+      "palette": "charcoal, brick red and chalk white",
+      "identity": "heavy leather punching bags",
+      "prompt": "An empty brick industrial hangar at dawn being converted into a boxing gym, a single heavy punching bag hanging in a shaft of light, wide shot."
+    },
+    "boxe/01-lancement": {
+      "status": "pending",
+      "src": "/story/boxe/01-lancement.webp",
+      "palette": "charcoal, brick red and chalk white",
+      "identity": "heavy leather punching bags",
+      "prompt": "The boxing gym under construction. Left: stacked new equipment. Center: a coach wrapping a boxer's hands near the ring. Right: a street poster wall (blank posters). Empty top band."
+    },
+    "boxe/02-partenariat": {
+      "status": "pending",
+      "src": "/story/boxe/02-partenariat.webp",
+      "palette": "charcoal, brick red and chalk white",
+      "identity": "heavy leather punching bags",
+      "prompt": "The busy gym at midday, a rival gym's neon sign visible across the street, a second empty hangar for expansion, staff gathered by the ring."
+    },
+    "boxe/03-croissance": {
+      "status": "pending",
+      "src": "/story/boxe/03-croissance.webp",
+      "palette": "charcoal, brick red and chalk white",
+      "identity": "heavy leather punching bags",
+      "prompt": "A large premium boxing gym, autumn evening: left staff discussion, center the ring, right a glass office for a buyout meeting."
+    },
+    "boxe/04-bilan": {
+      "status": "pending",
+      "src": "/story/boxe/04-bilan.webp",
+      "palette": "charcoal, brick red and chalk white",
+      "identity": "heavy leather punching bags",
+      "prompt": "Night street outside the gym, warm light spilling from the windows, hopeful mood."
+    },
+    "art/00-ouverture": {
+      "status": "pending",
+      "src": "/story/art/00-ouverture.webp",
+      "palette": "deep ultramarine, ochre and gallery white",
+      "identity": "framed canvases",
+      "prompt": "An art gallery opening in a gentrifying old district at dawn, white walls with framed canvases, a large shop window onto a cobbled street, wide shot."
+    },
+    "art/01-lancement": {
+      "status": "pending",
+      "src": "/story/art/01-lancement.webp",
+      "palette": "deep ultramarine, ochre and gallery white",
+      "identity": "framed canvases",
+      "prompt": "The gallery by day. Left: a curator choosing a positioning among canvases. Center: an easel with posters for a marketing campaign. Right: young artists bringing portfolios. Empty top band."
+    },
+    "art/02-partenariat": {
+      "status": "pending",
+      "src": "/story/art/02-partenariat.webp",
+      "palette": "deep ultramarine, ochre and gallery white",
+      "identity": "framed canvases",
+      "prompt": "The gallery at midday: two very similar paintings side by side (plagiarism controversy), an investor's table in the center, gallery staff on the right."
+    },
+    "art/03-croissance": {
+      "status": "pending",
+      "src": "/story/art/03-croissance.webp",
+      "palette": "deep ultramarine, ochre and gallery white",
+      "identity": "framed canvases",
+      "prompt": "A larger gallery in autumn: left a staff meeting, center a crowded exhibition, right the neighbourhood with new upscale shops and old residents."
+    },
+    "art/04-bilan": {
+      "status": "pending",
+      "src": "/story/art/04-bilan.webp",
+      "palette": "deep ultramarine, ochre and gallery white",
+      "identity": "framed canvases",
+      "prompt": "The street at dusk, the gallery glowing among old and new buildings, hopeful mood."
+    },
+    "foot/00-ouverture": {
+      "status": "pending",
+      "src": "/story/foot/00-ouverture.webp",
+      "palette": "grass green, navy and floodlight white",
+      "identity": "an amateur football pitch with goalposts",
+      "prompt": "A worn amateur football pitch at dawn with rusty floodlights and an old small clubhouse, wide shot, empty sky on the left."
+    },
+    "foot/01-lancement": {
+      "status": "pending",
+      "src": "/story/foot/01-lancement.webp",
+      "palette": "grass green, navy and floodlight white",
+      "identity": "an amateur football pitch with goalposts",
+      "prompt": "The club by day. Left: a muddy damaged pitch section. Center: coaching staff around a tactics board. Right: a blank sponsor banner on the fence. Empty top band."
+    },
+    "foot/02-partenariat": {
+      "status": "pending",
+      "src": "/story/foot/02-partenariat.webp",
+      "palette": "grass green, navy and floodlight white",
+      "identity": "an amateur football pitch with goalposts",
+      "prompt": "The town hall facade beside the pitch at midday, a meeting table with the mayor's team and club officials in the center."
+    },
+    "foot/03-croissance": {
+      "status": "pending",
+      "src": "/story/foot/03-croissance.webp",
+      "palette": "grass green, navy and floodlight white",
+      "identity": "an amateur football pitch with goalposts",
+      "prompt": "A renovated stadium in autumn: left players and staff in discussion, center new stands under construction, right a recruitment desk."
+    },
+    "foot/04-bilan": {
+      "status": "pending",
+      "src": "/story/foot/04-bilan.webp",
+      "palette": "grass green, navy and floodlight white",
+      "identity": "an amateur football pitch with goalposts",
+      "prompt": "The stadium at dusk under floodlights with a cheering local crowd, hopeful mood."
+    },
+    "mode/00-ouverture": {
+      "status": "pending",
+      "src": "/story/mode/00-ouverture.webp",
+      "palette": "indigo denim, off-white and signal orange",
+      "identity": "streetwear garments on rails",
+      "prompt": "A small streetwear studio in a city loft at dawn, garment rails, rolls of fabric and a cutting table, wide shot."
+    },
+    "mode/01-lancement": {
+      "status": "pending",
+      "src": "/story/mode/01-lancement.webp",
+      "palette": "indigo denim, off-white and signal orange",
+      "identity": "streetwear garments on rails",
+      "prompt": "The studio by day. Left: a sewing workshop. Center: piles of organic and synthetic fabrics. Right: a photo shoot setup for marketing. Empty top band."
+    },
+    "mode/02-partenariat": {
+      "status": "pending",
+      "src": "/story/mode/02-partenariat.webp",
+      "palette": "indigo denim, off-white and signal orange",
+      "identity": "streetwear garments on rails",
+      "prompt": "A big retail chain's glass headquarters lobby at midday with the small brand's samples on a negotiation table."
+    },
+    "mode/03-croissance": {
+      "status": "pending",
+      "src": "/story/mode/03-croissance.webp",
+      "palette": "indigo denim, off-white and signal orange",
+      "identity": "streetwear garments on rails",
+      "prompt": "A bigger textile workshop in autumn: left workers in discussion, center a supply-chain transparency board with blank cards, right a new store front."
+    },
+    "mode/04-bilan": {
+      "status": "pending",
+      "src": "/story/mode/04-bilan.webp",
+      "palette": "indigo denim, off-white and signal orange",
+      "identity": "streetwear garments on rails",
+      "prompt": "A city street at dusk with people wearing the brand, hopeful mood."
+    },
+    "resto/00-ouverture": {
+      "status": "pending",
+      "src": "/story/resto/00-ouverture.webp",
+      "palette": "terracotta, olive green and cream",
+      "identity": "a bistro counter with copper pots",
+      "prompt": "A small gastronomic bistro in a trendy neighbourhood at dawn, copper pots, chalkboard (blank), large window onto the street, wide shot."
+    },
+    "resto/01-lancement": {
+      "status": "pending",
+      "src": "/story/resto/01-lancement.webp",
+      "palette": "terracotta, olive green and cream",
+      "identity": "a bistro counter with copper pots",
+      "prompt": "The bistro by day. Left: local producers delivering crates of vegetables. Center: kitchen brigade at work. Right: the dining room being styled for a concept. Empty top band."
+    },
+    "resto/02-partenariat": {
+      "status": "pending",
+      "src": "/story/resto/02-partenariat.webp",
+      "palette": "terracotta, olive green and cream",
+      "identity": "a bistro counter with copper pots",
+      "prompt": "An elegant hotel lobby at midday where the bistro team meets hotel managers around a tasting table."
+    },
+    "resto/03-croissance": {
+      "status": "pending",
+      "src": "/story/resto/03-croissance.webp",
+      "palette": "terracotta, olive green and cream",
+      "identity": "a bistro counter with copper pots",
+      "prompt": "A busy bigger restaurant in autumn: left staff meeting in the kitchen, center food waste bins and compost, right the changing street with luxury shops."
+    },
+    "resto/04-bilan": {
+      "status": "pending",
+      "src": "/story/resto/04-bilan.webp",
+      "palette": "terracotta, olive green and cream",
+      "identity": "a bistro counter with copper pots",
+      "prompt": "The bistro terrace at dusk full of guests, warm hopeful mood."
+    },
+    "greenbox/00-ouverture": {
+      "status": "pending",
+      "src": "/story/greenbox/00-ouverture.webp",
+      "palette": "leaf green, sky blue and soil brown",
+      "identity": "rooftop vegetable crates",
+      "prompt": "An urban rooftop farm on Paris roofs at dawn, raised vegetable beds and greenhouses, wide shot, empty sky on the left."
+    },
+    "greenbox/01-lancement": {
+      "status": "pending",
+      "src": "/story/greenbox/01-lancement.webp",
+      "palette": "leaf green, sky blue and soil brown",
+      "identity": "rooftop vegetable crates",
+      "prompt": "The rooftop farm by day. Left: seed and compost suppliers. Center: packaging station with crates. Right: delivery cargo bike. Empty top band."
+    },
+    "greenbox/02-partenariat": {
+      "status": "pending",
+      "src": "/story/greenbox/02-partenariat.webp",
+      "palette": "leaf green, sky blue and soil brown",
+      "identity": "rooftop vegetable crates",
+      "prompt": "An organic supermarket's loading dock at midday, crates of rooftop vegetables on a negotiation table."
+    },
+    "greenbox/03-croissance": {
+      "status": "pending",
+      "src": "/story/greenbox/03-croissance.webp",
+      "palette": "leaf green, sky blue and soil brown",
+      "identity": "rooftop vegetable crates",
+      "prompt": "Several rooftop farms in autumn: left workers discussing, center seedlings from different suppliers, right a new rooftop under construction."
+    },
+    "greenbox/04-bilan": {
+      "status": "pending",
+      "src": "/story/greenbox/04-bilan.webp",
+      "palette": "leaf green, sky blue and soil brown",
+      "identity": "rooftop vegetable crates",
+      "prompt": "Paris rooftops at dusk covered with green gardens, hopeful mood."
+    },
+    "streamlab/00-ouverture": {
+      "status": "pending",
+      "src": "/story/streamlab/00-ouverture.webp",
+      "palette": "electric violet, cyan and deep night blue",
+      "identity": "streaming setups with ring lights",
+      "prompt": "A small content-creator agency studio at dawn, gaming chairs, microphones and ring lights, a window onto city roofs, wide shot."
+    },
+    "streamlab/01-lancement": {
+      "status": "pending",
+      "src": "/story/streamlab/01-lancement.webp",
+      "palette": "electric violet, cyan and deep night blue",
+      "identity": "streaming setups with ring lights",
+      "prompt": "The studio by day. Left: new cameras and computers being unboxed. Center: a creator filming content. Right: a monetization dashboard on a screen (no readable text). Empty top band."
+    },
+    "streamlab/02-partenariat": {
+      "status": "pending",
+      "src": "/story/streamlab/02-partenariat.webp",
+      "palette": "electric violet, cyan and deep night blue",
+      "identity": "streaming setups with ring lights",
+      "prompt": "An energy-drink brand's event space at midday with a sponsorship table and gaming stage."
+    },
+    "streamlab/03-croissance": {
+      "status": "pending",
+      "src": "/story/streamlab/03-croissance.webp",
+      "palette": "electric violet, cyan and deep night blue",
+      "identity": "streaming setups with ring lights",
+      "prompt": "A large creator agency office in autumn: left a crisis meeting, center rows of streaming booths, right a growth planning wall (blank)."
+    },
+    "streamlab/04-bilan": {
+      "status": "pending",
+      "src": "/story/streamlab/04-bilan.webp",
+      "palette": "electric violet, cyan and deep night blue",
+      "identity": "streaming setups with ring lights",
+      "prompt": "City night skyline seen from the studio, screens glowing softly, hopeful mood."
+    },
+    "petcare/00-ouverture": {
+      "status": "pending",
+      "src": "/story/petcare/00-ouverture.webp",
+      "palette": "warm honey, mint and soft grey",
+      "identity": "a premium pet daycare with dog beds",
+      "prompt": "A premium pet daycare in a renovated shopfront at dawn, dog beds and play area, wide shot."
+    },
+    "petcare/01-lancement": {
+      "status": "pending",
+      "src": "/story/petcare/01-lancement.webp",
+      "palette": "warm honey, mint and soft grey",
+      "identity": "a premium pet daycare with dog beds",
+      "prompt": "The daycare by day. Left: a positioning board with pet photos (no text). Center: groomers and vets with dogs and cats. Right: bags of pet food from suppliers. Empty top band."
+    },
+    "petcare/02-partenariat": {
+      "status": "pending",
+      "src": "/story/petcare/02-partenariat.webp",
+      "palette": "warm honey, mint and soft grey",
+      "identity": "a premium pet daycare with dog beds",
+      "prompt": "A big pet-store chain's warehouse office at midday with a negotiation table."
+    },
+    "petcare/03-croissance": {
+      "status": "pending",
+      "src": "/story/petcare/03-croissance.webp",
+      "palette": "warm honey, mint and soft grey",
+      "identity": "a premium pet daycare with dog beds",
+      "prompt": "A larger daycare in autumn: left staff discussion, center a crowded play area, right a new branch under construction."
+    },
+    "petcare/04-bilan": {
+      "status": "pending",
+      "src": "/story/petcare/04-bilan.webp",
+      "palette": "warm honey, mint and soft grey",
+      "identity": "a premium pet daycare with dog beds",
+      "prompt": "A park at dusk with happy dogs and owners, hopeful mood."
+    }
+  }
+}

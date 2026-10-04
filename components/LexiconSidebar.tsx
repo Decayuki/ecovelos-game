@@ -64,14 +64,23 @@ const LEXICON: LexiconEntry[] = [
   }
 ];
 
-export default function LexiconSidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+interface LexiconSidebarProps {
+  /** Mode contrôlé (traversée ÉcoVélos) : l'ouverture vient de l'en-tête, sans bouton flottant. */
+  open?: boolean;
+  onClose?: () => void;
+}
+
+export default function LexiconSidebar({ open, onClose }: LexiconSidebarProps = {}) {
+  const [localOpen, setLocalOpen] = useState(false);
+  const controlled = open !== undefined;
+  const isOpen = controlled ? open : localOpen;
+  const setIsOpen = (value: boolean) => (controlled ? !value && onClose?.() : setLocalOpen(value));
   const [expandedTerm, setExpandedTerm] = useState<string | null>(null);
 
   return (
     <>
       {/* Bouton Toggle (style Notion) */}
-      <button
+      {!controlled && <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-4 right-4 z-40 w-10 h-10 bg-white border-2 border-gray-300 rounded-lg shadow-lg hover:border-emerald-500 hover:text-emerald-600 transition-all flex items-center justify-center"
         aria-label="Lexique"
@@ -79,7 +88,7 @@ export default function LexiconSidebar() {
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
-      </button>
+      </button>}
 
       {/* Sidebar (style Notion) */}
       <div

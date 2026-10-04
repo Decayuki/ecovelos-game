@@ -8,7 +8,7 @@ interface ClaraCoachProps {
   onDismiss: () => void;
 }
 
-interface ClaraMessage {
+export interface ClaraMessage {
   text: string;
   tone: 'normal' | 'warning' | 'angry';
 }
@@ -89,7 +89,7 @@ export default function ClaraCoach({ gameState, phase, isGuidedMode, onDismiss }
   );
 }
 
-function generateMessage(gameState: GameState, phase: number, dismissCount: number): ClaraMessage | null {
+export function generateMessage(gameState: GameState, phase: number, dismissCount: number): ClaraMessage | null {
   const { budget, monthlyVA, scores } = gameState;
 
   // Clara devient plus méchante si ignorée
