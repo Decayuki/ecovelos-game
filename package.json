@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node tests/game-data.test.js",
+    "test": "node tests/game-data.test.js && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/game-score.test.mjs",
     "audit": "node audit-comprehensive.js"
   },
   "dependencies": {

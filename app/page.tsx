@@ -17,6 +17,7 @@ import { applyDecisionEffects, calculateEconomicScore, calculateSocialScore, cal
 import { getThemePhases, getThemeInitialState } from '@/lib/theme-phases-map';
 import { checkBadEnding, calculateScandals, calculateReputation } from '@/lib/bad-ending-logic';
 import themesData from '@/lib/themes-test.json';
+import { emitScoreOnce, newRunId } from '@/lib/game-score';
 
 const getInitialState = (themeId: string): GameState => {
   const themeData = getThemeInitialState(themeId);
@@ -58,6 +59,7 @@ export default function Home() {
   const [showWelcomeModal, setShowWelcomeModal] = useState(true);
   const [isGuidedMode, setIsGuidedMode] = useState(false);
   const [claraMessage, setClaraMessage] = useState<number>(0);
+  const [runId, setRunId] = useState<string | null>(null);
   const [showTimeTransition, setShowTimeTransition] = useState(false);
   const [transitionData, setTransitionData] = useState<{
     fromPhase: number;
@@ -86,6 +88,13 @@ export default function Home() {
       setGameState(prev => prev ? { ...prev, scores: newScores } : null);
     }
   }, [gameState?.budget, gameState?.monthlyRevenue, gameState?.monthlyCosts]);
+
+  // Écran final (bilan ou bad ending) : GAME_SCORE une seule fois par partie (contrat StudyNote).
+  const isFinalScreen = !!gameState && (gameFinished || !!gameState.badEnding);
+  useEffect(() => {
+    if (!isFinalScreen || !runId || !gameState) return;
+    emitScoreOnce(runId, calculateGlobalScore(gameState), window.parent, window, () => window.localStorage);
+  }, [isFinalScreen, runId, gameState]);
   
   const handleSelectTheme = (themeId: string) => {
     setSelectedTheme(themeId);
@@ -98,6 +107,7 @@ export default function Home() {
   };
   
   const handleStartGame = () => {
+    setRunId(newRunId());
     setGameStarted(true);
     setShowPhaseIntro(false);
   };
@@ -388,7 +398,9 @@ export default function Home() {
   }
   
   if (gameFinished) {
-    const grading = getGrading(gameState.scores.global);
+    // Même calcul que le score émis à StudyNote : l'affichage ne dépend pas du recalcul différé.
+    const finalScore = calculateGlobalScore(gameState);
+    const grading = getGrading(finalScore);
     
     return (
       <main className="min-h-screen p-4 md:p-8">
@@ -408,7 +420,7 @@ export default function Home() {
               <h2 className="text-xl font-semibold mb-2 text-gray-900">{grading.label}</h2>
               <p className="text-sm text-gray-600 mb-4">{grading.description}</p>
               <div className="inline-flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-gray-900">{gameState.scores.global}</span>
+                <span className="text-5xl font-bold text-gray-900">{finalScore}</span>
                 <span className="text-2xl text-gray-500">/100</span>
               </div>
             </div>
